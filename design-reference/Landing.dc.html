@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #FFFFFF; color: #16264D; font-family: 'DM Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    * { box-sizing: border-box; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { opacity: 0.78; }
+    ::selection { background: #F58220; color: #FFFFFF; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary { list-style: none; }
+    details[open] .plus { transform: rotate(45deg); }
+    .plus { transition: transform .2s ease; display:inline-block; }
+    .marquee-inner { animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  </style>
+</helmet>
+
+<div style="background:#FFFFFF;color:#16264D;font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.5;overflow-x:hidden">
+
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(22,38,77,0.08)">
+    <div style="max-width:1400px;margin:0 auto;padding:18px 48px;display:flex;align-items:center;justify-content:space-between">
+      <a href="/Landing.dc.html" style="display:flex;align-items:center;gap:10px">
+        <img src="assets/capitabel-logo.jpg" alt="Capitabel" style="height:30px;width:auto;display:block;flex-shrink:0">
+      </a>
+      <div style="display:flex;gap:36px;font-size:14px;color:#334971;font-weight:500">
+        <a href="/Landing.dc.html">Home</a>
+        <a href="/About.dc.html">About us</a>
+        <a href="/Loans.dc.html">Loan products</a>
+        <a href="#journal">Journal</a>
+        <a href="/Contact.dc.html">Contact</a>
+      </div>
+      <a href="/Contact.dc.html" style="display:inline-flex;align-items:center;gap:8px;padding:11px 20px;background:#16264D;color:#FFFFFF;border-radius:6px;font-size:14px;font-weight:500">
+        Talk to an expert <span>→</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section style="max-width:1400px;margin:0 auto;padding:72px 48px 48px">
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:end">
+      
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:10px;padding:6px 14px;border:1px solid rgba(22,38,77,0.2);border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:44px">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: rgb(245, 130, 32);"></span>Borrowing made Simple</div>
+        
+        <h1 style="font-family: 'Space Grotesk',sans-serif; font-weight: 600; font-size: 104px; line-height: 0.96; letter-spacing: -0.035em; margin: 0 0 32px; color: #16264D; text-align: left">
+          BORROW<br><span style="color: rgb(245, 130, 32); font-style: normal; position: absolute; left: 358px; top: 375px">BETTER</span><br><span style="font-family: &quot;Instrument Serif&quot;, serif; font-style: italic; font-weight: 400; letter-spacing: -0.02em; display: inline-block; font-size: 70px; text-decoration-line: none;"><br>with Capitabel.</span>
+        </h1><p style="font-size:20px;line-height:1.45;color:#334971;max-width:560px;margin:0 0 40px;text-wrap:pretty">One advisor. The right lender. 48 hours.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="/Contact.dc.html" style="display:inline-flex;align-items:center;gap:10px;padding:16px 26px;background:#F58220;color:#FFFFFF;border-radius:6px;font-size:15px;font-weight:500">
+            Book a consultation call <span>→</span>
+          </a>
+          <a href="#loans" style="display:inline-flex;align-items:center;gap:10px;padding:16px 26px;background:transparent;border:1px solid rgba(22,38,77,0.25);color:#16264D;border-radius:6px;font-size:15px;font-weight:500">
+            Explore loan products
+          </a>
+        </div>
+      </div><div style="display:flex;flex-direction:column;gap:16px">
+        
+        <div style="position: relative; aspect-ratio: 4/5; background: repeating-linear-gradient(135deg,#EFE7D5,#EFE7D5 12px,#D8CCB4 12px,#D8CCB4 24px); border-radius: 8px; overflow: hidden; display: flex; align-items: flex-end; padding: 20px; width: 400px; height: 462px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#334971;background:rgba(255,255,255,0.92);padding:6px 10px;border-radius:4px">img · advisor with borrower, Chennai site</span>
+        </div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="background:#16264D;color:#FFFFFF;border-radius:8px;padding:22px">
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:44px;line-height:1;letter-spacing:-0.02em">48 hrs</div>
+            <div style="font-size:12px;color:rgba(245,240,228,0.7);margin-top:8px">To a Capitabel Loan Offer</div>
+          </div>
+          <div style="background:#F58220;color:#FFFFFF;border-radius:8px;padding:22px">
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:44px;line-height:1;letter-spacing:-0.02em">₹200Cr</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.85);margin-top:8px">FY 2026–27 disbursement target</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LENDER MARQUEE -->
+  <section style="max-width:1400px;margin:0 auto;padding:40px 48px 20px">
+    <div style="display:flex;align-items:center;gap:32px;margin-bottom:24px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;white-space:nowrap">10–12 core lenders · 40+ network</div>
+      <div style="flex:1;height:1px;background:rgba(22,38,77,0.15)"></div>
+    </div>
+    <div style="overflow:hidden;border-top:1px solid rgba(22,38,77,0.1);border-bottom:1px solid rgba(22,38,77,0.1)">
+      <div class="marquee-inner" style="display:flex;gap:0;width:max-content">
+        <sc-for list="{{ lendersLoop }}" as="lender" hint-placeholder-count="12">
+          <div style="padding:26px 44px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19px;color:#334971;white-space:nowrap;border-right:1px solid rgba(22,38,77,0.08);letter-spacing:-0.01em">{{ lender }}</div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOAN PRODUCTS -->
+  <section id="loans" style="max-width:1400px;margin:0 auto;padding:120px 48px">
+    <div style="display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:end;margin-bottom:56px">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">01 · What we finance</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:64px;line-height:1;letter-spacing:-0.025em;margin:0;color:#16264D">
+          Three products.<br>
+          <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">One relationship.</span>
+        </h2>
+      </div>
+      <p style="font-size:19px;line-height:1.5;color:#334971;max-width:520px;margin:0;text-wrap:pretty">
+        Home Loans, Loan Against Property, and MSME finance — from a single advisor with visibility across our full lender panel. Higher lifetime value for the borrower, better outcomes for the file.
+      </p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <sc-for list="{{ products }}" as="p" hint-placeholder-count="3">
+        <a href="/Loans.dc.html" style="background:#F7F3E9;border:1px solid rgba(22,38,77,0.08);border-radius:12px;padding:36px 32px 32px;display:flex;flex-direction:column;min-height:480px;position:relative" style-hover="{ borderColor: 'rgba(245,130,32,0.5)' }">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#334971">{{ p.code }}</div>
+            <div style="padding:4px 10px;background:{{ p.tagBg }};color:{{ p.tagFg }};border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase">{{ p.tag }}</div>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:32px;line-height:1.1;letter-spacing:-0.02em;margin:0 0 12px;color:#16264D">{{ p.name }}</h3>
+          <p style="font-size:15px;line-height:1.5;color:#334971;margin:0 0 24px;max-width:340px">{{ p.desc }}</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:auto">
+            <sc-for list="{{ p.bullets }}" as="b" hint-placeholder-count="3">
+              <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#16264D">
+                <span style="color:#F58220;font-weight:600;margin-top:1px">◆</span>
+                <span>{{ b }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;margin-top:32px;padding-top:20px;border-top:1px solid rgba(22,38,77,0.12)">
+            <div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#334971;margin-bottom:4px">Ticket range</div>
+              <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;color:#16264D">{{ p.ticket }}</div>
+            </div>
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#16264D;color:#FFFFFF;font-size:16px">→</span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- THE PROMISE / 48H -->
+  <section style="background:#16264D;color:#FFFFFF">
+    <div style="max-width:1400px;margin:0 auto;padding:120px 48px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:80px;align-items:end">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,240,228,0.6);margin-bottom:20px">02 · The Capitabel promise</div>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:72px;line-height:0.98;letter-spacing:-0.025em;margin:0">
+            A Loan Offer in<br>
+            <span style="color:#F58220">48 hours,</span> not<br>
+            a wait for a lender.
+          </h2>
+        </div>
+        <p style="font-size:19px;line-height:1.5;color:rgba(245,240,228,0.75);max-width:480px;margin:0;text-wrap:pretty">
+          National fintechs make you wait on a lender's decision. Traditional DSAs make you chase paperwork through a black box. We issue our own in-principle offer — indicative rate, fees, tenure, KFS terms — within 48 hours of a complete file.
+        </p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+          <div style="border-top:1px solid rgba(245,240,228,0.2);padding-top:32px">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:56px">
+              <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:56px;line-height:1;color:#F58220;letter-spacing:-0.02em">{{ s.n }}</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,240,228,0.5)">{{ s.dur }}</div>
+            </div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;line-height:1.15;letter-spacing:-0.01em;margin:0 0 14px">{{ s.title }}</h3>
+            <p style="font-size:15px;line-height:1.55;color:rgba(245,240,228,0.7);margin:0">{{ s.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="margin-top:80px;padding:40px 48px;background:rgba(245,130,32,0.12);border:1px solid rgba(245,130,32,0.35);border-radius:12px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#F58220;margin-bottom:12px">Offer Honour Rate</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:32px;line-height:1.2;letter-spacing:-0.015em">
+            85% of Capitabel Loan Offers convert to lender sanctions on materially equivalent terms.
+          </div>
+        </div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:96px;color:#F58220;letter-spacing:-0.03em">85%</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section style="max-width:1400px;margin:0 auto;padding:120px 48px">
+    <div style="margin-bottom:56px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">03 · Who we serve</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:64px;line-height:1;letter-spacing:-0.025em;margin:0;color:#16264D;max-width:900px">
+        Built for the Bharat that the<br>
+        <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">balance-sheet fintechs</span> can't reach.
+      </h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <sc-for list="{{ segments }}" as="seg" hint-placeholder-count="3">
+        <div style="background:{{ seg.bg }};color:{{ seg.fg }};border-radius:12px;padding:40px 36px;min-height:440px;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:{{ seg.label }}">Segment · {{ seg.n }}</div>
+            <div style="width:44px;height:44px;border-radius:50%;background:{{ seg.dot }};color:{{ seg.dotFg }};display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px">{{ seg.initial }}</div>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:36px;line-height:1.05;letter-spacing:-0.02em;margin:auto 0 16px">{{ seg.title }}</h3>
+          <p style="font-size:15px;line-height:1.55;margin:0 0 28px;color:{{ seg.body }};max-width:340px">{{ seg.desc }}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px">
+            <sc-for list="{{ seg.tags }}" as="t" hint-placeholder-count="4">
+              <span style="padding:6px 12px;background:{{ seg.chipBg }};border-radius:999px;font-size:12px;color:{{ seg.chipFg }}">{{ t }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- MATCHING ENGINE / BUILT ON -->
+  <section style="max-width:1400px;margin:0 auto;padding:0 48px 120px">
+    <div style="background:#F7F3E9;border:1px solid rgba(22,38,77,0.08);border-radius:16px;padding:80px 64px;display:grid;grid-template-columns:1.15fr 1fr;gap:80px;align-items:start">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">04 · Under the hood</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:60px;line-height:1;letter-spacing:-0.025em;margin:0 0 24px;color:#16264D">
+          A matching engine<br>
+          <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">built on ground truth.</span>
+        </h2>
+        <p style="font-size:18px;line-height:1.5;color:#334971;margin:0 0 32px;max-width:520px;text-wrap:pretty">
+          Twenty-five years of South India real estate operations from Manor Group. Eighteen years of banking technology from ING Netherlands. Codified into a matching engine that routes borrowers by fit — not by what pays us best.
+        </p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px">
+          <sc-for list="{{ engineFacts }}" as="f" hint-placeholder-count="4">
+            <div style="padding:20px;background:#FFFFFF;border-radius:8px">
+              <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:28px;line-height:1;color:#16264D;letter-spacing:-0.015em">{{ f.val }}</div>
+              <div style="font-size:12px;color:#334971;margin-top:8px">{{ f.label }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <a href="/About.dc.html" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#16264D;border-bottom:1px solid #16264D;padding-bottom:2px;font-weight:500">Read the story behind Capitabel →</a>
+      </div>
+
+      <div style="background:#16264D;color:#FFFFFF;border-radius:12px;padding:36px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.8">
+        <div style="display:flex;justify-content:space-between;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid rgba(245,240,228,0.15);color:rgba(245,240,228,0.6);letter-spacing:0.1em;text-transform:uppercase;font-size:10px">
+          <span>matching-engine.log</span>
+          <span style="color:#F58220">● LIVE</span>
+        </div>
+        <div style="color:rgba(245,240,228,0.55)">[10:24:11] Ingesting file <span style="color:#F58220">#CP-2841</span></div>
+        <div style="color:rgba(255,255,255,0.9)">→ Profile: MSME · Chennai · ₹1.4 Cr · GST-linked</div>
+        <div style="color:rgba(245,240,228,0.55)">[10:24:13] Scoring 12 core lenders...</div>
+        <div style="color:rgba(255,255,255,0.9)">→ <span style="color:#F58220">KVB</span> · 4.6 · direct · TAT 8d · rate 12.8%</div>
+        <div style="color:rgba(255,255,255,0.9)">→ <span style="color:#F58220">ICICI</span> · 4.2 · direct · TAT 10d · rate 13.1%</div>
+        <div style="color:rgba(255,255,255,0.9)">→ <span style="color:#F58220">Central Bank</span> · 3.9 · direct · TAT 12d</div>
+        <div style="color:rgba(245,240,228,0.55)">[10:24:14] Ranking by borrower fit (Rule 1)</div>
+        <div style="color:rgba(245,240,228,0.55)">[10:24:14] Direct route preferred (Rule 2)</div>
+        <div style="color:rgba(245,240,228,0.55)">[10:24:15] No channel premium flagged</div>
+        <div style="color:#F58220;margin-top:12px">✓ Recommendation: KVB</div>
+        <div style="color:rgba(255,255,255,0.9)">→ Capitabel Loan Offer draft ready · 47:52 remaining</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="max-width:1400px;margin:0 auto;padding:0 48px 120px">
+    <div style="margin-bottom:56px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">05 · Client voices</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:64px;line-height:1;letter-spacing:-0.025em;margin:0;color:#16264D;max-width:900px">
+        Fifty-two files.<br>
+        <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">Fifty-two conversations</span> that started with trust.
+      </h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:20px">
+      <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+        <figure style="background:#F7F3E9;border:1px solid rgba(22,38,77,0.08);border-radius:12px;padding:36px;display:flex;flex-direction:column;margin:0;min-height:340px">
+          <div style="font-family:'Instrument Serif',serif;font-size:80px;line-height:0.5;color:#F58220;margin-bottom:18px">"</div>
+          <blockquote style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:22px;line-height:1.3;letter-spacing:-0.01em;color:#16264D;margin:0 0 auto">{{ t.quote }}</blockquote>
+          <figcaption style="display:flex;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(22,38,77,0.12)">
+            <div style="width:40px;height:40px;border-radius:50%;background:#16264D;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:600">{{ t.initial }}</div>
+            <div>
+              <div style="font-size:14px;font-weight:500;color:#16264D">{{ t.name }}</div>
+              <div style="font-size:12px;color:#334971">{{ t.role }}</div>
+            </div>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- LOCATIONS -->
+  <section style="max-width:1400px;margin:0 auto;padding:0 48px 120px">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:end;margin-bottom:48px">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">06 · Where we operate</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:64px;line-height:1;letter-spacing:-0.025em;margin:0;color:#16264D">
+          Feet on the ground,<br>
+          <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">in five clusters.</span>
+        </h2>
+      </div>
+      <p style="font-size:19px;line-height:1.5;color:#334971;margin:0;max-width:480px;text-wrap:pretty">
+        Tamil Nadu and Andhra Pradesh, from Chennai's urban core to South Andhra's Tier 2 towns and North Chennai's SIPCOT industrial estates. Local RMs, local languages, local relationships.
+      </p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px">
+      <sc-for list="{{ clusters }}" as="c" hint-placeholder-count="5">
+        <div style="background:#F7F3E9;border:1px solid rgba(22,38,77,0.08);border-radius:12px;padding:28px 24px;min-height:220px;display:flex;flex-direction:column">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:12px">{{ c.tag }}</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;line-height:1.1;letter-spacing:-0.01em;margin:0 0 auto;color:#16264D">{{ c.name }}</h3>
+          <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(22,38,77,0.1)">
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:28px;line-height:1;color:#F58220;letter-spacing:-0.02em">{{ c.target }}</div>
+            <div style="font-size:11px;color:#334971;margin-top:4px">FY 2026–27 target</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- JOURNAL -->
+  <section id="journal" style="background:#F5F0E4">
+    <div style="max-width:1400px;margin:0 auto;padding:120px 48px">
+      <div style="display:flex;align-items:end;justify-content:space-between;margin-bottom:48px;gap:48px;flex-wrap:wrap">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">07 · Journal</div>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:64px;line-height:1;letter-spacing:-0.025em;margin:0;color:#16264D">
+            Field notes on<br>
+            <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">borrowing well.</span>
+          </h2>
+        </div>
+        <a href="#" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#16264D;border-bottom:1px solid #16264D;padding-bottom:2px;font-weight:500">Read all posts →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+        <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
+          <a href="#" style="display:flex;flex-direction:column;gap:20px">
+            <div style="aspect-ratio:5/4;background:repeating-linear-gradient(135deg,#D8CCB4,#D8CCB4 10px,#C7B899 10px,#C7B899 20px);border-radius:8px;display:flex;align-items:flex-end;padding:14px">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#334971;background:rgba(255,255,255,0.9);padding:4px 8px;border-radius:4px">img · {{ p.tag }}</span>
+            </div>
+            <div>
+              <div style="display:flex;gap:14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#334971;margin-bottom:12px">
+                <span>{{ p.cat }}</span><span>·</span><span>{{ p.read }}</span>
+              </div>
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;line-height:1.2;letter-spacing:-0.015em;margin:0;color:#16264D">{{ p.title }}</h3>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="max-width:1400px;margin:0 auto;padding:120px 48px">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start">
+      <div style="position:sticky;top:120px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">08 · FAQ</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:56px;line-height:1;letter-spacing:-0.025em;margin:0 0 24px;color:#16264D">
+          Questions we<br>
+          <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">hear most often.</span>
+        </h2>
+        <p style="font-size:16px;line-height:1.5;color:#334971;margin:0 0 20px;max-width:340px">A 20-minute call answers most things faster than an email chain.</p>
+        <a href="/Contact.dc.html" style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:#16264D;color:#FFFFFF;border-radius:6px;font-size:14px;font-weight:500">Book a call →</a>
+      </div>
+      <div>
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+          <details style="border-top:1px solid rgba(22,38,77,0.15);padding:26px 0">
+            <summary style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;gap:24px">
+              <span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.01em;color:#16264D">{{ f.q }}</span>
+              <span class="plus" style="font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:28px;color:#F58220;flex-shrink:0">+</span>
+            </summary>
+            <p style="font-size:16px;line-height:1.55;color:#334971;margin:14px 0 0;max-width:680px">{{ f.a }}</p>
+          </details>
+        </sc-for>
+        <div style="border-top:1px solid rgba(22,38,77,0.15)"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="max-width:1400px;margin:0 auto;padding:0 48px 120px">
+    <div style="background:#16264D;color:#FFFFFF;border-radius:20px;padding:88px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:end;position:relative;overflow:hidden">
+      <div style="position:absolute;top:-100px;right:-80px;width:340px;height:340px;background:#F58220;opacity:0.35;filter:blur(10px);border-radius:50%"></div>
+      <div style="position:relative">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,240,228,0.6);margin-bottom:24px">A real person, on your side</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:80px;line-height:0.98;letter-spacing:-0.03em;margin:0 0 20px">
+          Start with a<br>
+          <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">conversation,</span><br>
+          not a commitment.
+        </h2>
+        <p style="font-size:18px;line-height:1.5;color:rgba(245,240,228,0.72);margin:0;max-width:520px">
+          A free 20-minute consultation with a lending specialist who understands what you're building — and what a good rate looks like this quarter.
+        </p>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;gap:14px">
+        <a href="/Contact.dc.html" style="display:flex;align-items:center;justify-content:space-between;padding:22px 26px;background:#F58220;color:#FFFFFF;border-radius:8px;font-size:16px;font-weight:500">
+          Book a consultation call
+          <span style="font-size:22px">→</span>
+        </a>
+        <a href="https://wa.me/919940548583" style="display:flex;align-items:center;justify-content:space-between;padding:22px 26px;background:#FFFFFF;color:#16264D;border-radius:8px;font-size:16px;font-weight:500">
+          WhatsApp us
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px">+91 99405 48583</span>
+        </a>
+        <a href="tel:+919940548583" style="display:flex;align-items:center;justify-content:space-between;padding:22px 26px;background:transparent;border:1px solid rgba(245,240,228,0.25);color:#FFFFFF;border-radius:8px;font-size:16px">
+          Call directly
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(245,240,228,0.7)">Mon–Sat · 9–7</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#F5F0E4;border-top:1px solid rgba(22,38,77,0.08)">
+    <div style="max-width:1400px;margin:0 auto;padding:72px 48px 32px">
+      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:56px;margin-bottom:56px">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
+            <img src="assets/capitabel-logo.jpg" alt="Capitabel" style="height:36px;width:auto;display:block">
+          </div>
+          <p style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:28px;line-height:1.1;letter-spacing:-0.02em;color:#16264D;margin:0 0 32px;max-width:400px">
+            Building Bharat through<br>
+            <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">credit access.</span>
+          </p>
+          <div style="font-size:13px;color:#334971;line-height:1.6;max-width:340px">
+            Capitabel Solutions Pvt Ltd<br>
+            #E162/5, Tiger Varadachar Road, 1st Cross Kalakshetra,<br>
+            Besantnagar, Chennai, Tamil Nadu 600090
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">Explore</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:#16264D">
+            <a href="/Landing.dc.html">Home</a>
+            <a href="/About.dc.html">About us</a>
+            <a href="/Loans.dc.html">Loan products</a>
+            <a href="#journal">Journal</a>
+            <a href="/Contact.dc.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">Reach us</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:#16264D">
+            <a href="tel:+919940548583">+91 99405 48583</a>
+            <a href="mailto:hello@capitabel.com">hello@capitabel.com</a>
+            <a href="https://wa.me/919940548583">WhatsApp us →</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">Elsewhere</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:#16264D">
+            <a href="#">LinkedIn ↗</a>
+            <a href="#">Instagram ↗</a>
+            <a href="#">Facebook ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid rgba(22,38,77,0.15);padding-top:28px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:12px;color:#334971">
+        <div>© 2026 Capitabel Solutions Pvt Ltd. All rights reserved.</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em">CHENNAI · EST. 2023 · MANOR GROUP</div>
+        <div style="display:flex;gap:20px">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Disclosures</a>
+        </div>
+      </div>
+
+      <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(80px,17vw,240px);line-height:0.9;color:#16264D;opacity:0.08;letter-spacing:-0.04em;margin-top:32px;overflow:hidden;white-space:nowrap">
+        CAPITABEL
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals() {
+    const lenders = ['HDFC Bank', 'ICICI Bank', 'Karur Vysya Bank', 'Central Bank of India', 'Indian Overseas Bank', 'Canara Bank', 'Repco Home Finance', 'Tata Capital', 'Bajaj Housing Finance', 'HomeFirst Finance', 'Muthoot Finance', 'Piramal Finance'];
+    return {
+      lendersLoop: [...lenders, ...lenders],
+      products: [
+        {
+          code: 'CP-01', tag: 'Home Loan', tagBg: '#16264D', tagFg: '#FFFFFF',
+          name: 'Home Loans',
+          desc: 'From the salaried professional buying a first flat in Chennai to the peri-urban aspirant financing a first home in Nellore.',
+          bullets: ['Tickets from ₹8 L to ₹3 Cr', 'Tenures up to 30 years', 'Balance-transfer restructuring available'],
+          ticket: '₹8 L – ₹3 Cr'
+        },
+        {
+          code: 'CP-02', tag: 'LAP', tagBg: '#F58220', tagFg: '#FFFFFF',
+          name: 'Loan Against Property',
+          desc: 'Unlock capital from commercial or residential property you already own — for business expansion, consolidation, or working capital.',
+          bullets: ['Tickets from ₹15 L to ₹2 Cr', 'Property-backed SME credit', 'Tenures up to 15 years'],
+          ticket: '₹15 L – ₹2 Cr'
+        },
+        {
+          code: 'CP-03', tag: 'MSME', tagBg: '#334971', tagFg: '#FFFFFF',
+          name: 'MSME Business Loans',
+          desc: 'Working capital, machinery, and secured business loans — structured around GST turnover, cash-flow cycles, and the paperwork rhythm of a small operation.',
+          bullets: ['Tickets from ₹20 L to ₹5 Cr', 'Secured and unsecured', 'SIPCOT industrial estate specialists'],
+          ticket: '₹20 L – ₹5 Cr'
+        },
+      ],
+      steps: [
+        { n: '01', dur: '~5 min', title: 'Tell us what you need', body: 'A short call clarifies what you\u2019re actually solving for. No paperwork maze required to get started.' },
+        { n: '02', dur: '48 hrs', title: 'We issue a Capitabel Loan Offer', body: 'Our matching engine scores your file against our core lender panel; we validate with 1\u20133 shortlisted lenders and issue an in-principle offer.' },
+        { n: '03', dur: '7–10 days', title: 'Sanction, disbursement, and beyond', body: 'Your dedicated advisor stays with you through documentation, sanction, and every next step. 94% approval rate on files we take on.' },
+      ],
+      segments: [
+        {
+          n: '01', title: 'MSME owners', initial: 'M', tag: 'MSME · Peri-urban + Tier 2',
+          bg: '#F5F0E4', fg: '#16264D', label: '#334971', dot: '#16264D', dotFg: '#FFFFFF',
+          body: '#334971', chipBg: 'rgba(22,38,77,0.08)', chipFg: '#16264D',
+          desc: 'Manufacturers, traders, service businesses. From Chennai\u2019s core to Gummidipoondi SIPCOT and Hosur. Working capital that respects your cash-flow cycle.',
+          tags: ['Working capital', 'Machinery finance', 'GST-linked', 'SIPCOT specialists', 'Secured LAP']
+        },
+        {
+          n: '02', title: 'Construction developers', initial: 'C', tag: 'Real estate · South India',
+          bg: '#F58220', fg: '#FFFFFF', label: 'rgba(255,255,255,0.75)', dot: '#FFFFFF', dotFg: '#F58220',
+          body: 'rgba(255,255,255,0.9)', chipBg: 'rgba(255,255,255,0.15)', chipFg: '#FFFFFF',
+          desc: 'Project finance, LAP against existing assets, and construction loans tied to real site milestones. Built on Manor Group\u2019s 25 years of ground.',
+          tags: ['Project finance', 'Draw-schedule loans', 'LAP', 'CREDAI-linked', 'Land purchase']
+        },
+        {
+          n: '03', title: 'Homebuyers', initial: 'H', tag: 'Home Loan · Tier 1 to Tier 3',
+          bg: '#16264D', fg: '#FFFFFF', label: 'rgba(245,240,228,0.65)', dot: '#F58220', dotFg: '#FFFFFF',
+          body: 'rgba(255,255,255,0.85)', chipBg: 'rgba(245,240,228,0.12)', chipFg: '#FFFFFF',
+          desc: 'Salaried professionals, business owners, first-time aspirants across South Andhra. Home loans that account for informal income and complex files.',
+          tags: ['First-time buyers', 'Balance transfer', 'Informal income', 'Affordable HL', 'Peri-urban']
+        },
+      ],
+      engineFacts: [
+        { val: '10–12', label: 'Core lender partners, rationalised from 40+' },
+        { val: '4 rules', label: 'Match by borrower fit, not commission' },
+        { val: '25 yrs', label: 'Manor Group South India real estate depth' },
+        { val: '€60 Bn', label: 'ING loan portfolio our tech was built on' },
+      ],
+      testimonials: [
+        { quote: 'Sanction in nine days on an MSME file two banks had already turned down. Harish\u2019s team knew exactly which lender would say yes.', initial: 'R', name: 'Rajesh Kumar', role: 'Textile manufacturer, Chennai' },
+        { quote: 'Draw-schedule financing that actually matched our site milestones. First team that got it.', initial: 'A', name: 'Anitha Reddy', role: 'Developer, Chennai' },
+        { quote: 'Refinanced our home loan and dropped the rate by 1.4%. Honest advice, no fuss.', initial: 'V', name: 'Vikram Iyer', role: 'Homeowner, Besantnagar' },
+      ],
+      clusters: [
+        { tag: 'Anchor · 60%', name: 'Chennai', target: '₹120 Cr' },
+        { tag: 'Tier 2 · Andhra', name: 'Nellore', target: '₹20 Cr' },
+        { tag: 'Cluster · 5 towns', name: 'South Andhra', target: '₹10 Cr' },
+        { tag: 'Industrial · SIPCOT', name: 'North Chennai', target: '₹10 Cr' },
+        { tag: 'FY 26–27 · TBD', name: 'Fifth cluster', target: '₹40 Cr' },
+      ],
+      posts: [
+        { tag: 'rate charts', cat: 'Rates', read: '4 min read', title: 'Reading a sanction letter: five lines that actually matter.' },
+        { tag: 'site diagram', cat: 'Construction', read: '6 min read', title: 'Draw-schedule loans, explained without the jargon.' },
+        { tag: 'GST ledger', cat: 'MSME', read: '5 min read', title: 'What lenders really look at in your GST returns.' },
+      ],
+      faqs: [
+        { q: 'What is a Capitabel Loan Offer?', a: 'It\u2019s an in-principle indicative offer issued by us — not the lender — within 48 hours of a complete file. It specifies indicative interest rate within a range, processing fee, tenure, and other Key Fact Statement terms. It\u2019s backed by our matching engine and validated through one round of calls with 1\u20133 shortlisted lenders. Our Offer Honour Rate — the share of offers that result in a lender sanction on materially equivalent terms — sits at 85%.' },
+        { q: 'Do you charge borrowers a fee?', a: 'For most retail loans, no \u2014 we\u2019re paid by the lender on successful disbursement. For complex project finance or specialised advisory, we quote a transparent flat fee upfront. Never a percentage of your loan, never a hidden charge.' },
+        { q: 'How do you decide which lender to recommend?', a: 'By borrower fit first — approval probability, indicative rate, processing fee, sanction TAT, and KFS terms — not by which lender pays us best. Where a direct lender relationship and a channel partner offer the same file, we default to direct. If a channel premium is material we flag it for management review; we don\u2019t auto-route.' },
+        { q: 'Which lenders do you work with?', a: 'A rationalised core panel of 10–12 institutions drawn from a wider network of 40+. It includes HDFC, ICICI, KVB, IOB, Central Bank, Canara, Repco Home Finance, Tata Capital, Bajaj Housing, and specialised MSME/HFC lenders like HomeFirst, Muthoot, and Piramal.' },
+        { q: 'Where do you operate?', a: 'Five clusters across Tamil Nadu and Andhra Pradesh: Chennai (anchor), Nellore, South Andhra (five towns), North Chennai / SIPCOT, and a fifth cluster launching in FY 2026–27. Feet on the ground in each, with local RMs speaking Tamil, Telugu, and English.' },
+        { q: 'Can you help if I\u2019ve been rejected before?', a: 'Often, yes. A rejection is usually a mismatch between your file and one lender\u2019s policy \u2014 not a verdict on your creditworthiness. We\u2019ll review, address gaps, and route you to lenders who fit. Our 94% approval rate on files we take on reflects exactly this filter.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

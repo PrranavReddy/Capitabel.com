@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #FFFFFF; color: #16264D; font-family: 'DM Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    * { box-sizing: border-box; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { opacity: 0.85; }
+    ::selection { background: #F58220; color: #FFFFFF; }
+    input, select, textarea { font-family: inherit; font-size: 15px; color: #16264D; background: #FFFFFF; border: 1px solid rgba(22,38,77,0.15); border-radius: 6px; padding: 14px 16px; width: 100%; outline: none; transition: border-color .15s; }
+    input:focus, select:focus, textarea:focus { border-color: #F58220; }
+    textarea { resize: vertical; min-height: 100px; }
+    label { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #334971; margin-bottom: 8px; }
+  </style>
+</helmet>
+
+<div style="background:#FFFFFF;color:#16264D;font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.5;overflow-x:hidden">
+
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(22,38,77,0.08)">
+    <div style="max-width:1400px;margin:0 auto;padding:18px 48px;display:flex;align-items:center;justify-content:space-between">
+      <a href="/Landing.dc.html" style="display:flex;align-items:center;gap:10px">
+        <img src="assets/capitabel-logo.jpg" alt="Capitabel" style="height:30px;width:auto;display:block"/>
+      </a>
+      <div style="display:flex;gap:36px;font-size:14px;color:#334971;font-weight:500">
+        <a href="/Landing.dc.html">Home</a>
+        <a href="/About.dc.html">About us</a>
+        <a href="/Loans.dc.html">Loan products</a>
+        <a href="/Landing.dc.html#journal">Journal</a>
+        <a href="/Contact.dc.html" style="color:#F58220">Contact</a>
+      </div>
+      <a href="https://wa.me/919940548583" style="display:inline-flex;align-items:center;gap:8px;padding:11px 20px;background:#16264D;color:#FFFFFF;border-radius:6px;font-size:14px;font-weight:500">
+        WhatsApp us <span>→</span>
+      </a>
+    </div>
+  </nav>
+
+  <section style="max-width:1400px;margin:0 auto;padding:64px 48px 40px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:32px">Contact · Chennai · Mon–Sat · 9–7 IST</div>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:104px;line-height:0.96;letter-spacing:-0.035em;margin:0 0 32px;max-width:1200px">
+      Let's talk about<br>
+      <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">your file.</span>
+    </h1>
+    <p style="font-size:20px;line-height:1.45;color:#334971;max-width:640px;margin:0;text-wrap:pretty">
+      A twenty-minute call with a lending specialist. Free, unhurried, and no commitment. Response within two hours during business days.
+    </p>
+  </section>
+
+  <section style="max-width:1400px;margin:0 auto;padding:40px 48px 120px">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:start">
+
+      <!-- FORM -->
+      <div style="background:#F7F3E9;border:1px solid rgba(22,38,77,0.08);border-radius:16px;padding:48px 48px 40px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px">
+          <div>
+            <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:32px;line-height:1;letter-spacing:-0.02em;margin:0 0 8px;color:#16264D">Book a consultation call</h2>
+            <p style="font-size:14px;color:#334971;margin:0">Fill in what you can — the rest we'll cover on the call.</p>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;text-align:right">Step 1 / 1<br><span style="color:#F58220">Takes 90 seconds</span></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+          <div>
+            <label>Full name</label>
+            <input type="text" placeholder="e.g. Rajesh Kumar"/>
+          </div>
+          <div>
+            <label>Mobile · WhatsApp</label>
+            <input type="tel" placeholder="+91 9XXXX XXXXX"/>
+          </div>
+        </div>
+
+        <div style="margin-bottom:16px">
+          <label>Email</label>
+          <input type="email" placeholder="you@company.com"/>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+          <div>
+            <label>Loan product</label>
+            <select>
+              <option>Home Loan</option>
+              <option>Loan Against Property</option>
+              <option>MSME · Business Loan</option>
+              <option>Construction / Project Finance</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div>
+            <label>Ticket size · indicative</label>
+            <select>
+              <option>Under ₹25 L</option>
+              <option>₹25 L – ₹1 Cr</option>
+              <option>₹1 Cr – ₹3 Cr</option>
+              <option>Above ₹3 Cr</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+          <div>
+            <label>Cluster</label>
+            <select>
+              <option>Chennai</option>
+              <option>Nellore</option>
+              <option>South Andhra (Tirupati / Gudur / Renigunta)</option>
+              <option>North Chennai / SIPCOT</option>
+              <option>Elsewhere in South India</option>
+            </select>
+          </div>
+          <div>
+            <label>Best time to call</label>
+            <select>
+              <option>Morning (9–12)</option>
+              <option>Afternoon (12–3)</option>
+              <option>Evening (3–7)</option>
+              <option>Any time</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-bottom:24px">
+          <label>Anything we should know before the call?</label>
+          <textarea placeholder="e.g. 'Turned down by two banks — need MSME working capital of ₹80L against my Sriperumbudur unit.'"></textarea>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+          <div style="font-size:12px;color:#334971;max-width:340px">
+            Your details go directly to a lending specialist — never to a marketing list. See our <a href="#" style="color:#16264D;text-decoration:underline">privacy note</a>.
+          </div>
+          <button style="display:inline-flex;align-items:center;gap:10px;padding:16px 28px;background:#F58220;color:#FFFFFF;border:none;border-radius:6px;font-size:15px;font-weight:500;cursor:pointer;font-family:inherit">
+            Send &amp; schedule call <span>→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- SIDEBAR CONTACT -->
+      <div style="display:flex;flex-direction:column;gap:20px">
+
+        <div style="background:#16264D;color:#FFFFFF;border-radius:12px;padding:32px 28px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,240,228,0.6);margin-bottom:16px">Prefer to skip the form?</div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <a href="https://wa.me/919940548583?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20consultation" style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#F58220;color:#FFFFFF;border-radius:8px;font-size:14px;font-weight:500">
+              <span>WhatsApp us</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px">+91 99405 48583</span>
+            </a>
+            <a href="tel:+919940548583" style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:rgba(245,240,228,0.08);border:1px solid rgba(245,240,228,0.2);color:#FFFFFF;border-radius:8px;font-size:14px">
+              <span>Call directly</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(245,240,228,0.7)">Mon–Sat · 9–7</span>
+            </a>
+            <a href="mailto:hello@capitabel.com" style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:rgba(245,240,228,0.08);border:1px solid rgba(245,240,228,0.2);color:#FFFFFF;border-radius:8px;font-size:14px">
+              <span>Email</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(245,240,228,0.7)">hello@capitabel.com</span>
+            </a>
+          </div>
+        </div>
+
+        <div style="background:#F7F3E9;border:1px solid rgba(22,38,77,0.08);border-radius:12px;padding:32px 28px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:16px">Head office</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;line-height:1.2;letter-spacing:-0.01em;color:#16264D;margin-bottom:12px">Besantnagar, Chennai</div>
+          <div style="font-size:14px;color:#334971;line-height:1.6">
+            Capitabel Solutions Pvt Ltd<br>
+            #E162/5, Tiger Varadachar Road,<br>
+            1st Cross Kalakshetra, Besantnagar,<br>
+            Chennai, Tamil Nadu 600090
+          </div>
+          <a href="#" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:13px;color:#16264D;border-bottom:1px solid #16264D;padding-bottom:2px;font-weight:500">Open in Google Maps →</a>
+        </div>
+
+        <div style="background:#F5F0E4;border-radius:12px;padding:32px 28px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:16px">Cluster contacts</div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <sc-for list="{{ clusters }}" as="c" hint-placeholder-count="4">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:14px;border-bottom:1px solid rgba(22,38,77,0.15)">
+                <div>
+                  <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;color:#16264D">{{ c.name }}</div>
+                  <div style="font-size:12px;color:#334971">{{ c.rm }}</div>
+                </div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#334971">{{ c.tag }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT HAPPENS NEXT -->
+  <section style="background:#F5F0E4">
+    <div style="max-width:1400px;margin:0 auto;padding:100px 48px">
+      <div style="margin-bottom:48px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">What happens next</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:56px;line-height:1;letter-spacing:-0.025em;margin:0;color:#16264D;max-width:900px">
+          Three steps between here and a<br>
+          <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">Capitabel Loan Offer.</span>
+        </h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+        <sc-for list="{{ next }}" as="n" hint-placeholder-count="3">
+          <div style="background:#F7F3E9;border:1px solid rgba(22,38,77,0.08);border-radius:12px;padding:32px 28px;min-height:220px;display:flex;flex-direction:column">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:auto">
+              <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:48px;color:#F58220;line-height:1;letter-spacing:-0.02em">{{ n.n }}</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#334971">{{ n.when }}</div>
+            </div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;line-height:1.15;letter-spacing:-0.015em;margin:24px 0 10px;color:#16264D">{{ n.title }}</h3>
+            <p style="font-size:14px;line-height:1.55;color:#334971;margin:0">{{ n.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#FFFFFF;border-top:1px solid rgba(22,38,77,0.08)">
+    <div style="max-width:1400px;margin:0 auto;padding:56px 48px 28px;display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:32px">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <img src="assets/capitabel-logo.jpg" alt="Capitabel" style="height:24px;width:auto;display:block"/>
+        </div>
+        <div style="font-size:12px;color:#334971">© 2026 Capitabel Solutions Pvt Ltd · Chennai</div>
+      </div>
+      <div style="display:flex;gap:32px;font-size:14px">
+        <a href="/Landing.dc.html">Home</a>
+        <a href="/About.dc.html">About</a>
+        <a href="/Loans.dc.html">Loans</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      clusters: [
+        { name: 'Chennai', rm: 'Harish Bode · Co-Founder', tag: 'HQ' },
+        { name: 'Nellore', rm: 'Mutu · ASM Andhra', tag: 'Tier 2' },
+        { name: 'South Andhra', rm: 'Nagindra · RM Sullurpet', tag: 'Cluster' },
+        { name: 'North Chennai', rm: 'RM · SIPCOT industrial', tag: 'Industrial' },
+      ],
+      next: [
+        { n: '01', when: 'Within 2 hours', title: 'We call you back', body: 'A lending specialist reaches out on WhatsApp or by phone — whichever you prefer — for a 20-minute conversation.' },
+        { n: '02', when: '24–48 hours', title: 'You send us your file', body: 'A tailored checklist over WhatsApp. We collect only what your file needs, not a generic list — usually 6–8 documents.' },
+        { n: '03', when: 'Within 48 hours of docs', title: 'Capitabel Loan Offer', body: 'An in-principle indicative offer with rate range, processing fee, tenure, and KFS terms — backed by our matching engine.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

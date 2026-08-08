@@ -1,0 +1,332 @@
+import Link from "next/link";
+import Image from "next/image";
+import Nav from "@/components/Nav";
+import { SimpleFooter } from "@/components/Footer";
+import { about } from "@/lib/data";
+
+export const metadata = {
+  title: "About",
+  description:
+    "Founded 2023 in Chennai. Twenty-five years of South India real estate ground truth, codified into a matching engine for MSMEs, developers, and homebuyers.",
+};
+
+export default function AboutPage() {
+  return (
+    <div>
+      <Nav />
+
+      {/* STORY */}
+      <section className="container" style={{ paddingTop: 72, paddingBottom: 40 }}>
+        <Eyebrow>About Capitabel · Founded 2023 · Chennai · Manor Group</Eyebrow>
+        <h1
+          style={{
+            fontFamily: "var(--font-display)",
+            fontWeight: 600,
+            fontSize: 112,
+            lineHeight: 0.96,
+            letterSpacing: "-0.035em",
+            margin: "0 0 40px",
+            maxWidth: 1200,
+          }}
+        >
+          Twenty-five years of
+          <br />
+          South India ground.
+          <br />
+          <Serif>Codified into a lender.</Serif>
+        </h1>
+        <div className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, marginTop: 48 }}>
+          <p style={{ fontSize: 22, lineHeight: 1.4, color: "var(--navy-700)", margin: 0, textWrap: "pretty" }}>
+            Capitabel Solutions was founded in 2023 by Chidambaram and Harish - two operators with deeply complementary expertise: 15+ years in
+            South India real estate development, and 18+ years in banking technology built across Europe.
+          </p>
+          <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--navy-700)", margin: 0, textWrap: "pretty" }}>
+            The founding insight: millions of creditworthy borrowers in peri-urban and Tier 2 South India are underserved - not because lenders
+            won&rsquo;t lend to them, but because the matching infrastructure between borrower and lender does not exist at the ground level.
+            Built on Manor Group&rsquo;s 25+ years of South India real estate operations, we&rsquo;re now codifying that ground-level knowledge
+            into technology.
+          </p>
+        </div>
+      </section>
+
+      <section className="container" style={{ paddingTop: 60, paddingBottom: 80 }}>
+        <div
+          style={{
+            aspectRatio: "21/9",
+            background: "repeating-linear-gradient(135deg,#EFE7D5,#EFE7D5 14px,#D8CCB4 14px,#D8CCB4 28px)",
+            borderRadius: 12,
+            display: "flex",
+            alignItems: "flex-end",
+            padding: 24,
+          }}
+        >
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--navy-700)", background: "rgba(255,255,255,0.92)", padding: "6px 10px", borderRadius: 4 }}>
+            img · Capitabel team, Besantnagar office
+          </span>
+        </div>
+      </section>
+
+      {/* BY THE NUMBERS */}
+      <section style={{ background: "var(--navy-900)", color: "#FFFFFF" }}>
+        <div className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
+          <Eyebrow dark>By the numbers · Since 2023</Eyebrow>
+          <h2 style={{ ...h2Style, fontSize: 72, lineHeight: 0.98, color: "#FFFFFF", marginBottom: 64 }}>
+            Two years in.
+            <br />
+            <Serif>Measured honestly.</Serif>
+          </h2>
+          <div className="stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 24 }}>
+            {about.stats.map((s) => (
+              <div key={s.tag} style={{ borderTop: "1px solid rgba(245,240,228,0.2)", paddingTop: 28 }}>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 72, lineHeight: 1, letterSpacing: "-0.03em", color: "#FFFFFF" }}>
+                  {s.val}
+                </div>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--orange-500)", marginTop: 16 }}>
+                  {s.tag}
+                </div>
+                <div style={{ fontSize: 14, color: "rgba(245,240,228,0.7)", marginTop: 8, maxWidth: 220 }}>{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PILLARS */}
+      <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
+        <div style={{ marginBottom: 56 }}>
+          <Eyebrow>Four strategic pillars · FY 2026–27</Eyebrow>
+          <h2 style={h2Style}>
+            How we are scaling from
+            <br />
+            <Serif>₹50 Cr to ₹200 Cr.</Serif>
+          </h2>
+        </div>
+        <div className="pillars-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 20 }}>
+          {about.pillars.map((p) => (
+            <div key={p.n} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: "44px 40px", minHeight: 260, display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "auto" }}>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 56, color: "var(--orange-500)", lineHeight: 1, letterSpacing: "-0.02em" }}>{p.n}</div>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-700)" }}>{p.tag}</div>
+              </div>
+              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 32, lineHeight: 1.1, letterSpacing: "-0.02em", margin: "32px 0 14px", color: "var(--navy-900)" }}>
+                {p.title}
+              </h3>
+              <p style={{ fontSize: 15, lineHeight: 1.55, color: "var(--navy-700)", margin: 0, maxWidth: 480 }}>{p.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FOUNDING TEAM */}
+      <section className="container" style={{ paddingBottom: 120 }}>
+        <div className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 80, alignItems: "end", marginBottom: 56 }}>
+          <div>
+            <Eyebrow>Founding team</Eyebrow>
+            <h2 style={h2Style}>
+              A team you
+              <br />
+              <Serif>actually talk to.</Serif>
+            </h2>
+          </div>
+          <p style={leadStyle}>
+            Real estate operations, European banking technology, and India&rsquo;s leading MSME NBFC — three career paths that met in a
+            Besantnagar office and stayed.
+          </p>
+        </div>
+
+        <div className="team-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
+          {about.team.map((m) => (
+            <div key={m.name} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: 32, display: "grid", gridTemplateColumns: "auto 1fr", gap: 28 }}>
+              <div style={{ width: 140, aspectRatio: "4/5", background: "var(--cream-200)", borderRadius: 8, overflow: "hidden", position: "relative" }}>
+                {m.img ? (
+                  <Image src={m.img} alt={m.name} fill sizes="140px" style={{ objectFit: "cover" }} />
+                ) : (
+                  <div
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 10,
+                      color: "var(--navy-700)",
+                      textAlign: "center",
+                      padding: 8,
+                    }}
+                  >
+                    img · portrait pending
+                  </div>
+                )}
+              </div>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--orange-500)", marginBottom: 8 }}>
+                  {m.role}
+                </div>
+                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 24, lineHeight: 1.1, letterSpacing: "-0.015em", margin: "0 0 12px", color: "var(--navy-900)" }}>
+                  {m.name}
+                </h3>
+                <p style={{ fontSize: 13, lineHeight: 1.55, color: "var(--navy-700)", margin: "0 0 16px" }}>{m.bio}</p>
+                <div style={{ marginTop: "auto", paddingTop: 16, borderTop: "1px solid var(--navy-a12)", display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--navy-700)" }}>
+                  <span>{m.langs}</span>
+                  <span>{m.base}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* OPERATING TEAM */}
+        <div style={{ marginTop: 48, background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 12, padding: "44px 48px" }}>
+          <Eyebrow dark>Current operating team</Eyebrow>
+          <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 36, letterSpacing: "-0.02em", margin: "0 0 32px" }}>
+            On the ground, in seven roles.
+          </h3>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {about.opsTeam.map((p) => (
+              <div
+                key={p.name}
+                className="opsrow-grid"
+                style={{ display: "grid", gridTemplateColumns: "1.4fr 1.5fr 1fr 2fr", gap: 24, padding: "20px 0", borderTop: "1px solid rgba(245,240,228,0.15)", alignItems: "baseline" }}
+              >
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 18, color: "#FFFFFF" }}>{p.name}</div>
+                <div style={{ fontSize: 14, color: "rgba(245,240,228,0.75)" }}>{p.role}</div>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", color: "var(--orange-500)" }}>{p.loc}</div>
+                <div style={{ fontSize: 13, color: "rgba(245,240,228,0.7)" }}>{p.focus}</div>
+              </div>
+            ))}
+            <div style={{ borderTop: "1px solid rgba(245,240,228,0.15)" }} />
+          </div>
+        </div>
+      </section>
+
+      {/* TIMELINE */}
+      <section style={{ background: "var(--cream-300)" }}>
+        <div className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
+          <div className="timeline-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: 80, alignItems: "start" }}>
+            <div className="timeline-sticky" style={{ position: "sticky", top: 120 }}>
+              <Eyebrow>Company timeline</Eyebrow>
+              <h2 style={{ ...h2Style, fontSize: 56 }}>
+                How we
+                <br />
+                <Serif>got here.</Serif>
+              </h2>
+            </div>
+            <div>
+              {about.timeline.map((e) => (
+                <div key={e.year} style={{ display: "grid", gridTemplateColumns: "120px 1fr", gap: 32, padding: "28px 0", borderTop: "1px solid var(--navy-a20)" }}>
+                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", color: "var(--orange-500)", paddingTop: 4 }}>{e.year}</div>
+                  <div>
+                    <h4 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 24, lineHeight: 1.15, letterSpacing: "-0.015em", margin: "0 0 8px", color: "var(--navy-900)" }}>
+                      {e.title}
+                    </h4>
+                    <p style={{ fontSize: 15, lineHeight: 1.55, color: "var(--navy-700)", margin: 0, maxWidth: 560 }}>{e.body}</p>
+                  </div>
+                </div>
+              ))}
+              <div style={{ borderTop: "1px solid var(--navy-a20)" }} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BELIEFS */}
+      <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
+        <div style={{ marginBottom: 56 }}>
+          <Eyebrow>What we believe</Eyebrow>
+          <h2 style={{ ...h2Style, maxWidth: 1000 }}>
+            Four ideas we <Serif>refuse to bend on.</Serif>
+          </h2>
+        </div>
+        <div className="beliefs-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 20 }}>
+          {about.beliefs.map((b) => (
+            <div key={b.n} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: "44px 40px", minHeight: 260, display: "flex", flexDirection: "column" }}>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 44, color: "var(--orange-500)", lineHeight: 1, letterSpacing: "-0.02em", marginBottom: "auto" }}>
+                {b.n}
+              </div>
+              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 28, lineHeight: 1.15, letterSpacing: "-0.02em", margin: "36px 0 12px", color: "var(--navy-900)" }}>
+                {b.title}
+              </h3>
+              <p style={{ fontSize: 15, lineHeight: 1.55, color: "var(--navy-700)", margin: 0, maxWidth: 480 }}>{b.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="container" style={{ paddingBottom: 120 }}>
+        <div
+          className="cta-grid"
+          style={{ background: "var(--orange-500)", color: "#FFFFFF", borderRadius: 16, padding: "80px 64px", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 48, alignItems: "end" }}
+        >
+          <div>
+            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 60, lineHeight: 1, letterSpacing: "-0.03em", margin: "0 0 20px" }}>
+              Talk to a founder,
+              <br />
+              not a form.
+            </h2>
+            <p style={{ fontSize: 17, lineHeight: 1.5, color: "rgba(255,255,255,0.9)", margin: 0, maxWidth: 480 }}>
+              Every consultation call in Q1 goes to Harish, Chidu, or Devesh directly. No routing menus.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="btn hover-fade"
+            style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "24px 28px", background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 8, fontSize: 16, fontWeight: 500 }}
+          >
+            Book a consultation call
+            <span style={{ fontSize: 22 }} aria-hidden>→</span>
+          </Link>
+        </div>
+      </section>
+
+      <SimpleFooter
+        links={[
+          { href: "/", label: "Home" },
+          { href: "/loans", label: "Loans" },
+          { href: "/contact", label: "Contact" },
+        ]}
+      />
+    </div>
+  );
+}
+
+function Eyebrow({ children, dark = false }) {
+  return (
+    <div
+      style={{
+        fontFamily: "var(--font-mono)",
+        fontSize: 11,
+        letterSpacing: "0.14em",
+        textTransform: "uppercase",
+        color: dark ? "rgba(245,240,228,0.6)" : "var(--navy-700)",
+        marginBottom: 20,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function Serif({ children }) {
+  return <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 400, color: "var(--orange-500)" }}>{children}</span>;
+}
+
+const h2Style = {
+  fontFamily: "var(--font-display)",
+  fontWeight: 600,
+  fontSize: 64,
+  lineHeight: 1,
+  letterSpacing: "-0.025em",
+  margin: 0,
+  color: "var(--navy-900)",
+};
+
+const leadStyle = {
+  fontSize: 19,
+  lineHeight: 1.5,
+  color: "var(--navy-700)",
+  maxWidth: 520,
+  margin: 0,
+  textWrap: "pretty",
+};

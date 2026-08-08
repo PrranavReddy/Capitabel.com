@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #FFFFFF; color: #16264D; font-family: 'DM Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    * { box-sizing: border-box; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { opacity: 0.78; }
+    ::selection { background: #F58220; color: #FFFFFF; }
+  </style>
+</helmet>
+
+<div style="background:#FFFFFF;color:#16264D;font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.5;overflow-x:hidden">
+
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(22,38,77,0.08)">
+    <div style="max-width:1400px;margin:0 auto;padding:18px 48px;display:flex;align-items:center;justify-content:space-between">
+      <a href="/Landing.dc.html" style="display:flex;align-items:center;gap:10px">
+        <img src="assets/capitabel-logo.jpg" alt="Capitabel" style="height:30px;width:auto;display:block">
+      </a>
+      <div style="display:flex;gap:36px;font-size:14px;color:#334971;font-weight:500">
+        <a href="/Landing.dc.html">Home</a>
+        <a href="/About.dc.html" style="color:#F58220">About us</a>
+        <a href="/Loans.dc.html">Loan products</a>
+        <a href="/Landing.dc.html#journal">Journal</a>
+        <a href="/Contact.dc.html">Contact</a>
+      </div>
+      <a href="/Contact.dc.html" style="display:inline-flex;align-items:center;gap:8px;padding:11px 20px;background:#16264D;color:#FFFFFF;border-radius:6px;font-size:14px;font-weight:500">
+        Talk to an expert <span>→</span>
+      </a>
+    </div>
+  </nav>
+
+  <section style="max-width:1400px;margin:0 auto;padding:72px 48px 40px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:32px">About Capitabel · Founded 2023 · Chennai · Manor Group</div>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:112px;line-height:0.96;letter-spacing:-0.035em;margin:0 0 40px;max-width:1200px">
+      Twenty-five years of<br>
+      South India ground.<br>
+      <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">Codified into a lender.</span>
+    </h1>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:48px">
+      <p style="font-size:22px;line-height:1.4;color:#334971;margin:0;text-wrap:pretty">Capitabel Solutions was founded in 2023 by Chidambaram and Harish - two operators with deeply complementary expertise: 15+ years in South India real estate development, and 18+ years in banking technology built across Europe.</p>
+      <p style="font-size:17px;line-height:1.6;color:#334971;margin:0;text-wrap:pretty">The founding insight: millions of creditworthy borrowers in peri-urban and Tier 2 South India are underserved - not because lenders won't lend to them, but because the matching infrastructure between borrower and lender does not exist at the ground level. Built on Manor Group's 25+ years of South India real estate operations, we're now codifying that ground-level knowledge into technology.</p>
+    </div>
+  </section>
+
+  <section style="max-width:1400px;margin:0 auto;padding:60px 48px 80px">
+    <div style="aspect-ratio:21/9;background:repeating-linear-gradient(135deg,#EFE7D5,#EFE7D5 14px,#D8CCB4 14px,#D8CCB4 28px);border-radius:12px;display:flex;align-items:flex-end;padding:24px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#334971;background:rgba(255,255,255,0.92);padding:6px 10px;border-radius:4px">img · Capitabel team, Besantnagar office</span>
+    </div>
+  </section>
+
+  <!-- BY THE NUMBERS -->
+  <section style="background:#16264D;color:#FFFFFF">
+    <div style="max-width:1400px;margin:0 auto;padding:120px 48px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,240,228,0.6);margin-bottom:20px">By the numbers · Since 2023</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:72px;line-height:0.98;letter-spacing:-0.03em;margin:0 0 64px">
+        Two years in.<br>
+        <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">Measured honestly.</span>
+      </h2>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+        <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+          <div style="border-top:1px solid rgba(245,240,228,0.2);padding-top:28px">
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:72px;line-height:1;letter-spacing:-0.03em;color:#FFFFFF">{{ s.val }}</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#F58220;margin-top:16px">{{ s.tag }}</div>
+            <div style="font-size:14px;color:rgba(245,240,228,0.7);margin-top:8px;max-width:220px">{{ s.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGIC PILLARS -->
+  <section style="max-width:1400px;margin:0 auto;padding:120px 48px">
+    <div style="margin-bottom:56px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">Four strategic pillars · FY 2026–27</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:64px;line-height:1;letter-spacing:-0.025em;margin:0;color:#16264D">
+        How we are scaling from<br>
+        <span style="font-family: &quot;Instrument Serif&quot;, serif; font-style: italic; font-weight: 400; color: rgb(245, 130, 32);">₹50 Cr to ₹200 Cr.</span>
+      </h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
+      <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="4">
+        <div style="background:#F7F3E9;border:1px solid rgba(22,38,77,0.08);border-radius:12px;padding:44px 40px;min-height:260px;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:auto">
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:56px;color:#F58220;line-height:1;letter-spacing:-0.02em">{{ p.n }}</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#334971">{{ p.tag }}</div>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:32px;line-height:1.1;letter-spacing:-0.02em;margin:32px 0 14px;color:#16264D">{{ p.title }}</h3>
+          <p style="font-size:15px;line-height:1.55;color:#334971;margin:0;max-width:480px">{{ p.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FOUNDING TEAM -->
+  <section style="max-width:1400px;margin:0 auto;padding:0 48px 120px">
+    <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:end;margin-bottom:56px">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">Founding team</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:64px;line-height:1;letter-spacing:-0.025em;margin:0;color:#16264D">
+          A team you<br>
+          <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">actually talk to.</span>
+        </h2>
+      </div>
+      <p style="font-size:19px;line-height:1.5;color:#334971;margin:0;max-width:520px;text-wrap:pretty">
+        Real estate operations, European banking technology, and India's leading MSME NBFC — three career paths that met in a Besantnagar office and stayed.
+      </p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px">
+      <sc-for list="{{ team }}" as="m" hint-placeholder-count="4">
+        <div style="background:#F7F3E9;border:1px solid rgba(22,38,77,0.08);border-radius:12px;padding:32px;display:grid;grid-template-columns:auto 1fr;gap:28px">
+          <div style="width:140px;aspect-ratio:4/5;background:#EFE7D5;border-radius:8px;overflow:hidden">
+            <img src="{{ m.img }}" alt="{{ m.name }}" style="height: 100%; object-fit: cover; display: block; width: 100%">
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#F58220;margin-bottom:8px">{{ m.role }}</div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;line-height:1.1;letter-spacing:-0.015em;margin:0 0 12px;color:#16264D">{{ m.name }}</h3>
+            <p style="font-size:13px;line-height:1.55;color:#334971;margin:0 0 16px">{{ m.bio }}</p>
+            <div style="margin-top:auto;padding-top:16px;border-top:1px solid rgba(22,38,77,0.12);display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#334971">
+              <span>{{ m.langs }}</span>
+              <span>{{ m.base }}</span>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- Operating team table -->
+    <div style="margin-top:48px;background:#16264D;color:#FFFFFF;border-radius:12px;padding:44px 48px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,240,228,0.6);margin-bottom:20px">Current operating team</div>
+      <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:36px;letter-spacing:-0.02em;margin:0 0 32px">On the ground, in seven roles.</h3>
+      <div style="display:flex;flex-direction:column">
+        <sc-for list="{{ opsTeam }}" as="p" hint-placeholder-count="7">
+          <div style="display:grid;grid-template-columns:1.4fr 1.5fr 1fr 2fr;gap:24px;padding:20px 0;border-top:1px solid rgba(245,240,228,0.15);align-items:baseline">
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:18px;color:#FFFFFF">{{ p.name }}</div>
+            <div style="font-size:14px;color:rgba(245,240,228,0.75)">{{ p.role }}</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#F58220">{{ p.loc }}</div>
+            <div style="font-size:13px;color:rgba(245,240,228,0.7)">{{ p.focus }}</div>
+          </div>
+        </sc-for>
+        <div style="border-top:1px solid rgba(245,240,228,0.15)"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section style="background:#F5F0E4">
+    <div style="max-width:1400px;margin:0 auto;padding:120px 48px">
+      <div style="display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start">
+        <div style="position:sticky;top:120px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">Company timeline</div>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:56px;line-height:1;letter-spacing:-0.025em;margin:0;color:#16264D">
+            How we<br>
+            <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">got here.</span>
+          </h2>
+        </div>
+        <div>
+          <sc-for list="{{ timeline }}" as="e" hint-placeholder-count="7">
+            <div style="display:grid;grid-template-columns:120px 1fr;gap:32px;padding:28px 0;border-top:1px solid rgba(22,38,77,0.2)">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#F58220;padding-top:4px">{{ e.year }}</div>
+              <div>
+                <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;line-height:1.15;letter-spacing:-0.015em;margin:0 0 8px;color:#16264D">{{ e.title }}</h4>
+                <p style="font-size:15px;line-height:1.55;color:#334971;margin:0;max-width:560px">{{ e.body }}</p>
+              </div>
+            </div>
+          </sc-for>
+          <div style="border-top:1px solid rgba(22,38,77,0.2)"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BELIEFS -->
+  <section style="max-width:1400px;margin:0 auto;padding:120px 48px">
+    <div style="margin-bottom:56px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#334971;margin-bottom:20px">What we believe</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:64px;line-height:1;letter-spacing:-0.025em;margin:0;color:#16264D;max-width:1000px">
+        Four ideas we <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#F58220">refuse to bend on.</span>
+      </h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
+      <sc-for list="{{ beliefs }}" as="b" hint-placeholder-count="4">
+        <div style="background:#F7F3E9;border:1px solid rgba(22,38,77,0.08);border-radius:12px;padding:44px 40px;min-height:260px;display:flex;flex-direction:column">
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:44px;color:#F58220;line-height:1;letter-spacing:-0.02em;margin-bottom:auto">{{ b.n }}</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:28px;line-height:1.15;letter-spacing:-0.02em;margin:36px 0 12px;color:#16264D">{{ b.title }}</h3>
+          <p style="font-size:15px;line-height:1.55;color:#334971;margin:0;max-width:480px">{{ b.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="max-width:1400px;margin:0 auto;padding:0 48px 120px">
+    <div style="background:#F58220;color:#FFFFFF;border-radius:16px;padding:80px 64px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end">
+      <div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:60px;line-height:1;letter-spacing:-0.03em;margin:0 0 20px">
+          Talk to a founder,<br>
+          not a form.
+        </h2>
+        <p style="font-size:17px;line-height:1.5;color:rgba(255,255,255,0.9);margin:0;max-width:480px">
+          Every consultation call in Q1 goes to Harish, Chidu, or Devesh directly. No routing menus.
+        </p>
+      </div>
+      <a href="/Contact.dc.html" style="display:flex;align-items:center;justify-content:space-between;padding:24px 28px;background:#16264D;color:#FFFFFF;border-radius:8px;font-size:16px;font-weight:500">
+        Book a consultation call
+        <span style="font-size:22px">→</span>
+      </a>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid rgba(22,38,77,0.08); background-color: #FFFFFF">
+    <div style="max-width:1400px;margin:0 auto;padding:56px 48px 28px;display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:32px">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <img src="assets/capitabel-logo.jpg" alt="Capitabel" style="height:24px;width:auto;display:block">
+        </div>
+        <div style="font-size:12px;color:#334971">© 2026 Capitabel Solutions Pvt Ltd · Chennai</div>
+      </div>
+      <div style="display:flex;gap:32px;font-size:14px">
+        <a href="/Landing.dc.html">Home</a>
+        <a href="/Loans.dc.html">Loans</a>
+        <a href="/Contact.dc.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      stats: [
+        { val: '₹50.15Cr', tag: 'Disbursed', label: 'Across 52 files since inception in 2023' },
+        { val: '96.3%', tag: 'Approval', label: 'Rate on files we take on to sanction' },
+        { val: '30+', tag: 'Lenders', label: 'Banks and NBFCs on the wider Capitabel network' },
+        { val: '5', tag: 'Clusters', label: 'Geographic clusters across Tamil Nadu and Andhra Pradesh' },
+      ],
+      pillars: [
+        { n: '01', tag: 'Grow', title: 'Scale to ₹200 Cr', body: 'Across five geographic clusters through structured expansion of team, lender relationships, and sourcing channels. From ₹9.6 Cr March run rate to ₹22 Cr+ by Q4.' },
+        { n: '02', tag: 'Build', title: 'Ship the Matching Engine', body: 'Borrower profile to top three lenders in minutes. Cut time-to-Capitabel-Loan-Offer from seven days to forty-eight hours by Q3.' },
+        { n: '03', tag: 'Deepen', title: 'Shift product mix', body: 'Grow MSME to 25% of volume. Deepen LAP to 10%. Higher commission yields drive profitability per crore disbursed — 0.59% blended today, 1.20–1.40% target.' },
+        { n: '04', tag: 'Institutionalise', title: 'Make Capitabel investor-ready', body: 'Formalise the Matching Engine Framework with Thiru, SOPs, governance, and KPIs. Angel round close by Q3, seed conversations early FY 2027–28.' },
+      ],
+      team: [
+        { img: './uploads/Chidambaram.png', role: 'Co-Founder', name: 'Chidambaram Kattuputur', bio: 'Operator-investor at the intersection of real estate and fintech. 15+ years building affordable, luxury, and impact housing across South India. CEO of Sanctuary Spaces. Masters in International Business, Grenoble Business School.', langs: 'Ta · En · Te · Hi', base: 'Chennai' },
+        { img: './uploads/Screenshot 2026-08-08 at 12.42.10 PM.png', role: 'Co-Founder & MD', name: 'Harish Bode', bio: '18+ years across ING Netherlands, Capgemini, and Cognizant. At ING: Head of IT Custodian for a €60 Bn loan portfolio. Led Strategic Roadmap for Digital Business Lending. MBA, University of Amsterdam.', langs: 'En · Nl · Te · Ta · Hi', base: 'Chennai' },
+        { img: './uploads/Screenshot 2026-08-08 at 12.41.30 PM.png', role: 'Founding Member · Partnerships', name: 'Devesh Narang', bio: 'Strategy and partnerships generalist with Capitabel since founding. Closed 15+ bank and NBFC partnerships, cut loan processing TAT by 54%. Won SDG 10 at ESG World Summit & GRIT Awards 2022. Bachelor of Commerce, Loyola College.', langs: 'En · Ta · Hi', base: 'Chennai' },
+        { img: './assets/team-thiru.jpg', role: 'Strategic Advisor', name: 'Thiru.R', bio: '25 years in MSME and inclusive lending. Former COO and Board Member at Kinara Capital (12.5 years). Earlier: Mimo Finance, Dhan Foundation, Sir Ratan Tata Trust. Harvard Business School — Strategic Leadership Programme.', langs: 'Ta · Te · En · Kn · Hi', base: 'South India' },
+      ],
+      opsTeam: [
+        { name: 'Chidambaram Kattuputur', role: 'Co-Founder', loc: 'Chennai', focus: 'Strategy · Real Estate Partnerships · Investor Relations' },
+        { name: 'Harish Bode', role: 'Co-Founder & MD', loc: 'Chennai', focus: 'Technology · Lender Network · Operations · Banking Relationships' },
+        { name: 'Devesh Narang', role: 'Founding Member, Partnerships', loc: 'Chennai', focus: 'Lender Relations · MSME Vertical · Digital Channels' },
+        { name: 'Monica', role: 'Customer Support', loc: 'Chennai', focus: 'Client Services · CRM Management · Customer NPS' },
+        { name: 'Nagindra', role: 'RM — Sullurpet Cluster', loc: 'Sullurpet', focus: 'On-Ground Sourcing · Builder & Agent Relationships' },
+        { name: 'Mutu', role: 'ASM — Andhra Region', loc: 'Andhra', focus: 'Region Sales Management · Partner Development · Expansion' },
+        { name: 'Thiru.R', role: 'Strategic Advisor', loc: 'South India', focus: 'Matching Engine Framework · Governance · Institution Building' },
+      ],
+      timeline: [
+        { year: '2023', title: 'Capitabel incorporated.', body: 'Chidambaram and Harish co-found the business in Chennai, under the Manor Group umbrella.' },
+        { year: 'Sep 2023', title: 'Devesh joins as founding member.', body: 'Partnerships lead. First bank and NBFC partnerships closed, operations infrastructure built from zero.' },
+        { year: 'FY 2024–25', title: 'First ₹25 Cr cumulative disbursed.', body: 'Core lender relationships established across 20+ banks and NBFCs. Chennai anchor operating steadily.' },
+        { year: 'FY 2025–26', title: '₹50.15 Cr cumulative · 52 files closed.', body: 'March 2026 monthly run rate reaches ₹9.6 Cr. Mutu and Nagindra onboard for Andhra expansion.' },
+        { year: 'Q1 FY 26–27', title: 'Nellore branch · Matching Engine Alpha.', body: 'Nellore branch activation. Claude–Zoho integration goes live as the intelligence layer of the Matching Engine. Framework delivered with Thiru.' },
+        { year: 'Q3 FY 26–27', title: 'Engine production · Angel round.', body: 'South Andhra expansion to 5 towns. Matching Engine in production. Joggle embedded finance pilot. Angel round closed (₹3–4 Cr).' },
+        { year: 'Q4 FY 26–27', title: '₹200 Cr milestone · ₹1 Cr profit.', body: 'Full-year disbursement target achieved. First full profitable year. Seed round preparation begins.' },
+      ],
+      beliefs: [
+        { n: '01', title: 'One advisor, start to finish.', body: 'No routing menus, no handoffs, no repeating your story. The specialist you meet on your first call is the one who negotiates your sanction and picks up the phone six months later.' },
+        { n: '02', title: 'Match by borrower fit, not commission.', body: 'Our matching engine ranks lenders by approval probability, indicative rate, and KFS terms — never by what pays us best. Direct relationships preferred over channel partners at equal payout.' },
+        { n: '03', title: 'Say no when it isn\u2019t the right loan.', body: 'Every year we walk clients away from loans they came in wanting. We\u2019d rather earn a referral in five years than close a bad file this month.' },
+        { n: '04', title: 'Explain everything, hide nothing.', body: 'Every fee, every clause, every rate-reset trigger. You\u2019ll leave every meeting with fewer questions than you brought in.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
