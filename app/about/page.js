@@ -92,7 +92,7 @@ export default function AboutPage() {
       </section>
 
       {/* FOUNDING TEAM */}
-      <section className="container" style={{ paddingBottom: 120 }}>
+      <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
         <div className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 80, alignItems: "end", marginBottom: 56 }}>
           <div>
             <Eyebrow>Founding team</Eyebrow>
