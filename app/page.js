@@ -155,7 +155,7 @@ export default function LandingPage() {
               whiteSpace: "nowrap",
             }}
           >
-            10–12 core lenders · 40+ network
+            40+ lenders in our network
           </div>
           <div style={{ flex: 1, height: 1, background: "var(--navy-a15)" }} />
         </div>
@@ -477,7 +477,7 @@ export default function LandingPage() {
               [10:24:11] Ingesting file <span style={{ color: "var(--orange-500)" }}>#CP-2841</span>
             </div>
             <div style={{ color: "rgba(255,255,255,0.9)" }}>→ Profile: MSME · Chennai · ₹1.4 Cr · GST-linked</div>
-            <div style={{ color: "rgba(245,240,228,0.55)" }}>[10:24:13] Scoring 12 core lenders...</div>
+            <div style={{ color: "rgba(245,240,228,0.55)" }}>[10:24:13] Scoring core lenders...</div>
             <div style={{ color: "rgba(255,255,255,0.9)" }}>
               → <span style={{ color: "var(--orange-500)" }}>KVB</span> · 4.6 · direct · TAT 8d · rate 12.8%
             </div>

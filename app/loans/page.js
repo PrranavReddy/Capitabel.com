@@ -29,13 +29,11 @@ export default function LoansPage() {
         >
           Three products.
           <br />
-          <Serif>Twelve lenders.</Serif>
-          <br />
-          One relationship.
+          <Serif>One relationship.</Serif>
         </h1>
         <p style={{ fontSize: 20, lineHeight: 1.45, color: "var(--navy-700)", maxWidth: 640, margin: 0, textWrap: "pretty" }}>
-          A rationalised core panel of 10–12 institutions from a wider network of 40+. Every file is scored on borrower fit — approval
-          probability, indicative rate, sanction TAT, KFS terms — before we recommend a lender.
+          A rationalised core lender panel, drawn from a wider network of 40+ banks and NBFCs. Every file is scored on borrower fit —
+          approval probability, indicative rate, sanction TAT, KFS terms — before we recommend a lender.
         </p>
       </section>
 
