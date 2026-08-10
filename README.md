@@ -53,8 +53,7 @@ rather than in the page files.
 ## Known placeholders / TODO before launch
 
 - **Photography** — hero, office, and journal images are still placeholder blocks (no real photos
-  were supplied for those spots). Team portraits for Chidambaram, Harish, and Devesh are real; Thiru's
-  portrait is pending.
+  were supplied for those spots). All four team portraits (Chidambaram, Harish, Devesh, Thiru) are real.
 - **Contact form** — [`components/ContactForm.js`](components/ContactForm.js) currently opens a
   pre-filled `mailto:` to `hello@capitabel.com` on submit (see the `TODO` in that file). Wire it to
   a real endpoint (Formspree, Zoho Forms, or a Next.js API route into the CRM) before launch.
