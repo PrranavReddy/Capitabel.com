@@ -29,9 +29,9 @@ export default function AboutPage() {
             maxWidth: 1200,
           }}
         >
-          Twenty-five years of
+          15 years of
           <br />
-          South India ground.
+          South Indian ground roots.
           <br />
           <Serif>Codified into a lender.</Serif>
         </h1>
