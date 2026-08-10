@@ -132,11 +132,11 @@ export default function LandingPage() {
                 img · advisor with borrower, Chennai site
               </span>
             </div>
-            <div style={{ background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 8, padding: 22 }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 44, lineHeight: 1, letterSpacing: "-0.02em" }}>
+            <div style={{ background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 8, padding: 16, width: "fit-content", maxWidth: 200 }}>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 28, lineHeight: 1, letterSpacing: "-0.02em" }}>
                 48 hrs
               </div>
-              <div style={{ fontSize: 12, color: "rgba(245,240,228,0.7)", marginTop: 8 }}>To a Capitabel Loan Offer</div>
+              <div style={{ fontSize: 11, color: "rgba(245,240,228,0.7)", marginTop: 6 }}>To a Capitabel Loan Offer</div>
             </div>
           </div>
         </div>
