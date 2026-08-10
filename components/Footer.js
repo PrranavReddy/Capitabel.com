@@ -70,7 +70,7 @@ export function LandingFooter() {
               <Link className="hover-fade" href="/">Home</Link>
               <Link className="hover-fade" href="/about">About us</Link>
               <Link className="hover-fade" href="/loans">Loan products</Link>
-              <Link className="hover-fade" href="/#journal">Journal</Link>
+              <Link className="hover-fade" href="/journal">Journal</Link>
               <Link className="hover-fade" href="/contact">Contact</Link>
             </div>
           </div>

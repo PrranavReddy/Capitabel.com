@@ -132,19 +132,11 @@ export default function LandingPage() {
                 img · advisor with borrower, Chennai site
               </span>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-              <div style={{ background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 8, padding: 22 }}>
-                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 44, lineHeight: 1, letterSpacing: "-0.02em" }}>
-                  48 hrs
-                </div>
-                <div style={{ fontSize: 12, color: "rgba(245,240,228,0.7)", marginTop: 8 }}>To a Capitabel Loan Offer</div>
+            <div style={{ background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 8, padding: 22 }}>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 44, lineHeight: 1, letterSpacing: "-0.02em" }}>
+                48 hrs
               </div>
-              <div style={{ background: "var(--orange-500)", color: "#FFFFFF", borderRadius: 8, padding: 22 }}>
-                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 44, lineHeight: 1, letterSpacing: "-0.02em" }}>
-                  ₹200Cr
-                </div>
-                <div style={{ fontSize: 12, color: "rgba(255,255,255,0.85)", marginTop: 8 }}>FY 2026–27 disbursement target</div>
-              </div>
+              <div style={{ fontSize: 12, color: "rgba(245,240,228,0.7)", marginTop: 8 }}>To a Capitabel Loan Offer</div>
             </div>
           </div>
         </div>
@@ -598,60 +590,11 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* JOURNAL */}
-      <section id="journal" style={{ background: "var(--cream-300)" }}>
-        <div className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-          <div style={{ display: "flex", alignItems: "end", justifyContent: "space-between", marginBottom: 48, gap: 48, flexWrap: "wrap" }}>
-            <div>
-              <Eyebrow>07 · Journal</Eyebrow>
-              <h2 style={h2Style}>
-                Field notes on
-                <br />
-                <Serif>borrowing well.</Serif>
-              </h2>
-            </div>
-            <a href="#" className="underline-link hover-fade" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14, color: "var(--navy-900)", fontWeight: 500 }}>
-              Read all posts →
-            </a>
-          </div>
-          <div className="journal-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
-            {landing.posts.map((p) => (
-              <a key={p.title} href="#" style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-                <div
-                  style={{
-                    aspectRatio: "5/4",
-                    background: "repeating-linear-gradient(135deg,#D8CCB4,#D8CCB4 10px,#C7B899 10px,#C7B899 20px)",
-                    borderRadius: 8,
-                    display: "flex",
-                    alignItems: "flex-end",
-                    padding: 14,
-                  }}
-                >
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--navy-700)", background: "rgba(255,255,255,0.9)", padding: "4px 8px", borderRadius: 4 }}>
-                    img · {p.tag}
-                  </span>
-                </div>
-                <div>
-                  <div style={{ display: "flex", gap: 14, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--navy-700)", marginBottom: 12 }}>
-                    <span>{p.cat}</span>
-                    <span>·</span>
-                    <span>{p.read}</span>
-                  </div>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 24, lineHeight: 1.2, letterSpacing: "-0.015em", margin: 0, color: "var(--navy-900)" }}>
-                    {p.title}
-                  </h3>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
         <div className="faq-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "start" }}>
           <div className="faq-sticky" style={{ position: "sticky", top: 120 }}>
-            <Eyebrow>08 · FAQ</Eyebrow>
+            <Eyebrow>07 · FAQ</Eyebrow>
             <h2 style={{ ...h2Style, fontSize: 56, marginBottom: 24 }}>
               Questions we
               <br />
