@@ -197,37 +197,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* LOCATIONS */}
-      <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-        <div className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "end", marginBottom: 48 }}>
-          <div>
-            <Eyebrow>Where we operate</Eyebrow>
-            <h2 style={h2Style}>
-              Feet on the ground,
-              <br />
-              <Serif>across four clusters.</Serif>
-            </h2>
-          </div>
-          <p style={{ ...leadStyle, maxWidth: 480 }}>
-            Tamil Nadu and Andhra Pradesh, from Chennai&rsquo;s urban core to South Andhra&rsquo;s Tier 2 towns and North Chennai&rsquo;s
-            SIPCOT industrial estates. Local RMs, local languages, local relationships.
-          </p>
-        </div>
-
-        <div className="clusters-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
-          {about.clusters.map((c) => (
-            <div key={c.name} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: "28px 24px", minHeight: 160, display: "flex", flexDirection: "column" }}>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-700)", marginBottom: 12 }}>
-                {c.tag}
-              </div>
-              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 22, lineHeight: 1.1, letterSpacing: "-0.01em", margin: "auto 0 0", color: "var(--navy-900)" }}>
-                {c.name}
-              </h3>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* TESTIMONIALS */}
       <section className="container" style={{ paddingBottom: 120 }}>
         <div style={{ marginBottom: 56 }}>
