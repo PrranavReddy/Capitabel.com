@@ -200,8 +200,21 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="container" style={{ paddingBottom: 120 }}>
         <div
-          className="cta-grid"
-          style={{ background: "var(--orange-500)", color: "#FFFFFF", borderRadius: 16, padding: "80px 64px", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 48, alignItems: "end" }}
+          className="cta-grid glass-tile"
+          style={{
+            background: "linear-gradient(160deg, rgba(247,146,52,0.92), rgba(224,110,10,0.92))",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            border: "1px solid rgba(255,255,255,0.35)",
+            boxShadow: "0 24px 60px -16px rgba(199,92,0,0.5), inset 0 1px 0 rgba(255,255,255,0.3)",
+            color: "#FFFFFF",
+            borderRadius: 16,
+            padding: "80px 64px",
+            display: "grid",
+            gridTemplateColumns: "1.2fr 1fr",
+            gap: 48,
+            alignItems: "end",
+          }}
         >
           <div>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 60, lineHeight: 1, letterSpacing: "-0.03em", margin: "0 0 20px" }}>
@@ -216,7 +229,20 @@ export default function AboutPage() {
           <Link
             href="/contact"
             className="btn hover-fade"
-            style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "24px 28px", background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 8, fontSize: 16, fontWeight: 500 }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "24px 28px",
+              background: "rgba(22,38,77,0.6)",
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
+              border: "1px solid rgba(255,255,255,0.2)",
+              color: "#FFFFFF",
+              borderRadius: 8,
+              fontSize: 16,
+              fontWeight: 500,
+            }}
           >
             Book a consultation call
             <span style={{ fontSize: 22 }} aria-hidden>→</span>

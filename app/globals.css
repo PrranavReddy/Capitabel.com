@@ -262,6 +262,48 @@ summary:focus-visible {
 }
 
 /* ---------------------------------------------------------------------- */
+/* Glass tile — frosted-glass CTA treatment                               */
+/* ---------------------------------------------------------------------- */
+.glass-tile {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.glass-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.32) 0%,
+    rgba(255, 255, 255, 0.08) 22%,
+    rgba(255, 255, 255, 0) 45%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glass-tile::after {
+  content: "";
+  position: absolute;
+  top: -60%;
+  right: -20%;
+  width: 60%;
+  height: 220%;
+  background: rgba(255, 255, 255, 0.14);
+  transform: rotate(20deg);
+  filter: blur(2px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glass-tile > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------------------------------------------------------------------- */
 /* Nav                                                                    */
 /* ---------------------------------------------------------------------- */
 .nav-links {
