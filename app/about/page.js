@@ -91,32 +91,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* PILLARS */}
-      <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-        <div style={{ marginBottom: 56 }}>
-          <Eyebrow>Four strategic pillars · FY 2026–27</Eyebrow>
-          <h2 style={h2Style}>
-            How we are scaling from
-            <br />
-            <Serif>₹50 Cr to ₹200 Cr.</Serif>
-          </h2>
-        </div>
-        <div className="pillars-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 20 }}>
-          {about.pillars.map((p) => (
-            <div key={p.n} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: "44px 40px", minHeight: 260, display: "flex", flexDirection: "column" }}>
-              <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "auto" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 56, color: "var(--orange-500)", lineHeight: 1, letterSpacing: "-0.02em" }}>{p.n}</div>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-700)" }}>{p.tag}</div>
-              </div>
-              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 32, lineHeight: 1.1, letterSpacing: "-0.02em", margin: "32px 0 14px", color: "var(--navy-900)" }}>
-                {p.title}
-              </h3>
-              <p style={{ fontSize: 15, lineHeight: 1.55, color: "var(--navy-700)", margin: 0, maxWidth: 480 }}>{p.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* FOUNDING TEAM */}
       <section className="container" style={{ paddingBottom: 120 }}>
         <div className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 80, alignItems: "end", marginBottom: 56 }}>

@@ -561,7 +561,7 @@ export default function LandingPage() {
             <h2 style={h2Style}>
               Feet on the ground,
               <br />
-              <Serif>in five clusters.</Serif>
+              <Serif>across four clusters.</Serif>
             </h2>
           </div>
           <p style={{ ...leadStyle, maxWidth: 480 }}>
@@ -570,21 +570,15 @@ export default function LandingPage() {
           </p>
         </div>
 
-        <div className="clusters-grid" style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 16 }}>
+        <div className="clusters-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
           {landing.clusters.map((c) => (
-            <div key={c.name} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: "28px 24px", minHeight: 220, display: "flex", flexDirection: "column" }}>
+            <div key={c.name} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: "28px 24px", minHeight: 160, display: "flex", flexDirection: "column" }}>
               <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-700)", marginBottom: 12 }}>
                 {c.tag}
               </div>
-              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 22, lineHeight: 1.1, letterSpacing: "-0.01em", margin: "0 auto 0 0", color: "var(--navy-900)" }}>
+              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 22, lineHeight: 1.1, letterSpacing: "-0.01em", margin: "auto 0 0", color: "var(--navy-900)" }}>
                 {c.name}
               </h3>
-              <div style={{ marginTop: 24, paddingTop: 16, borderTop: "1px solid var(--navy-a10)" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 28, lineHeight: 1, color: "var(--orange-500)", letterSpacing: "-0.02em" }}>
-                  {c.target}
-                </div>
-                <div style={{ fontSize: 11, color: "var(--navy-700)", marginTop: 4 }}>FY 2026–27 target</div>
-              </div>
             </div>
           ))}
         </div>
