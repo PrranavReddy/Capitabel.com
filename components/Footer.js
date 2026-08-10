@@ -22,7 +22,7 @@ export function LandingFooter() {
                 alt="Capitabel"
                 width={198}
                 height={36}
-                style={{ display: "block" }}
+                style={{ display: "block", mixBlendMode: "multiply" }}
               />
             </div>
             <p
@@ -184,7 +184,7 @@ export function SimpleFooter({ links, background = "#FFFFFF" }) {
               alt="Capitabel"
               width={132}
               height={24}
-              style={{ display: "block" }}
+              style={{ display: "block", mixBlendMode: "multiply" }}
             />
           </div>
           <div style={{ fontSize: 12, color: "var(--navy-700)" }}>© 2026 Capitabel Solutions Pvt Ltd · Chennai</div>

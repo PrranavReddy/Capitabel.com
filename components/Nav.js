@@ -37,7 +37,7 @@ export default function Nav() {
             alt="Capitabel"
             width={165}
             height={30}
-            style={{ display: "block" }}
+            style={{ display: "block", mixBlendMode: "multiply" }}
             priority
           />
         </Link>
