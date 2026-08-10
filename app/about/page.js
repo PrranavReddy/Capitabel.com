@@ -197,6 +197,94 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* LOCATIONS */}
+      <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
+        <div className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "end", marginBottom: 48 }}>
+          <div>
+            <Eyebrow>Where we operate</Eyebrow>
+            <h2 style={h2Style}>
+              Feet on the ground,
+              <br />
+              <Serif>across four clusters.</Serif>
+            </h2>
+          </div>
+          <p style={{ ...leadStyle, maxWidth: 480 }}>
+            Tamil Nadu and Andhra Pradesh, from Chennai&rsquo;s urban core to South Andhra&rsquo;s Tier 2 towns and North Chennai&rsquo;s
+            SIPCOT industrial estates. Local RMs, local languages, local relationships.
+          </p>
+        </div>
+
+        <div className="clusters-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
+          {about.clusters.map((c) => (
+            <div key={c.name} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: "28px 24px", minHeight: 160, display: "flex", flexDirection: "column" }}>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-700)", marginBottom: 12 }}>
+                {c.tag}
+              </div>
+              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 22, lineHeight: 1.1, letterSpacing: "-0.01em", margin: "auto 0 0", color: "var(--navy-900)" }}>
+                {c.name}
+              </h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="container" style={{ paddingBottom: 120 }}>
+        <div style={{ marginBottom: 56 }}>
+          <Eyebrow>Client voices</Eyebrow>
+          <h2 style={{ ...h2Style, maxWidth: 900 }}>
+            Fifty-two files.
+            <br />
+            <Serif>Fifty-two conversations</Serif> that started with trust.
+          </h2>
+        </div>
+
+        <div className="testimonials-grid" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 20 }}>
+          {about.testimonials.map((t) => (
+            <figure
+              key={t.name}
+              style={{
+                background: "var(--cream-100)",
+                border: "1px solid var(--navy-a08)",
+                borderRadius: 12,
+                padding: 36,
+                display: "flex",
+                flexDirection: "column",
+                margin: 0,
+                minHeight: 340,
+              }}
+            >
+              <div style={{ fontFamily: "var(--font-serif)", fontSize: 80, lineHeight: 0.5, color: "var(--orange-500)", marginBottom: 18 }}>&ldquo;</div>
+              <blockquote style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 22, lineHeight: 1.3, letterSpacing: "-0.01em", color: "var(--navy-900)", margin: "0 auto 0 0" }}>
+                {t.quote}
+              </blockquote>
+              <figcaption style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 32, paddingTop: 24, borderTop: "1px solid var(--navy-a12)" }}>
+                <div
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: "50%",
+                    background: "var(--navy-900)",
+                    color: "#FFFFFF",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 600,
+                  }}
+                >
+                  {t.initial}
+                </div>
+                <div>
+                  <div style={{ fontSize: 14, fontWeight: 500, color: "var(--navy-900)" }}>{t.name}</div>
+                  <div style={{ fontSize: 12, color: "var(--navy-700)" }}>{t.role}</div>
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="container" style={{ paddingBottom: 120 }}>
         <div
