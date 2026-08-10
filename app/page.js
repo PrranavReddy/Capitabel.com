@@ -10,7 +10,7 @@ export default function LandingPage() {
 
       {/* HERO */}
       <section className="container" style={{ paddingTop: 72, paddingBottom: 48 }}>
-        <div className="hero-grid" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 64, alignItems: "end" }}>
+        <div>
           <div>
             <div
               style={{
@@ -100,43 +100,10 @@ export default function LandingPage() {
               >
                 Explore loan products
               </a>
-            </div>
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            <div
-              style={{
-                position: "relative",
-                aspectRatio: "4/5",
-                background: "repeating-linear-gradient(135deg,#EFE7D5,#EFE7D5 12px,#D8CCB4 12px,#D8CCB4 24px)",
-                borderRadius: 8,
-                overflow: "hidden",
-                display: "flex",
-                alignItems: "flex-end",
-                padding: 20,
-                width: "100%",
-                maxWidth: 400,
-                height: 462,
-              }}
-            >
-              <span
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: 11,
-                  color: "var(--navy-700)",
-                  background: "rgba(255,255,255,0.92)",
-                  padding: "6px 10px",
-                  borderRadius: 4,
-                }}
-              >
-                img · advisor with borrower, Chennai site
-              </span>
-            </div>
-            <div style={{ background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 8, padding: 16, width: "fit-content", maxWidth: 200 }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 28, lineHeight: 1, letterSpacing: "-0.02em" }}>
-                48 hrs
+              <div style={{ background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 6, padding: "12px 20px", display: "flex", alignItems: "baseline", gap: 8 }}>
+                <span style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 20, letterSpacing: "-0.02em" }}>48 hrs</span>
+                <span style={{ fontSize: 12, color: "rgba(245,240,228,0.7)" }}>to a Capitabel Loan Offer</span>
               </div>
-              <div style={{ fontSize: 11, color: "rgba(245,240,228,0.7)", marginTop: 6 }}>To a Capitabel Loan Offer</div>
             </div>
           </div>
         </div>
