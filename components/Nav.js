@@ -33,9 +33,9 @@ export default function Nav() {
       >
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
           <Image
-            src="/images/capitabel-logo.jpg"
+            src="/images/capitabel-logo.png"
             alt="Capitabel"
-            width={128}
+            width={165}
             height={30}
             style={{ display: "block" }}
             priority

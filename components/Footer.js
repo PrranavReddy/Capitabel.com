@@ -18,9 +18,9 @@ export function LandingFooter() {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
               <Image
-                src="/images/capitabel-logo.jpg"
+                src="/images/capitabel-logo.png"
                 alt="Capitabel"
-                width={154}
+                width={198}
                 height={36}
                 style={{ display: "block" }}
               />
@@ -180,9 +180,9 @@ export function SimpleFooter({ links, background = "#FFFFFF" }) {
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
             <Image
-              src="/images/capitabel-logo.jpg"
+              src="/images/capitabel-logo.png"
               alt="Capitabel"
-              width={102}
+              width={132}
               height={24}
               style={{ display: "block" }}
             />
