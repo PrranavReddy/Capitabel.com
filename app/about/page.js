@@ -174,36 +174,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* TIMELINE */}
-      <section style={{ background: "var(--cream-300)" }}>
-        <div className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-          <div className="timeline-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: 80, alignItems: "start" }}>
-            <div className="timeline-sticky" style={{ position: "sticky", top: 120 }}>
-              <Eyebrow>Company timeline</Eyebrow>
-              <h2 style={{ ...h2Style, fontSize: 56 }}>
-                How we
-                <br />
-                <Serif>got here.</Serif>
-              </h2>
-            </div>
-            <div>
-              {about.timeline.map((e) => (
-                <div key={e.year} style={{ display: "grid", gridTemplateColumns: "120px 1fr", gap: 32, padding: "28px 0", borderTop: "1px solid var(--navy-a20)" }}>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", color: "var(--orange-500)", paddingTop: 4 }}>{e.year}</div>
-                  <div>
-                    <h4 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 24, lineHeight: 1.15, letterSpacing: "-0.015em", margin: "0 0 8px", color: "var(--navy-900)" }}>
-                      {e.title}
-                    </h4>
-                    <p style={{ fontSize: 15, lineHeight: 1.55, color: "var(--navy-700)", margin: 0, maxWidth: 560 }}>{e.body}</p>
-                  </div>
-                </div>
-              ))}
-              <div style={{ borderTop: "1px solid var(--navy-a20)" }} />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* BELIEFS */}
       <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
         <div style={{ marginBottom: 56 }}>
