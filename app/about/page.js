@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SimpleFooter } from "@/components/Footer";
+import Reveal from "@/components/Reveal";
+import CountUp from "@/components/CountUp";
 import { about } from "@/lib/data";
 
 export const metadata = {
@@ -49,17 +51,19 @@ export default function AboutPage() {
       {/* BY THE NUMBERS */}
       <section style={{ background: "var(--navy-900)", color: "#FFFFFF" }}>
         <div className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-          <Eyebrow dark>By the numbers · Since 2023</Eyebrow>
-          <h2 style={{ ...h2Style, fontSize: 72, lineHeight: 0.98, color: "#FFFFFF", marginBottom: 64 }}>
-            Two years in.
-            <br />
-            <Serif>Measured honestly.</Serif>
-          </h2>
-          <div className="stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
+          <Reveal as="div">
+            <Eyebrow dark>By the numbers · Since 2023</Eyebrow>
+            <h2 style={{ ...h2Style, fontSize: 72, lineHeight: 0.98, color: "#FFFFFF", marginBottom: 64 }}>
+              Two years in.
+              <br />
+              <Serif>Measured honestly.</Serif>
+            </h2>
+          </Reveal>
+          <Reveal as="div" className="stats-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
             {about.stats.map((s) => (
               <div key={s.tag} style={{ borderTop: "1px solid rgba(245,240,228,0.2)", paddingTop: 28 }}>
                 <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 72, lineHeight: 1, letterSpacing: "-0.03em", color: "#FFFFFF" }}>
-                  {s.val}
+                  <CountUp value={s.val} />
                 </div>
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--orange-500)", marginTop: 16 }}>
                   {s.tag}
@@ -67,13 +71,13 @@ export default function AboutPage() {
                 <div style={{ fontSize: 14, color: "rgba(245,240,228,0.7)", marginTop: 8, maxWidth: 220 }}>{s.label}</div>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* FOUNDING TEAM */}
       <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-        <div className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 80, alignItems: "end", marginBottom: 56 }}>
+        <Reveal as="div" className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 80, alignItems: "end", marginBottom: 56 }}>
           <div>
             <Eyebrow>Founding team</Eyebrow>
             <h2 style={h2Style}>
@@ -86,9 +90,9 @@ export default function AboutPage() {
             Real estate operations, European banking technology, and India&rsquo;s leading MSME NBFC — three career paths that met in a
             Besantnagar office and stayed.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="team-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
+        <Reveal as="div" className="team-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
           {about.team.map((m) => (
             <div key={m.name} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: 32, display: "grid", gridTemplateColumns: "auto 1fr", gap: 28 }}>
               <div style={{ width: 140, aspectRatio: "4/5", background: "var(--cream-200)", borderRadius: 8, overflow: "hidden", position: "relative" }}>
@@ -128,10 +132,10 @@ export default function AboutPage() {
               </div>
             </div>
           ))}
-        </div>
+        </Reveal>
 
         {/* OPERATING TEAM */}
-        <div style={{ marginTop: 48, background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 12, padding: "44px 48px" }}>
+        <Reveal as="div" style={{ marginTop: 48, background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 12, padding: "44px 48px" }}>
           <Eyebrow dark>Current operating team</Eyebrow>
           <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 36, letterSpacing: "-0.02em", margin: "0 0 32px" }}>
             On the ground, in seven roles.
@@ -151,18 +155,18 @@ export default function AboutPage() {
             ))}
             <div style={{ borderTop: "1px solid rgba(245,240,228,0.15)" }} />
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* BELIEFS */}
       <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-        <div style={{ marginBottom: 56 }}>
+        <Reveal as="div" style={{ marginBottom: 56 }}>
           <Eyebrow>What we believe</Eyebrow>
           <h2 style={{ ...h2Style, maxWidth: 1000 }}>
             Four ideas we <Serif>refuse to bend on.</Serif>
           </h2>
-        </div>
-        <div className="beliefs-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 20 }}>
+        </Reveal>
+        <Reveal as="div" className="beliefs-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 20 }}>
           {about.beliefs.map((b) => (
             <div key={b.n} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: "44px 40px", minHeight: 260, display: "flex", flexDirection: "column" }}>
               <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 44, color: "var(--orange-500)", lineHeight: 1, letterSpacing: "-0.02em", marginBottom: "auto" }}>
@@ -174,21 +178,21 @@ export default function AboutPage() {
               <p style={{ fontSize: 15, lineHeight: 1.55, color: "var(--navy-700)", margin: 0, maxWidth: 480 }}>{b.body}</p>
             </div>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       {/* TESTIMONIALS */}
       <section className="container" style={{ paddingBottom: 120 }}>
-        <div style={{ marginBottom: 56 }}>
+        <Reveal as="div" style={{ marginBottom: 56 }}>
           <Eyebrow>Client voices</Eyebrow>
           <h2 style={{ ...h2Style, maxWidth: 900 }}>
             Fifty-two files.
             <br />
             <Serif>Fifty-two conversations</Serif> that started with trust.
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="testimonials-grid" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 20 }}>
+        <Reveal as="div" className="testimonials-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 20 }}>
           {about.testimonials.map((t) => (
             <figure
               key={t.name}
@@ -231,12 +235,13 @@ export default function AboutPage() {
               </figcaption>
             </figure>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       {/* CTA */}
       <section className="container" style={{ paddingBottom: 120 }}>
-        <div
+        <Reveal
+          as="div"
           className="cta-grid glass-tile"
           style={{
             background: "linear-gradient(160deg, rgba(247,146,52,0.92), rgba(224,110,10,0.92))",
@@ -284,7 +289,7 @@ export default function AboutPage() {
             Book a consultation call
             <span style={{ fontSize: 22 }} aria-hidden>→</span>
           </Link>
-        </div>
+        </Reveal>
       </section>
 
       <SimpleFooter
