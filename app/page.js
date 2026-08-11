@@ -411,7 +411,7 @@ export default function LandingPage() {
 
 
       {/* FAQ */}
-      <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
+      <section className="container" style={{ paddingBottom: 120 }}>
         <div className="faq-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "start" }}>
           <div className="faq-sticky" style={{ position: "sticky", top: 120 }}>
             <Eyebrow>04 · FAQ</Eyebrow>
