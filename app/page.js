@@ -2,14 +2,16 @@ import Link from "next/link";
 import { LandingFooter } from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
+import CursorDotGrid from "@/components/CursorDotGrid";
 import { landing, site } from "@/lib/data";
 
 export default function LandingPage() {
   return (
     <div>
       {/* HERO */}
-      <section className="container" style={{ paddingTop: 72, paddingBottom: 48 }}>
-        <div>
+      <section className="container" style={{ paddingTop: 72, paddingBottom: 48, position: "relative" }}>
+        <CursorDotGrid />
+        <div style={{ position: "relative", zIndex: 1 }}>
           <div>
             <div
               style={{
