@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
 import TiltCard from "@/components/TiltCard";
 import MagneticButton from "@/components/MagneticButton";
+import FAQItem from "@/components/FAQItem";
 import { landing, site } from "@/lib/data";
 
 export default function LandingPage() {
@@ -432,17 +433,7 @@ export default function LandingPage() {
           </div>
           <Reveal as="div">
             {landing.faqs.map((f) => (
-              <details key={f.q} style={{ borderTop: "1px solid var(--navy-a15)", padding: "26px 0" }}>
-                <summary style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24 }}>
-                  <span style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 22, letterSpacing: "-0.01em", color: "var(--navy-900)" }}>{f.q}</span>
-                  <span className="plus" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: 28, color: "var(--orange-500)", flexShrink: 0 }}>
-                    +
-                  </span>
-                </summary>
-                <p className="faq-answer" style={{ fontSize: 16, lineHeight: 1.55, color: "var(--navy-700)", margin: "14px 0 0", maxWidth: 680 }}>
-                  {f.a}
-                </p>
-              </details>
+              <FAQItem key={f.q} q={f.q} a={f.a} />
             ))}
             <div style={{ borderTop: "1px solid var(--navy-a15)" }} />
           </Reveal>

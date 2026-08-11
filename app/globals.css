@@ -241,39 +241,27 @@ button {
 }
 
 /* ---------------------------------------------------------------------- */
-/* FAQ accordion (native <details>)                                       */
+/* FAQ accordion (FAQItem.js — state-driven, not native <details>)        */
 /* ---------------------------------------------------------------------- */
-details summary {
-  list-style: none;
-  cursor: pointer;
-}
-
-details summary::-webkit-details-marker {
-  display: none;
-}
-
 .plus {
   display: inline-block;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease;
 }
 
-details[open] .plus {
+.faq-item.is-open .plus {
   transform: rotate(45deg);
 }
 
-details .faq-answer {
-  animation: faq-open 0.2s ease;
+/* grid-template-rows 0fr -> 1fr eases to the content's natural height
+   without any JS measuring or hardcoded max-height. */
+.faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
 }
 
-@keyframes faq-open {
-  from {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.faq-item.is-open .faq-panel {
+  grid-template-rows: 1fr;
 }
 
 /* ---------------------------------------------------------------------- */
