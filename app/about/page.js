@@ -4,6 +4,7 @@ import { SimpleFooter } from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
 import TiltCard from "@/components/TiltCard";
+import MagneticButton from "@/components/MagneticButton";
 import { about } from "@/lib/data";
 
 export const metadata = {
@@ -269,7 +270,8 @@ export default function AboutPage() {
               Every consultation call in Q1 goes to Harish, Chidu, or Devesh directly. No routing menus.
             </p>
           </div>
-          <Link
+          <MagneticButton
+            as={Link}
             href="/contact"
             className="btn hover-fade"
             style={{
@@ -289,7 +291,7 @@ export default function AboutPage() {
           >
             Book a consultation call
             <span style={{ fontSize: 22 }} aria-hidden>→</span>
-          </Link>
+          </MagneticButton>
         </Reveal>
       </section>
 

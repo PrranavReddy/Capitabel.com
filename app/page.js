@@ -3,6 +3,7 @@ import { LandingFooter } from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
 import TiltCard from "@/components/TiltCard";
+import MagneticButton from "@/components/MagneticButton";
 import { landing, site } from "@/lib/data";
 
 export default function LandingPage() {
@@ -66,7 +67,8 @@ export default function LandingPage() {
               One advisor. The right lender. 48 hours.
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link
+              <MagneticButton
+                as={Link}
                 href="/contact"
                 className="btn btn-orange hover-fade"
                 style={{
@@ -82,7 +84,7 @@ export default function LandingPage() {
                 }}
               >
                 Book a consultation call <span aria-hidden>→</span>
-              </Link>
+              </MagneticButton>
               <a
                 href="#loans"
                 className="btn btn-ghost hover-fade"
@@ -483,14 +485,15 @@ export default function LandingPage() {
             </p>
           </div>
           <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 14 }}>
-            <Link
+            <MagneticButton
+              as={Link}
               href="/contact"
               className="btn btn-orange hover-fade"
               style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "22px 26px", background: "var(--orange-500)", color: "#FFFFFF", borderRadius: 8, fontSize: 16, fontWeight: 500 }}
             >
               Book a consultation call
               <span style={{ fontSize: 22 }} aria-hidden>→</span>
-            </Link>
+            </MagneticButton>
             <a
               href={site.whatsapp}
               className="btn btn-white hover-fade"

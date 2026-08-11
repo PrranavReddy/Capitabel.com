@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import MagneticButton from "@/components/MagneticButton";
 import { contact, site } from "@/lib/data";
 
 const initialState = {
@@ -142,7 +143,8 @@ export default function ContactForm() {
             </a>
             .
           </div>
-          <button
+          <MagneticButton
+            as="button"
             type="submit"
             className="btn btn-orange hover-fade"
             style={{
@@ -160,7 +162,7 @@ export default function ContactForm() {
             }}
           >
             Send &amp; schedule call <span aria-hidden>→</span>
-          </button>
+          </MagneticButton>
         </div>
 
         <div role="status" aria-live="polite">

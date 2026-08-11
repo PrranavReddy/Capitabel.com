@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SimpleFooter } from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
+import MagneticButton from "@/components/MagneticButton";
 import { loans, site } from "@/lib/data";
 
 export const metadata = {
@@ -305,14 +306,15 @@ export default function LoansPage() {
             </p>
           </div>
           <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 14 }}>
-            <Link
+            <MagneticButton
+              as={Link}
               href="/contact"
               className="btn btn-orange hover-fade"
               style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "22px 26px", background: "var(--orange-500)", color: "#FFFFFF", borderRadius: 8, fontSize: 16, fontWeight: 500 }}
             >
               Book a consultation call
               <span style={{ fontSize: 22 }} aria-hidden>→</span>
-            </Link>
+            </MagneticButton>
             <a
               href={site.whatsapp}
               className="btn btn-white hover-fade"
