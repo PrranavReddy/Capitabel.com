@@ -320,69 +320,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* WHO WE SERVE */}
-      <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-        <Reveal as="div" style={{ marginBottom: 56 }}>
-          <Eyebrow>03 · Who we serve</Eyebrow>
-          <h2 style={{ ...h2Style, maxWidth: 900 }}>
-            Built for the Bharat that the
-            <br />
-            <Serif>balance-sheet fintechs</Serif> can&rsquo;t reach.
-          </h2>
-        </Reveal>
-
-        <Reveal as="div" className="segments-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
-          {landing.segments.map((seg) => (
-            <div
-              key={seg.n}
-              style={{
-                background: seg.bg,
-                color: seg.fg,
-                borderRadius: 12,
-                padding: "40px 36px",
-                minHeight: 440,
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 32 }}>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: seg.label }}>
-                  Segment · {seg.n}
-                </div>
-                <div
-                  style={{
-                    width: 44,
-                    height: 44,
-                    borderRadius: "50%",
-                    background: seg.dot,
-                    color: seg.dotFg,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontFamily: "var(--font-display)",
-                    fontWeight: 600,
-                    fontSize: 18,
-                  }}
-                >
-                  {seg.initial}
-                </div>
-              </div>
-              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 36, lineHeight: 1.05, letterSpacing: "-0.02em", margin: "auto 0 16px" }}>
-                {seg.title}
-              </h3>
-              <p style={{ fontSize: 15, lineHeight: 1.55, margin: "0 0 28px", color: seg.body, maxWidth: 340 }}>{seg.desc}</p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                {seg.tags.map((t) => (
-                  <span key={t} style={{ padding: "6px 12px", background: seg.chipBg, borderRadius: 999, fontSize: 12, color: seg.chipFg }}>
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </Reveal>
-      </section>
-
       {/* MATCHING ENGINE */}
       <section className="container" style={{ paddingBottom: 120 }}>
         <Reveal
@@ -400,7 +337,7 @@ export default function LandingPage() {
           }}
         >
           <div>
-            <Eyebrow>04 · Under the hood</Eyebrow>
+            <Eyebrow>03 · Under the hood</Eyebrow>
             <h2 style={{ ...h2Style, fontSize: 60, marginBottom: 24 }}>
               A matching engine
               <br />
@@ -471,7 +408,7 @@ export default function LandingPage() {
       <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
         <div className="faq-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "start" }}>
           <div className="faq-sticky" style={{ position: "sticky", top: 120 }}>
-            <Eyebrow>05 · FAQ</Eyebrow>
+            <Eyebrow>04 · FAQ</Eyebrow>
             <h2 style={{ ...h2Style, fontSize: 56, marginBottom: 24 }}>
               Questions we
               <br />
