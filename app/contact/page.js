@@ -1,5 +1,6 @@
 import { SimpleFooter } from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import Reveal from "@/components/Reveal";
 import { contact, site } from "@/lib/data";
 
 export const metadata = {
@@ -34,7 +35,7 @@ export default function ContactPage() {
       </section>
 
       <section className="container" style={{ paddingTop: 40, paddingBottom: 120 }}>
-        <div className="contact-grid" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 24, alignItems: "start" }}>
+        <Reveal as="div" className="contact-grid" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 24, alignItems: "start" }}>
           <ContactForm />
 
           <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
@@ -113,21 +114,21 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* WHAT HAPPENS NEXT */}
       <section style={{ background: "var(--cream-300)" }}>
         <div className="container" style={{ paddingTop: 100, paddingBottom: 100 }}>
-          <div style={{ marginBottom: 48 }}>
+          <Reveal as="div" style={{ marginBottom: 48 }}>
             <Eyebrow>What happens next</Eyebrow>
             <h2 style={{ ...h2Style, maxWidth: 900 }}>
               Three steps between here and a
               <br />
               <Serif>Capitabel Loan Offer.</Serif>
             </h2>
-          </div>
-          <div className="next-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+          </Reveal>
+          <Reveal as="div" className="next-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
             {contact.next.map((n) => (
               <div key={n.n} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: "32px 28px", minHeight: 220, display: "flex", flexDirection: "column" }}>
                 <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "auto" }}>
@@ -140,7 +141,7 @@ export default function ContactPage() {
                 <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--navy-700)", margin: 0 }}>{n.body}</p>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
