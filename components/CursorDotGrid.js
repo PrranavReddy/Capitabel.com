@@ -3,27 +3,26 @@
 import { useEffect, useRef } from "react";
 
 /**
- * A grid of dots drawn on a full-bleed canvas that brighten and grow near
- * the cursor. Meant to sit as an absolutely-positioned background layer
- * inside a position:relative container — the parent element is what
- * receives the mousemove listener, so this works no matter where the
- * canvas sits in the stacking order.
+ * A fixed, viewport-pinned grid of dots that brighten and grow near the
+ * cursor. Rendered once in the root layout, behind everything else — every
+ * section that has its own solid/tile background simply paints over it, so
+ * it only shows through in the plain page-background gaps between tiles.
  *
- * Respects prefers-reduced-motion by drawing a single static frame instead
- * of animating.
+ * Doesn't scroll with the page (position: fixed) — content scrolls over a
+ * constant ambient layer. Respects prefers-reduced-motion by drawing a
+ * single static frame instead of animating.
  */
 export default function CursorDotGrid({
-  gap = 30,
+  gap = 32,
   dotColor = "22,38,77",
   accentColor = "245,130,32",
-  baseOpacity = 0.16,
+  baseOpacity = 0.13,
 }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const parent = canvas?.parentElement;
-    if (!canvas || !parent) return;
+    if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
     const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
@@ -33,9 +32,8 @@ export default function CursorDotGrid({
     let raf;
 
     function resize() {
-      const rect = parent.getBoundingClientRect();
-      width = rect.width;
-      height = rect.height;
+      width = window.innerWidth;
+      height = window.innerHeight;
       const dpr = window.devicePixelRatio || 1;
       canvas.width = width * dpr;
       canvas.height = height * dpr;
@@ -45,9 +43,8 @@ export default function CursorDotGrid({
     }
 
     function handleMove(e) {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
     }
 
     function handleLeave() {
@@ -60,13 +57,13 @@ export default function CursorDotGrid({
       for (let x = gap / 2; x < width; x += gap) {
         for (let y = gap / 2; y < height; y += gap) {
           const d = Math.hypot(x - mouse.x, y - mouse.y);
-          const influence = Math.max(0, 1 - d / 150);
-          const radius = 1.3 + influence * 3.2;
+          const influence = Math.max(0, 1 - d / 160);
+          const radius = 1.2 + influence * 3.2;
           ctx.beginPath();
           ctx.arc(x, y, radius, 0, Math.PI * 2);
           ctx.fillStyle =
             influence > 0.03
-              ? `rgba(${accentColor},${Math.min(1, baseOpacity + influence * 0.8).toFixed(2)})`
+              ? `rgba(${accentColor},${Math.min(1, baseOpacity + influence * 0.85).toFixed(2)})`
               : `rgba(${dotColor},${baseOpacity})`;
           ctx.fill();
         }
@@ -77,13 +74,13 @@ export default function CursorDotGrid({
     resize();
     draw();
 
-    parent.addEventListener("mousemove", handleMove);
-    parent.addEventListener("mouseleave", handleLeave);
+    window.addEventListener("mousemove", handleMove);
+    window.addEventListener("mouseleave", handleLeave);
     window.addEventListener("resize", resize);
 
     return () => {
-      parent.removeEventListener("mousemove", handleMove);
-      parent.removeEventListener("mouseleave", handleLeave);
+      window.removeEventListener("mousemove", handleMove);
+      window.removeEventListener("mouseleave", handleLeave);
       window.removeEventListener("resize", resize);
       if (raf) cancelAnimationFrame(raf);
     };
@@ -93,7 +90,7 @@ export default function CursorDotGrid({
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }}
+      style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}
     />
   );
 }
