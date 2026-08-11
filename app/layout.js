@@ -2,6 +2,7 @@ import { Space_Grotesk, Instrument_Serif, DM_Sans, JetBrains_Mono } from "next/f
 import Nav from "@/components/Nav";
 import PageTransition from "@/components/PageTransition";
 import CursorDotGrid from "@/components/CursorDotGrid";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -67,6 +68,7 @@ export default function RootLayout({ children }) {
     >
       <body>
         <CursorDotGrid />
+        <ScrollProgressBar />
         <div style={{ position: "relative", zIndex: 1 }}>
           <Nav />
           <PageTransition>{children}</PageTransition>
