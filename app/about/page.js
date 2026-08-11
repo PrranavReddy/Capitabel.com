@@ -75,7 +75,7 @@ export default function AboutPage() {
             <br />
             <Serif>Measured honestly.</Serif>
           </h2>
-          <div className="stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 24 }}>
+          <div className="stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
             {about.stats.map((s) => (
               <div key={s.tag} style={{ borderTop: "1px solid rgba(245,240,228,0.2)", paddingTop: 28 }}>
                 <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 72, lineHeight: 1, letterSpacing: "-0.03em", color: "#FFFFFF" }}>
