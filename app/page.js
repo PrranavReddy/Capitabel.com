@@ -339,7 +339,7 @@ export default function LandingPage() {
             display: "grid",
             gridTemplateColumns: "1.15fr 1fr",
             gap: 80,
-            alignItems: "start",
+            alignItems: "center",
           }}
         >
           <div>
