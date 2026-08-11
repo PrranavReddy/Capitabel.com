@@ -2,6 +2,7 @@ import Link from "next/link";
 import { LandingFooter } from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
+import TiltCard from "@/components/TiltCard";
 import { landing, site } from "@/lib/data";
 
 export default function LandingPage() {
@@ -168,8 +169,9 @@ export default function LandingPage() {
 
         <Reveal as="div" className="products-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
           {landing.products.map((p) => (
-            <Link
+            <TiltCard
               key={p.code}
+              as={Link}
               href="/loans"
               className="card-hover"
               style={{
@@ -247,7 +249,7 @@ export default function LandingPage() {
                   →
                 </span>
               </div>
-            </Link>
+            </TiltCard>
           ))}
         </Reveal>
       </section>

@@ -3,20 +3,24 @@
 import { useEffect, useRef } from "react";
 
 /**
- * A fixed, viewport-pinned grid of dots that brighten and grow near the
- * cursor. Rendered once in the root layout, behind everything else — every
- * section that has its own solid/tile background simply paints over it, so
- * it only shows through in the plain page-background gaps between tiles.
+ * A fixed, viewport-pinned grid of dots that acts like a magnetic field —
+ * dots near the cursor are physically pushed away along the line from the
+ * cursor to the dot, and brighten as they're displaced. Rendered once in
+ * the root layout, behind everything else — every section that has its own
+ * solid/tile background simply paints over it, so it only shows through in
+ * the plain page-background gaps between tiles.
  *
  * Doesn't scroll with the page (position: fixed) — content scrolls over a
  * constant ambient layer. Respects prefers-reduced-motion by drawing a
- * single static frame instead of animating.
+ * single static, undisplaced frame instead of animating.
  */
 export default function CursorDotGrid({
   gap = 32,
   dotColor = "22,38,77",
   accentColor = "245,130,32",
   baseOpacity = 0.13,
+  pushRadius = 130,
+  pushDistance = 22,
 }) {
   const canvasRef = useRef(null);
 
@@ -56,14 +60,18 @@ export default function CursorDotGrid({
       ctx.clearRect(0, 0, width, height);
       for (let x = gap / 2; x < width; x += gap) {
         for (let y = gap / 2; y < height; y += gap) {
-          const d = Math.hypot(x - mouse.x, y - mouse.y);
-          const influence = Math.max(0, 1 - d / 160);
-          const radius = 1.2 + influence * 3.2;
+          const dx = x - mouse.x;
+          const dy = y - mouse.y;
+          const d = Math.hypot(dx, dy);
+          const push = Math.max(0, 1 - d / pushRadius);
+          const ox = push > 0 ? x + (dx / d) * push * pushDistance : x;
+          const oy = push > 0 ? y + (dy / d) * push * pushDistance : y;
+          const radius = 1.2 + push * 2.4;
           ctx.beginPath();
-          ctx.arc(x, y, radius, 0, Math.PI * 2);
+          ctx.arc(ox, oy, radius, 0, Math.PI * 2);
           ctx.fillStyle =
-            influence > 0.03
-              ? `rgba(${accentColor},${Math.min(1, baseOpacity + influence * 0.85).toFixed(2)})`
+            push > 0.04
+              ? `rgba(${accentColor},${Math.min(1, baseOpacity + push * 0.85).toFixed(2)})`
               : `rgba(${dotColor},${baseOpacity})`;
           ctx.fill();
         }
