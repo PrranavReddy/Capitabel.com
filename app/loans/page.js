@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Nav from "@/components/Nav";
 import { SimpleFooter } from "@/components/Footer";
 import { loans, site } from "@/lib/data";
 
@@ -12,8 +11,6 @@ export const metadata = {
 export default function LoansPage() {
   return (
     <div>
-      <Nav />
-
       <section className="container" style={{ paddingTop: 72, paddingBottom: 60 }}>
         <Eyebrow>Loan products · Home Loan · LAP · MSME</Eyebrow>
         <h1

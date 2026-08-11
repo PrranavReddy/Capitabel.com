@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import Nav from "@/components/Nav";
 import { SimpleFooter } from "@/components/Footer";
 import { about } from "@/lib/data";
 
@@ -13,8 +12,6 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div>
-      <Nav />
-
       {/* STORY */}
       <section className="container" style={{ paddingTop: 72, paddingBottom: 40 }}>
         <Eyebrow>About Capitabel · Founded 2023 · Chennai · Manor Group</Eyebrow>

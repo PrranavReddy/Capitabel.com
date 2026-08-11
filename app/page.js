@@ -1,13 +1,12 @@
 import Link from "next/link";
-import Nav from "@/components/Nav";
 import { LandingFooter } from "@/components/Footer";
+import Reveal from "@/components/Reveal";
+import CountUp from "@/components/CountUp";
 import { landing, site } from "@/lib/data";
 
 export default function LandingPage() {
   return (
     <div>
-      <Nav />
-
       {/* HERO */}
       <section className="container" style={{ paddingTop: 72, paddingBottom: 48 }}>
         <div>
@@ -111,7 +110,7 @@ export default function LandingPage() {
 
       {/* LENDER MARQUEE */}
       <section className="container" style={{ paddingTop: 40, paddingBottom: 20 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 32, marginBottom: 24 }}>
+        <Reveal as="div" style={{ display: "flex", alignItems: "center", gap: 32, marginBottom: 24 }}>
           <div
             style={{
               fontFamily: "var(--font-mono)",
@@ -125,7 +124,7 @@ export default function LandingPage() {
             40+ lenders in our network
           </div>
           <div style={{ flex: 1, height: 1, background: "var(--navy-a15)" }} />
-        </div>
+        </Reveal>
         <div className="marquee-track">
           <div className="marquee-inner">
             {landing.lendersLoop.map((lender, i) => (
@@ -151,7 +150,7 @@ export default function LandingPage() {
 
       {/* LOAN PRODUCTS */}
       <section id="loans" className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-        <div className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.15fr", gap: 80, alignItems: "end", marginBottom: 56 }}>
+        <Reveal as="div" className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.15fr", gap: 80, alignItems: "end", marginBottom: 56 }}>
           <div>
             <Eyebrow>01 · What we finance</Eyebrow>
             <h2 style={h2Style}>
@@ -164,9 +163,9 @@ export default function LandingPage() {
             Home Loans, Loan Against Property, and MSME finance — from a single advisor with visibility across our full lender panel. Higher
             lifetime value for the borrower, better outcomes for the file.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="products-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+        <Reveal as="div" className="products-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
           {landing.products.map((p) => (
             <Link
               key={p.code}
@@ -249,13 +248,13 @@ export default function LandingPage() {
               </div>
             </Link>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       {/* THE PROMISE / 48H */}
       <section style={{ background: "var(--navy-900)", color: "#FFFFFF" }}>
         <div className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-          <div className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, marginBottom: 80, alignItems: "end" }}>
+          <Reveal as="div" className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, marginBottom: 80, alignItems: "end" }}>
             <div>
               <Eyebrow dark>02 · The Capitabel promise</Eyebrow>
               <h2 style={{ ...h2Style, fontSize: 72, lineHeight: 0.98, color: "#FFFFFF" }}>
@@ -270,7 +269,7 @@ export default function LandingPage() {
               National fintechs make you wait on a lender&rsquo;s decision. Traditional DSAs make you chase paperwork through a black box. We
               issue our own in-principle offer — indicative rate, fees, tenure, KFS terms — within 48 hours of a complete file.
             </p>
-          </div>
+          </Reveal>
 
           <div className="steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
             {landing.steps.map((s) => (
@@ -291,7 +290,8 @@ export default function LandingPage() {
             ))}
           </div>
 
-          <div
+          <Reveal
+            as="div"
             className="grid-collapse"
             style={{
               marginTop: 80,
@@ -313,23 +313,25 @@ export default function LandingPage() {
                 85% of Capitabel Loan Offers convert to lender sanctions on materially equivalent terms.
               </div>
             </div>
-            <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 96, color: "var(--orange-500)", letterSpacing: "-0.03em" }}>85%</div>
-          </div>
+            <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 96, color: "var(--orange-500)", letterSpacing: "-0.03em" }}>
+              <CountUp value="85%" />
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* WHO WE SERVE */}
       <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-        <div style={{ marginBottom: 56 }}>
+        <Reveal as="div" style={{ marginBottom: 56 }}>
           <Eyebrow>03 · Who we serve</Eyebrow>
           <h2 style={{ ...h2Style, maxWidth: 900 }}>
             Built for the Bharat that the
             <br />
             <Serif>balance-sheet fintechs</Serif> can&rsquo;t reach.
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="segments-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+        <Reveal as="div" className="segments-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
           {landing.segments.map((seg) => (
             <div
               key={seg.n}
@@ -378,12 +380,13 @@ export default function LandingPage() {
               </div>
             </div>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       {/* MATCHING ENGINE */}
       <section className="container" style={{ paddingBottom: 120 }}>
-        <div
+        <Reveal
+          as="div"
           className="engine-grid"
           style={{
             background: "var(--cream-100)",
@@ -412,7 +415,7 @@ export default function LandingPage() {
               {landing.engineFacts.map((f) => (
                 <div key={f.label} style={{ padding: 20, background: "#FFFFFF", borderRadius: 8 }}>
                   <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 28, lineHeight: 1, color: "var(--navy-900)", letterSpacing: "-0.015em" }}>
-                    {f.val}
+                    <CountUp value={f.val} />
                   </div>
                   <div style={{ fontSize: 12, color: "var(--navy-700)", marginTop: 8 }}>{f.label}</div>
                 </div>
@@ -460,7 +463,7 @@ export default function LandingPage() {
             <div style={{ color: "var(--orange-500)", marginTop: 12 }}>✓ Recommendation: KVB</div>
             <div style={{ color: "rgba(255,255,255,0.9)" }}>→ Capitabel Loan Offer draft ready · 47:52 remaining</div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
 
@@ -485,7 +488,7 @@ export default function LandingPage() {
               Book a call →
             </Link>
           </div>
-          <div>
+          <Reveal as="div">
             {landing.faqs.map((f) => (
               <details key={f.q} style={{ borderTop: "1px solid var(--navy-a15)", padding: "26px 0" }}>
                 <summary style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24 }}>
@@ -500,13 +503,14 @@ export default function LandingPage() {
               </details>
             ))}
             <div style={{ borderTop: "1px solid var(--navy-a15)" }} />
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* CTA */}
       <section className="container" style={{ paddingBottom: 120 }}>
-        <div
+        <Reveal
+          as="div"
           className="cta-grid"
           style={{
             background: "var(--navy-900)",
@@ -564,7 +568,7 @@ export default function LandingPage() {
               <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "rgba(245,240,228,0.7)" }}>Mon–Sat · 9–7</span>
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <LandingFooter />

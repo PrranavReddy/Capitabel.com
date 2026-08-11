@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Nav from "@/components/Nav";
 import { SimpleFooter } from "@/components/Footer";
 import { landing, site } from "@/lib/data";
 
@@ -11,8 +10,6 @@ export const metadata = {
 export default function JournalPage() {
   return (
     <div>
-      <Nav />
-
       <section className="container" style={{ paddingTop: 72, paddingBottom: 60 }}>
         <Eyebrow>Journal</Eyebrow>
         <h1

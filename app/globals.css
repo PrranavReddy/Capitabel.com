@@ -91,7 +91,16 @@ button {
 }
 
 .btn {
-  transition: background-color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.97);
 }
 
 .btn-dark:hover {
@@ -100,6 +109,7 @@ button {
 
 .btn-orange:hover {
   background: #dd7415;
+  box-shadow: 0 8px 20px -6px rgba(245, 130, 32, 0.5);
 }
 
 .btn-white:hover {
@@ -111,11 +121,13 @@ button {
 }
 
 .card-hover {
-  transition: border-color 0.2s ease;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card-hover:hover {
   border-color: rgba(245, 130, 32, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 32px -18px rgba(22, 38, 77, 0.28);
 }
 
 .underline-link {
@@ -160,6 +172,10 @@ button {
   animation: marquee 40s linear infinite;
 }
 
+.marquee-track:hover .marquee-inner {
+  animation-play-state: paused;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -169,9 +185,58 @@ button {
   }
 }
 
+/* ---------------------------------------------------------------------- */
+/* Scroll reveal (components/Reveal.js)                                   */
+/* ---------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Page transition (components/PageTransition.js)                         */
+/* ---------------------------------------------------------------------- */
+.page-fade {
+  animation: page-fade-in 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .marquee-inner {
     animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .page-fade {
+    animation: none;
+  }
+
+  .btn:hover,
+  .btn:active,
+  .card-hover:hover {
+    transform: none;
   }
 }
 

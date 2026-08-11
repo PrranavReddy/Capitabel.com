@@ -1,4 +1,3 @@
-import Nav from "@/components/Nav";
 import { SimpleFooter } from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import { contact, site } from "@/lib/data";
@@ -12,8 +11,6 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <div>
-      <Nav />
-
       <section className="container" style={{ paddingTop: 64, paddingBottom: 40 }}>
         <Eyebrow>Contact · Chennai · Mon–Sat · 9–7 IST</Eyebrow>
         <h1

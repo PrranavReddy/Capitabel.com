@@ -1,4 +1,6 @@
 import { Space_Grotesk, Instrument_Serif, DM_Sans, JetBrains_Mono } from "next/font/google";
+import Nav from "@/components/Nav";
+import PageTransition from "@/components/PageTransition";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -62,7 +64,10 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${spaceGrotesk.variable} ${instrumentSerif.variable} ${dmSans.variable} ${jetBrainsMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <Nav />
+        <PageTransition>{children}</PageTransition>
+      </body>
     </html>
   );
 }
