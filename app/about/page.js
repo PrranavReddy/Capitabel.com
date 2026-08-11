@@ -49,23 +49,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="container" style={{ paddingTop: 60, paddingBottom: 80 }}>
-        <div
-          style={{
-            aspectRatio: "21/9",
-            background: "repeating-linear-gradient(135deg,#EFE7D5,#EFE7D5 14px,#D8CCB4 14px,#D8CCB4 28px)",
-            borderRadius: 12,
-            display: "flex",
-            alignItems: "flex-end",
-            padding: 24,
-          }}
-        >
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--navy-700)", background: "rgba(255,255,255,0.92)", padding: "6px 10px", borderRadius: 4 }}>
-            img · Capitabel team, Besantnagar office
-          </span>
-        </div>
-      </section>
-
       {/* BY THE NUMBERS */}
       <section style={{ background: "var(--navy-900)", color: "#FFFFFF" }}>
         <div className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
