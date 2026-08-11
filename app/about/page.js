@@ -3,6 +3,7 @@ import Image from "next/image";
 import { SimpleFooter } from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
+import TiltCard from "@/components/TiltCard";
 import { about } from "@/lib/data";
 
 export const metadata = {
@@ -94,7 +95,7 @@ export default function AboutPage() {
 
         <Reveal as="div" className="team-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
           {about.team.map((m) => (
-            <div key={m.name} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: 32, display: "grid", gridTemplateColumns: "auto 1fr", gap: 28 }}>
+            <TiltCard key={m.name} maxTilt={5} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: 32, display: "grid", gridTemplateColumns: "auto 1fr", gap: 28 }}>
               <div style={{ width: 140, aspectRatio: "4/5", background: "var(--cream-200)", borderRadius: 8, overflow: "hidden", position: "relative" }}>
                 {m.img ? (
                   <Image src={m.img} alt={m.name} fill sizes="140px" style={{ objectFit: "cover" }} />
@@ -130,7 +131,7 @@ export default function AboutPage() {
                   <span>{m.base}</span>
                 </div>
               </div>
-            </div>
+            </TiltCard>
           ))}
         </Reveal>
 
