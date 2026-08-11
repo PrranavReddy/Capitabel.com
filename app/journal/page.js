@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SimpleFooter } from "@/components/Footer";
+import Reveal from "@/components/Reveal";
 import { landing, site } from "@/lib/data";
 
 export const metadata = {
@@ -34,7 +35,7 @@ export default function JournalPage() {
       </section>
 
       <section className="container" style={{ paddingBottom: 120 }}>
-        <div className="journal-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
+        <Reveal as="div" className="journal-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
           {landing.posts.map((p) => (
             <a key={p.title} href="#" style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               <div
@@ -63,12 +64,13 @@ export default function JournalPage() {
               </div>
             </a>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       {/* CTA */}
       <section className="container" style={{ paddingBottom: 120 }}>
-        <div
+        <Reveal
+          as="div"
           className="cta-grid"
           style={{
             background: "var(--navy-900)",
@@ -111,7 +113,7 @@ export default function JournalPage() {
               <span style={{ fontFamily: "var(--font-mono)", fontSize: 13 }}>{site.phone}</span>
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <SimpleFooter
