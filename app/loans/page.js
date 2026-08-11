@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { SimpleFooter } from "@/components/Footer";
+import Reveal from "@/components/Reveal";
+import CountUp from "@/components/CountUp";
 import { loans, site } from "@/lib/data";
 
 export const metadata = {
@@ -36,7 +38,8 @@ export default function LoansPage() {
 
       {/* SUMMARY */}
       <section className="container" style={{ paddingBottom: 40 }}>
-        <div
+        <Reveal
+          as="div"
           className="summary-grid"
           style={{ background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 16, padding: "56px 56px 40px", display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 32 }}
         >
@@ -45,11 +48,13 @@ export default function LoansPage() {
               <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(245,240,228,0.6)", marginBottom: 14 }}>
                 {s.label}
               </div>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 48, lineHeight: 1, color: "#FFFFFF", letterSpacing: "-0.02em" }}>{s.val}</div>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 48, lineHeight: 1, color: "#FFFFFF", letterSpacing: "-0.02em" }}>
+                <CountUp value={s.val} />
+              </div>
               <div style={{ fontSize: 12, color: "rgba(245,240,228,0.55)", marginTop: 10 }}>{s.note}</div>
             </div>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       {/* PRODUCTS DEEP DIVE */}
@@ -94,7 +99,7 @@ export default function LoansPage() {
                 </Link>
               </div>
 
-              <div>
+              <Reveal as="div">
                 <div style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: 36, marginBottom: 20 }}>
                   <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-700)", marginBottom: 20 }}>
                     Snapshot
@@ -147,7 +152,7 @@ export default function LoansPage() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </Reveal>
             </div>
           </div>
         ))}
@@ -156,7 +161,7 @@ export default function LoansPage() {
       {/* PROCESS */}
       <section style={{ background: "var(--cream-300)" }}>
         <div className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-          <div className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, marginBottom: 56, alignItems: "end" }}>
+          <Reveal as="div" className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, marginBottom: 56, alignItems: "end" }}>
             <div>
               <Eyebrow>Process · Every file, every product</Eyebrow>
               <h2 style={h2Style}>
@@ -168,8 +173,8 @@ export default function LoansPage() {
             <p style={{ ...leadStyle, fontSize: 18, maxWidth: 480 }}>
               Our published TATs from the FY 2026–27 operating plan. Every step is timestamped in Zoho CRM and reviewed weekly.
             </p>
-          </div>
-          <div style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, overflow: "hidden" }}>
+          </Reveal>
+          <Reveal as="div" delay={100} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, overflow: "hidden" }}>
             <div
               className="process-head"
               style={{
@@ -202,13 +207,14 @@ export default function LoansPage() {
                 <div style={{ fontSize: 13, color: "var(--navy-700)" }}>{s.owner}</div>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* CTA */}
       <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-        <div
+        <Reveal
+          as="div"
           className="cta-grid"
           style={{
             background: "var(--navy-900)",
@@ -253,7 +259,7 @@ export default function LoansPage() {
               <span style={{ fontFamily: "var(--font-mono)", fontSize: 13 }}>{site.phone}</span>
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <SimpleFooter
