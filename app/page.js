@@ -330,82 +330,37 @@ export default function LandingPage() {
       <section className="container" style={{ paddingBottom: 120 }}>
         <Reveal
           as="div"
-          className="engine-grid"
           style={{
             background: "var(--cream-100)",
             border: "1px solid var(--navy-a08)",
             borderRadius: 16,
             padding: "80px 64px",
-            display: "grid",
-            gridTemplateColumns: "1.15fr 1fr",
-            gap: 80,
-            alignItems: "center",
           }}
         >
-          <div>
-            <Eyebrow>03 · Under the hood</Eyebrow>
-            <h2 style={{ ...h2Style, fontSize: 60, marginBottom: 24 }}>
-              A matching engine
-              <br />
-              <Serif>built on ground truth.</Serif>
-            </h2>
-            <p style={{ ...leadStyle, fontSize: 18, marginBottom: 32, maxWidth: 520 }}>
-              Twenty-five years of South India real estate operations from Manor Group. Eighteen years of banking technology from ING
-              Netherlands. Codified into a matching engine that routes borrowers by fit — not by what pays us best.
-            </p>
+          <Eyebrow>03 · Under the hood</Eyebrow>
+          <h2 style={{ ...h2Style, fontSize: 60, marginBottom: 24, maxWidth: 700 }}>
+            A matching engine
+            <br />
+            <Serif>built on ground truth.</Serif>
+          </h2>
+          <p style={{ ...leadStyle, fontSize: 18, marginBottom: 32, maxWidth: 560 }}>
+            Twenty-five years of South India real estate operations from Manor Group. Eighteen years of banking technology from ING
+            Netherlands. Codified into a matching engine that routes borrowers by fit — not by what pays us best.
+          </p>
 
-            <div className="grid-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 32 }}>
-              {landing.engineFacts.map((f) => (
-                <div key={f.label} style={{ padding: 20, background: "#FFFFFF", borderRadius: 8 }}>
-                  <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 28, lineHeight: 1, color: "var(--navy-900)", letterSpacing: "-0.015em" }}>
-                    <CountUp value={f.val} />
-                  </div>
-                  <div style={{ fontSize: 12, color: "var(--navy-700)", marginTop: 8 }}>{f.label}</div>
+          <div className="grid-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16, marginBottom: 32 }}>
+            {landing.engineFacts.map((f) => (
+              <div key={f.label} style={{ padding: 20, background: "#FFFFFF", borderRadius: 8 }}>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 28, lineHeight: 1, color: "var(--navy-900)", letterSpacing: "-0.015em" }}>
+                  <CountUp value={f.val} />
                 </div>
-              ))}
-            </div>
-            <Link href="/about" className="underline-link hover-fade" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14, color: "var(--navy-900)", fontWeight: 500 }}>
-              Read the story behind Capitabel →
-            </Link>
+                <div style={{ fontSize: 12, color: "var(--navy-700)", marginTop: 8 }}>{f.label}</div>
+              </div>
+            ))}
           </div>
-
-          <div style={{ background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 12, padding: 36, fontFamily: "var(--font-mono)", fontSize: 12, lineHeight: 1.8 }}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                paddingBottom: 16,
-                marginBottom: 16,
-                borderBottom: "1px solid rgba(245,240,228,0.15)",
-                color: "rgba(245,240,228,0.6)",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                fontSize: 10,
-              }}
-            >
-              <span>matching-engine.log</span>
-              <span style={{ color: "var(--orange-500)" }}>● LIVE</span>
-            </div>
-            <div style={{ color: "rgba(245,240,228,0.55)" }}>
-              [10:24:11] Ingesting file <span style={{ color: "var(--orange-500)" }}>#CP-2841</span>
-            </div>
-            <div style={{ color: "rgba(255,255,255,0.9)" }}>→ Profile: MSME · Chennai · ₹1.4 Cr · GST-linked</div>
-            <div style={{ color: "rgba(245,240,228,0.55)" }}>[10:24:13] Scoring core lenders...</div>
-            <div style={{ color: "rgba(255,255,255,0.9)" }}>
-              → <span style={{ color: "var(--orange-500)" }}>KVB</span> · 4.6 · direct · TAT 8d · rate 12.8%
-            </div>
-            <div style={{ color: "rgba(255,255,255,0.9)" }}>
-              → <span style={{ color: "var(--orange-500)" }}>ICICI</span> · 4.2 · direct · TAT 10d · rate 13.1%
-            </div>
-            <div style={{ color: "rgba(255,255,255,0.9)" }}>
-              → <span style={{ color: "var(--orange-500)" }}>Central Bank</span> · 3.9 · direct · TAT 12d
-            </div>
-            <div style={{ color: "rgba(245,240,228,0.55)" }}>[10:24:14] Ranking by borrower fit (Rule 1)</div>
-            <div style={{ color: "rgba(245,240,228,0.55)" }}>[10:24:14] Direct route preferred (Rule 2)</div>
-            <div style={{ color: "rgba(245,240,228,0.55)" }}>[10:24:15] No channel premium flagged</div>
-            <div style={{ color: "var(--orange-500)", marginTop: 12 }}>✓ Recommendation: KVB</div>
-            <div style={{ color: "rgba(255,255,255,0.9)" }}>→ Capitabel Loan Offer draft ready · 47:52 remaining</div>
-          </div>
+          <Link href="/about" className="underline-link hover-fade" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14, color: "var(--navy-900)", fontWeight: 500 }}>
+            Read the story behind Capitabel →
+          </Link>
         </Reveal>
       </section>
 
