@@ -365,51 +365,57 @@ summary:focus-visible {
 }
 
 /* ---------------------------------------------------------------------- */
-/* Responsive grids — desktop values live inline (matching the design     */
-/* reference pixel-for-pixel); breakpoints collapse them below 900px.     */
+/* Responsive tiers — desktop values live inline (matching the design     */
+/* reference pixel-for-pixel) and are the default above 1024px. Three     */
+/* breakpoints layer on top: phone (≤640px), tablet (641–1023px), and     */
+/* large desktop (≥1440px). Class list is every grid actually in use —    */
+/* check with a grep before adding a page that introduces a new one.      */
 /* ---------------------------------------------------------------------- */
-@media (max-width: 900px) {
-  .grid-collapse,
-  .hero-grid,
+
+/* Asymmetric sidebar/split layouts and table-like rows: don't split
+   cleanly into 2 columns at medium widths, so these stack instead. */
+@media (max-width: 1023px) {
   .split-grid,
-  .products-grid,
-  .steps-grid,
-  .segments-grid,
-  .engine-grid,
-  .testimonials-grid,
-  .clusters-grid,
-  .journal-grid,
   .faq-grid,
-  .cta-grid,
-  .footer-grid,
-  .stats-grid,
-  .pillars-grid,
-  .team-grid,
-  .opsrow-grid,
-  .timeline-grid,
-  .beliefs-grid,
-  .summary-grid,
+  .contact-grid,
   .product-detail-grid,
+  .cta-grid,
   .process-row,
   .process-head,
-  .contact-grid,
-  .field-grid-2,
-  .next-grid {
+  .opsrow-grid {
     grid-template-columns: 1fr !important;
   }
 
   .faq-sticky,
-  .timeline-sticky,
   .loans-sticky {
     position: static !important;
   }
+}
+
+/* Phone: full single-column collapse for everything, tightest type. */
+@media (max-width: 640px) {
+  .grid-collapse,
+  .products-grid,
+  .steps-grid,
+  .segments-grid,
+  .testimonials-grid,
+  .journal-grid,
+  .stats-grid,
+  .team-grid,
+  .beliefs-grid,
+  .summary-grid,
+  .field-grid-2,
+  .next-grid,
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
 
   h1 {
-    font-size: clamp(44px, 12vw, 72px) !important;
+    font-size: clamp(40px, 12vw, 72px) !important;
   }
 
   h2 {
-    font-size: clamp(34px, 8vw, 48px) !important;
+    font-size: clamp(30px, 8vw, 48px) !important;
   }
 
   .footer-wordmark {
@@ -417,13 +423,56 @@ summary:focus-visible {
   }
 }
 
-@media (min-width: 901px) and (max-width: 1180px) {
+/* Tablet: 2-column card grids, moderate type clamp so the biggest
+   desktop headline sizes (up to 112px) don't overflow a narrower
+   column. Asymmetric/table layouts already stacked above. */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .grid-collapse,
+  .products-grid,
+  .steps-grid,
+  .segments-grid,
+  .journal-grid,
   .stats-grid,
-  .summary-grid {
+  .team-grid,
+  .beliefs-grid,
+  .summary-grid,
+  .field-grid-2,
+  .next-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  .clusters-grid {
+  .testimonials-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .footer-grid {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  h1 {
+    font-size: clamp(48px, 7vw, 96px) !important;
+  }
+
+  h2 {
+    font-size: clamp(36px, 5.5vw, 64px) !important;
+  }
+}
+
+/* Large desktop: give big screens more room instead of just wider
+   margins — every section using .container widens with it. */
+@media (min-width: 1440px) {
+  :root {
+    --max-width: 1600px;
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --max-width: 1760px;
   }
 }
