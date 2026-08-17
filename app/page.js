@@ -12,7 +12,7 @@ export default function LandingPage() {
     <div>
       {/* HERO */}
       <section className="container" style={{ paddingTop: 72, paddingBottom: 48 }}>
-        <div>
+        <div className="hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
           <div>
             <h1
               style={{
@@ -63,6 +63,23 @@ export default function LandingPage() {
                 Book a consultation call <span aria-hidden>→</span>
               </MagneticButton>
             </div>
+          </div>
+
+          <div className="hero-tagline" style={{ textAlign: "right" }}>
+            <p
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: 36,
+                lineHeight: 1.25,
+                letterSpacing: "-0.01em",
+                color: "var(--navy-900)",
+                margin: 0,
+              }}
+            >
+              Growth capital <span style={{ color: "var(--orange-500)" }}>advisory and fulfilment.</span>
+            </p>
           </div>
         </div>
       </section>

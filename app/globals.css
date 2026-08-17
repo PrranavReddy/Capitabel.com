@@ -375,6 +375,7 @@ summary:focus-visible {
 /* Asymmetric sidebar/split layouts and table-like rows: don't split
    cleanly into 2 columns at medium widths, so these stack instead. */
 @media (max-width: 1023px) {
+  .hero-grid,
   .split-grid,
   .faq-grid,
   .contact-grid,
@@ -389,6 +390,11 @@ summary:focus-visible {
   .faq-sticky,
   .loans-sticky {
     position: static !important;
+  }
+
+  .hero-tagline {
+    text-align: left !important;
+    margin-top: 24px;
   }
 }
 
