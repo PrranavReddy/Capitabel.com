@@ -14,27 +14,6 @@ export default function LandingPage() {
       <section className="container" style={{ paddingTop: 72, paddingBottom: 48 }}>
         <div>
           <div>
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 10,
-                padding: "6px 14px",
-                background: "var(--white)",
-                border: "1px solid var(--navy-a20)",
-                borderRadius: 999,
-                fontFamily: "var(--font-mono)",
-                fontSize: 11,
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                color: "var(--navy-700)",
-                marginBottom: 44,
-              }}
-            >
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--orange-500)" }} />
-              Borrowing made Simple
-            </div>
-
             <h1
               style={{
                 fontFamily: "var(--font-display)",
@@ -64,10 +43,7 @@ export default function LandingPage() {
                 with Capitabel.
               </span>
             </h1>
-            <p style={{ fontSize: 20, lineHeight: 1.45, color: "var(--navy-700)", maxWidth: 560, margin: "0 0 40px", textWrap: "pretty" }}>
-              One advisor. The right lender. 48 hours.
-            </p>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 40 }}>
               <MagneticButton
                 as={Link}
                 href="/contact"
@@ -86,28 +62,6 @@ export default function LandingPage() {
               >
                 Book a consultation call <span aria-hidden>→</span>
               </MagneticButton>
-              <a
-                href="#loans"
-                className="btn btn-ghost hover-fade"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 10,
-                  padding: "16px 26px",
-                  background: "var(--white)",
-                  border: "1px solid var(--navy-a25)",
-                  color: "var(--navy-900)",
-                  borderRadius: 6,
-                  fontSize: 15,
-                  fontWeight: 500,
-                }}
-              >
-                Explore loan products
-              </a>
-              <div style={{ background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 6, padding: "12px 20px", display: "flex", alignItems: "baseline", gap: 8 }}>
-                <span style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 20, letterSpacing: "-0.02em" }}>48 hrs</span>
-                <span style={{ fontSize: 12, color: "rgba(245,240,228,0.7)" }}>to a Capitabel Loan Offer</span>
-              </div>
             </div>
           </div>
         </div>
