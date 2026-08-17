@@ -71,16 +71,14 @@ export default function LandingPage() {
                 fontFamily: "var(--font-serif)",
                 fontStyle: "italic",
                 fontWeight: 400,
-                fontSize: 48,
-                lineHeight: 1.05,
-                letterSpacing: "-0.01em",
+                fontSize: 72,
+                lineHeight: 1,
+                letterSpacing: "-0.015em",
                 color: "var(--navy-900)",
                 margin: 0,
               }}
             >
-              Growth capital
-              <br />
-              <span style={{ color: "var(--orange-500)" }}>advisory and fulfilment.</span>
+              Growth capital <span style={{ color: "var(--orange-500)" }}>advisory and fulfilment.</span>
             </p>
           </div>
         </div>
