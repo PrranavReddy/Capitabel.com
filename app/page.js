@@ -159,10 +159,7 @@ export default function LandingPage() {
                 position: "relative",
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20 }}>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-700)" }}>
-                  {p.code}
-                </div>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", marginBottom: 20 }}>
                 <div
                   style={{
                     padding: "4px 10px",
