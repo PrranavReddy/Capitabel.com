@@ -135,10 +135,6 @@ export default function LandingPage() {
               <Serif>One relationship.</Serif>
             </h2>
           </div>
-          <p style={leadStyle}>
-            Home Loans, Loan Against Property, and MSME finance — from a single advisor with visibility across our full lender panel. Higher
-            lifetime value for the borrower, better outcomes for the file.
-          </p>
         </Reveal>
 
         <Reveal as="div" className="products-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
@@ -178,7 +174,9 @@ export default function LandingPage() {
               <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 32, lineHeight: 1.1, letterSpacing: "-0.02em", margin: "0 0 12px", color: "var(--navy-900)" }}>
                 {p.name}
               </h3>
-              <p style={{ fontSize: 15, lineHeight: 1.5, color: "var(--navy-700)", margin: "0 0 24px", maxWidth: 340 }}>{p.desc}</p>
+              {p.desc && (
+                <p style={{ fontSize: 15, lineHeight: 1.5, color: "var(--navy-700)", margin: "0 0 24px", maxWidth: 340 }}>{p.desc}</p>
+              )}
               <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: "auto" }}>
                 {p.bullets.map((b) => (
                   <div key={b} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13, color: "var(--navy-900)" }}>
