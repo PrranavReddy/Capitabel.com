@@ -235,16 +235,16 @@ export default function LandingPage() {
             </h2>
           </Reveal>
 
-          <div className="steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
+          <div className="steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20 }}>
             {landing.steps.map((s) => (
-              <div key={s.n} style={{ background: "var(--cream-100)", borderRadius: 10, padding: 20 }}>
-                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 20, lineHeight: 1, color: "var(--orange-500)", letterSpacing: "-0.02em", marginBottom: 10 }}>
+              <div key={s.n} style={{ background: "var(--cream-100)", borderRadius: 12, padding: 28 }}>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 28, lineHeight: 1, color: "var(--orange-500)", letterSpacing: "-0.02em", marginBottom: 14 }}>
                   {s.n}
                 </div>
-                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 15, lineHeight: 1.2, letterSpacing: "-0.01em", margin: "0 0 4px", color: "var(--navy-900)" }}>
+                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 18, lineHeight: 1.2, letterSpacing: "-0.01em", margin: "0 0 6px", color: "var(--navy-900)" }}>
                   {s.title}
                 </h3>
-                <p style={{ fontSize: 12, lineHeight: 1.45, color: "var(--navy-700)", margin: 0 }}>{s.body}</p>
+                <p style={{ fontSize: 14, lineHeight: 1.5, color: "var(--navy-700)", margin: 0 }}>{s.body}</p>
               </div>
             ))}
           </div>
