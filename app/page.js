@@ -225,8 +225,8 @@ export default function LandingPage() {
 
       {/* THE PROMISE / 48H */}
       <section style={{ background: "var(--navy-900)", color: "#FFFFFF" }}>
-        <div className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-          <Reveal as="div" style={{ marginBottom: 80 }}>
+        <div className="container" style={{ paddingTop: 72, paddingBottom: 72 }}>
+          <Reveal as="div" style={{ marginBottom: 40 }}>
             <Eyebrow dark>02 · How we work</Eyebrow>
             <h2 style={{ ...h2Style, fontSize: 72, lineHeight: 0.98, color: "#FFFFFF" }}>
               The Capitabel
@@ -235,16 +235,16 @@ export default function LandingPage() {
             </h2>
           </Reveal>
 
-          <div className="steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 24 }}>
+          <div className="steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
             {landing.steps.map((s) => (
-              <div key={s.n} style={{ borderTop: "1px solid rgba(245,240,228,0.2)", paddingTop: 32 }}>
-                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 56, lineHeight: 1, color: "var(--orange-500)", letterSpacing: "-0.02em", marginBottom: 56 }}>
+              <div key={s.n} style={{ background: "var(--cream-100)", borderRadius: 10, padding: 20 }}>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 20, lineHeight: 1, color: "var(--orange-500)", letterSpacing: "-0.02em", marginBottom: 10 }}>
                   {s.n}
                 </div>
-                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 26, lineHeight: 1.15, letterSpacing: "-0.01em", margin: "0 0 14px" }}>
+                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 15, lineHeight: 1.2, letterSpacing: "-0.01em", margin: "0 0 4px", color: "var(--navy-900)" }}>
                   {s.title}
                 </h3>
-                <p style={{ fontSize: 15, lineHeight: 1.55, color: "rgba(245,240,228,0.7)", margin: 0 }}>{s.body}</p>
+                <p style={{ fontSize: 12, lineHeight: 1.45, color: "var(--navy-700)", margin: 0 }}>{s.body}</p>
               </div>
             ))}
           </div>
@@ -253,7 +253,7 @@ export default function LandingPage() {
             as="div"
             className="grid-collapse"
             style={{
-              marginTop: 80,
+              marginTop: 40,
               padding: "40px 48px",
               background: "rgba(245,130,32,0.12)",
               border: "1px solid rgba(245,130,32,0.35)",
