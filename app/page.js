@@ -129,8 +129,8 @@ export default function LandingPage() {
         <div className="container" style={{ paddingTop: 72, paddingBottom: 72 }}>
           <Reveal as="div" style={{ marginBottom: 40 }}>
             <Eyebrow dark>01 · How we work</Eyebrow>
-            <h2 style={{ ...h2Style, fontSize: 56, lineHeight: 1.05, color: "#FFFFFF" }}>
-              The Capitabel <Serif>Experience.</Serif>
+            <h2 style={{ ...h2Style, color: "#FFFFFF" }}>
+              The Capitabel <Serif style={{ letterSpacing: "0em" }}>Experience.</Serif>
             </h2>
           </Reveal>
 
@@ -433,9 +433,9 @@ function Eyebrow({ children, dark = false }) {
   );
 }
 
-function Serif({ children }) {
+function Serif({ children, style = {} }) {
   return (
-    <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 400, color: "var(--orange-500)" }}>{children}</span>
+    <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 400, color: "var(--orange-500)", ...style }}>{children}</span>
   );
 }
 
