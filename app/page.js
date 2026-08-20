@@ -226,33 +226,20 @@ export default function LandingPage() {
       {/* THE PROMISE / 48H */}
       <section style={{ background: "var(--navy-900)", color: "#FFFFFF" }}>
         <div className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-          <Reveal as="div" className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, marginBottom: 80, alignItems: "end" }}>
-            <div>
-              <Eyebrow dark>02 · The Capitabel promise</Eyebrow>
-              <h2 style={{ ...h2Style, fontSize: 72, lineHeight: 0.98, color: "#FFFFFF" }}>
-                A Loan Offer in
-                <br />
-                <span style={{ color: "var(--orange-500)" }}>48 hours,</span> not
-                <br />
-                a wait for a lender.
-              </h2>
-            </div>
-            <p style={{ ...leadStyle, color: "rgba(245,240,228,0.75)", maxWidth: 480 }}>
-              National fintechs make you wait on a lender&rsquo;s decision. Traditional DSAs make you chase paperwork through a black box. We
-              issue our own in-principle offer — indicative rate, fees, tenure, KFS terms — within 48 hours of a complete file.
-            </p>
+          <Reveal as="div" style={{ marginBottom: 80 }}>
+            <Eyebrow dark>02 · How we work</Eyebrow>
+            <h2 style={{ ...h2Style, fontSize: 72, lineHeight: 0.98, color: "#FFFFFF" }}>
+              The Capitabel
+              <br />
+              <span style={{ color: "var(--orange-500)" }}>Experience.</span>
+            </h2>
           </Reveal>
 
-          <div className="steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
+          <div className="steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 24 }}>
             {landing.steps.map((s) => (
               <div key={s.n} style={{ borderTop: "1px solid rgba(245,240,228,0.2)", paddingTop: 32 }}>
-                <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 56 }}>
-                  <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 56, lineHeight: 1, color: "var(--orange-500)", letterSpacing: "-0.02em" }}>
-                    {s.n}
-                  </div>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(245,240,228,0.5)" }}>
-                    {s.dur}
-                  </div>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 56, lineHeight: 1, color: "var(--orange-500)", letterSpacing: "-0.02em", marginBottom: 56 }}>
+                  {s.n}
                 </div>
                 <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 26, lineHeight: 1.15, letterSpacing: "-0.01em", margin: "0 0 14px" }}>
                   {s.title}
