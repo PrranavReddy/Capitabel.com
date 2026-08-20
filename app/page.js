@@ -124,11 +124,67 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* THE PROMISE / 48H */}
+      <section style={{ background: "var(--navy-900)", color: "#FFFFFF" }}>
+        <div className="container" style={{ paddingTop: 72, paddingBottom: 72 }}>
+          <Reveal as="div" style={{ marginBottom: 40 }}>
+            <Eyebrow dark>01 · How we work</Eyebrow>
+            <h2 style={{ ...h2Style, fontSize: 72, lineHeight: 0.98, color: "#FFFFFF" }}>
+              The Capitabel
+              <br />
+              <span style={{ color: "var(--orange-500)" }}>Experience.</span>
+            </h2>
+          </Reveal>
+
+          <div className="steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 24 }}>
+            {landing.steps.map((s) => (
+              <div key={s.n} style={{ background: "var(--cream-100)", borderRadius: 12, padding: 40 }}>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 44, lineHeight: 1, color: "var(--orange-500)", letterSpacing: "-0.02em", marginBottom: 20 }}>
+                  {s.n}
+                </div>
+                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 24, lineHeight: 1.2, letterSpacing: "-0.01em", margin: "0 0 10px", color: "var(--navy-900)" }}>
+                  {s.title}
+                </h3>
+                <p style={{ fontSize: 16, lineHeight: 1.5, color: "var(--navy-700)", margin: 0 }}>{s.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <Reveal
+            as="div"
+            className="grid-collapse"
+            style={{
+              marginTop: 40,
+              padding: "40px 48px",
+              background: "rgba(245,130,32,0.12)",
+              border: "1px solid rgba(245,130,32,0.35)",
+              borderRadius: 12,
+              display: "grid",
+              gridTemplateColumns: "1fr auto",
+              gap: 32,
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--orange-500)", marginBottom: 12 }}>
+                Offer Honour Rate
+              </div>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 32, lineHeight: 1.2, letterSpacing: "-0.015em" }}>
+                85% of Capitabel Loan Offers convert to lender sanctions on materially equivalent terms.
+              </div>
+            </div>
+            <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 96, color: "var(--orange-500)", letterSpacing: "-0.03em" }}>
+              <CountUp value="85%" />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* LOAN PRODUCTS */}
       <section id="loans" className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
         <Reveal as="div" className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.15fr", gap: 80, alignItems: "end", marginBottom: 56 }}>
           <div>
-            <Eyebrow>01 · What we finance</Eyebrow>
+            <Eyebrow>02 · What we finance</Eyebrow>
             <h2 style={h2Style}>
               Three products.
               <br />
@@ -221,62 +277,6 @@ export default function LandingPage() {
             </TiltCard>
           ))}
         </Reveal>
-      </section>
-
-      {/* THE PROMISE / 48H */}
-      <section style={{ background: "var(--navy-900)", color: "#FFFFFF" }}>
-        <div className="container" style={{ paddingTop: 72, paddingBottom: 72 }}>
-          <Reveal as="div" style={{ marginBottom: 40 }}>
-            <Eyebrow dark>02 · How we work</Eyebrow>
-            <h2 style={{ ...h2Style, fontSize: 72, lineHeight: 0.98, color: "#FFFFFF" }}>
-              The Capitabel
-              <br />
-              <span style={{ color: "var(--orange-500)" }}>Experience.</span>
-            </h2>
-          </Reveal>
-
-          <div className="steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20 }}>
-            {landing.steps.map((s) => (
-              <div key={s.n} style={{ background: "var(--cream-100)", borderRadius: 12, padding: 28 }}>
-                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 28, lineHeight: 1, color: "var(--orange-500)", letterSpacing: "-0.02em", marginBottom: 14 }}>
-                  {s.n}
-                </div>
-                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 18, lineHeight: 1.2, letterSpacing: "-0.01em", margin: "0 0 6px", color: "var(--navy-900)" }}>
-                  {s.title}
-                </h3>
-                <p style={{ fontSize: 14, lineHeight: 1.5, color: "var(--navy-700)", margin: 0 }}>{s.body}</p>
-              </div>
-            ))}
-          </div>
-
-          <Reveal
-            as="div"
-            className="grid-collapse"
-            style={{
-              marginTop: 40,
-              padding: "40px 48px",
-              background: "rgba(245,130,32,0.12)",
-              border: "1px solid rgba(245,130,32,0.35)",
-              borderRadius: 12,
-              display: "grid",
-              gridTemplateColumns: "1fr auto",
-              gap: 32,
-              alignItems: "center",
-            }}
-          >
-            <div>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--orange-500)", marginBottom: 12 }}>
-                Offer Honour Rate
-              </div>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 32, lineHeight: 1.2, letterSpacing: "-0.015em" }}>
-                85% of Capitabel Loan Offers convert to lender sanctions on materially equivalent terms.
-              </div>
-            </div>
-            <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 96, color: "var(--orange-500)", letterSpacing: "-0.03em" }}>
-              <CountUp value="85%" />
-            </div>
-          </Reveal>
-        </div>
       </section>
 
       {/* MATCHING ENGINE */}
