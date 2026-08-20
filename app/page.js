@@ -199,8 +199,8 @@ export default function LandingPage() {
               href="/loans"
               className="card-hover"
               style={{
-                background: "var(--cream-100)",
-                border: "1px solid var(--navy-a08)",
+                background: "var(--navy-900)",
+                border: "1px solid transparent",
                 borderRadius: 12,
                 padding: "36px 32px 32px",
                 display: "flex",
@@ -225,15 +225,15 @@ export default function LandingPage() {
                   {p.tag}
                 </div>
               </div>
-              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 32, lineHeight: 1.1, letterSpacing: "-0.02em", margin: "0 0 12px", color: "var(--navy-900)" }}>
+              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 32, lineHeight: 1.1, letterSpacing: "-0.02em", margin: "0 0 12px", color: "#FFFFFF" }}>
                 {p.name}
               </h3>
               {p.desc && (
-                <p style={{ fontSize: 15, lineHeight: 1.5, color: "var(--navy-700)", margin: "0 0 24px", maxWidth: 340 }}>{p.desc}</p>
+                <p style={{ fontSize: 15, lineHeight: 1.5, color: "rgba(245,240,228,0.75)", margin: "0 0 24px", maxWidth: 340 }}>{p.desc}</p>
               )}
               <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: "auto" }}>
                 {p.bullets.map((b) => (
-                  <div key={b} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13, color: "var(--navy-900)" }}>
+                  <div key={b} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13, color: "#FFFFFF" }}>
                     <span style={{ color: "var(--orange-500)", fontWeight: 600, marginTop: 1 }}>◆</span>
                     <span>{b}</span>
                   </div>
@@ -246,14 +246,14 @@ export default function LandingPage() {
                   justifyContent: "space-between",
                   marginTop: 32,
                   paddingTop: 20,
-                  borderTop: "1px solid var(--navy-a12)",
+                  borderTop: "1px solid rgba(245,240,228,0.15)",
                 }}
               >
                 <div>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--navy-700)", marginBottom: 4 }}>
-                    Ticket range
+                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(245,240,228,0.6)", marginBottom: 4 }}>
+                    Ticket size
                   </div>
-                  <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 22, color: "var(--navy-900)" }}>{p.ticket}</div>
+                  <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 22, color: "#FFFFFF" }}>{p.ticket}</div>
                 </div>
                 <span
                   style={{
@@ -263,7 +263,7 @@ export default function LandingPage() {
                     width: 40,
                     height: 40,
                     borderRadius: "50%",
-                    background: "var(--navy-900)",
+                    background: "var(--orange-500)",
                     color: "#FFFFFF",
                     fontSize: 16,
                   }}
