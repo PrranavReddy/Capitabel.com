@@ -129,10 +129,8 @@ export default function LandingPage() {
         <div className="container" style={{ paddingTop: 72, paddingBottom: 72 }}>
           <Reveal as="div" style={{ marginBottom: 40 }}>
             <Eyebrow dark>01 · How we work</Eyebrow>
-            <h2 style={{ ...h2Style, fontSize: 72, lineHeight: 0.98, color: "#FFFFFF" }}>
-              The Capitabel
-              <br />
-              <span style={{ color: "var(--orange-500)" }}>Experience.</span>
+            <h2 style={{ ...h2Style, fontSize: 56, lineHeight: 1.05, color: "#FFFFFF" }}>
+              The Capitabel <Serif>Experience.</Serif>
             </h2>
           </Reveal>
 
