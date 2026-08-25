@@ -339,8 +339,8 @@ export default function LandingPage() {
             </Link>
           </div>
           <Reveal as="div">
-            {landing.faqs.map((f) => (
-              <FAQItem key={f.q} q={f.q} a={f.a} />
+            {landing.faqs.map((f, i) => (
+              <FAQItem key={f.q} n={String(i + 1).padStart(2, "0")} q={f.q} a={f.a} />
             ))}
             <div style={{ borderTop: "1px solid var(--navy-a15)" }} />
           </Reveal>

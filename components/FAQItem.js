@@ -9,7 +9,7 @@ import { useState } from "react";
  * 0fr -> 1fr trick (see .faq-panel in globals.css) so it eases to whatever
  * the content's natural height is, no JS measurement needed.
  */
-export default function FAQItem({ q, a }) {
+export default function FAQItem({ n, q, a }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -34,7 +34,14 @@ export default function FAQItem({ q, a }) {
           cursor: "pointer",
         }}
       >
-        <span style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 22, letterSpacing: "-0.01em", color: "var(--navy-900)" }}>{q}</span>
+        <span style={{ display: "flex", alignItems: "baseline", gap: 16 }}>
+          {n && (
+            <span style={{ fontFamily: "var(--font-mono)", fontWeight: 600, fontSize: 14, letterSpacing: "0.05em", color: "var(--orange-500)", flexShrink: 0 }}>
+              {n}
+            </span>
+          )}
+          <span style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 22, letterSpacing: "-0.01em", color: "var(--navy-900)" }}>{q}</span>
+        </span>
         <span className="plus" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: 28, color: "var(--orange-500)", flexShrink: 0 }}>
           +
         </span>
