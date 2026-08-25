@@ -78,7 +78,9 @@ export default function LandingPage() {
                 margin: 0,
               }}
             >
-              Growth capital <span style={{ color: "var(--orange-500)" }}>advisory and fulfilment.</span>
+              Growth capital
+              <br />
+              <span style={{ color: "var(--orange-500)" }}>advisory and fulfilment.</span>
             </p>
           </div>
         </div>
@@ -168,11 +170,11 @@ export default function LandingPage() {
                 Offer Honour Rate
               </div>
               <div style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 32, lineHeight: 1.2, letterSpacing: "-0.015em" }}>
-                85% of Capitabel Loan Offers convert to lender sanctions on materially equivalent terms.
+                91% of Capitabel Loan Offers convert to lender sanctions on materially similar terms.
               </div>
             </div>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 96, color: "var(--orange-500)", letterSpacing: "-0.03em" }}>
-              <CountUp value="85%" />
+              <CountUp value="91%" />
             </div>
           </Reveal>
         </div>
