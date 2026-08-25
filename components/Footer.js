@@ -39,12 +39,7 @@ export function LandingFooter() {
               BORROW <span style={{ color: "var(--orange-500)" }}>BETTER</span>
             </div>
             <div style={{ fontSize: 13, color: "var(--navy-700)", lineHeight: 1.6, maxWidth: 340 }}>
-              {site.address.map((line) => (
-                <span key={line}>
-                  {line}
-                  <br />
-                </span>
-              ))}
+              Headquartered in Chennai.
             </div>
           </div>
 
@@ -126,7 +121,7 @@ export function LandingFooter() {
         >
           <div>© 2026 Capitabel Solutions Pvt Ltd. All rights reserved.</div>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em" }}>
-            CHENNAI · EST. 2023 · MANOR GROUP
+            CHENNAI · EST. 2024
           </div>
           <div style={{ display: "flex", gap: 20 }}>
             <a className="hover-fade" href="#">Privacy</a>

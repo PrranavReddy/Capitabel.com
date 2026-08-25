@@ -75,26 +75,9 @@ export default function ContactPage() {
               <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-700)", marginBottom: 16 }}>
                 Head office
               </div>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 22, lineHeight: 1.2, letterSpacing: "-0.01em", color: "var(--navy-900)", marginBottom: 12 }}>
-                Besantnagar, Chennai
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 22, lineHeight: 1.2, letterSpacing: "-0.01em", color: "var(--navy-900)" }}>
+                Headquartered in Chennai
               </div>
-              <div style={{ fontSize: 14, color: "var(--navy-700)", lineHeight: 1.6 }}>
-                {site.address.map((line) => (
-                  <span key={line}>
-                    {line}
-                    <br />
-                  </span>
-                ))}
-              </div>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Tiger+Varadachar+Road+Besantnagar+Chennai"
-                target="_blank"
-                rel="noreferrer"
-                className="underline-link hover-fade"
-                style={{ display: "inline-flex", alignItems: "center", gap: 6, marginTop: 16, fontSize: 13, color: "var(--navy-900)", fontWeight: 500 }}
-              >
-                Open in Google Maps →
-              </a>
             </div>
 
             <div style={{ background: "var(--cream-300)", borderRadius: 12, padding: "32px 28px" }}>
