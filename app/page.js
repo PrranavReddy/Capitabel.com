@@ -302,11 +302,11 @@ export default function LandingPage() {
 
           <div className="grid-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16, marginBottom: 32 }}>
             {landing.engineFacts.map((f) => (
-              <div key={f.label} style={{ padding: 20, background: "#FFFFFF", borderRadius: 8 }}>
-                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 28, lineHeight: 1, color: "var(--navy-900)", letterSpacing: "-0.015em" }}>
+              <div key={f.label} style={{ padding: 24, background: "#FFFFFF", borderRadius: 8 }}>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 34, lineHeight: 1, color: "var(--navy-900)", letterSpacing: "-0.015em" }}>
                   <CountUp value={f.val} />
                 </div>
-                <div style={{ fontSize: 12, color: "var(--navy-700)", marginTop: 8 }}>{f.label}</div>
+                <div style={{ fontSize: 14, color: "var(--navy-700)", marginTop: 10 }}>{f.label}</div>
               </div>
             ))}
           </div>
