@@ -133,7 +133,7 @@ export default function JournalPage() {
 
 function Eyebrow({ children }) {
   return (
-    <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-700)", marginBottom: 20 }}>
+    <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-900)", marginBottom: 20 }}>
       {children}
     </div>
   );

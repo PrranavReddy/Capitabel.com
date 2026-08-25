@@ -311,10 +311,11 @@ function Eyebrow({ children, dark = false }) {
     <div
       style={{
         fontFamily: "var(--font-mono)",
-        fontSize: 11,
+        fontSize: 13,
+        fontWeight: 600,
         letterSpacing: "0.14em",
         textTransform: "uppercase",
-        color: dark ? "rgba(245,240,228,0.6)" : "var(--navy-700)",
+        color: dark ? "var(--orange-500)" : "var(--navy-900)",
         marginBottom: 20,
       }}
     >

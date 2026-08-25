@@ -368,7 +368,7 @@ export default function LandingPage() {
         >
           <div style={{ position: "absolute", top: -100, right: -80, width: 340, height: 340, background: "var(--orange-500)", opacity: 0.35, filter: "blur(10px)", borderRadius: "50%" }} />
           <div style={{ position: "relative" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(245,240,228,0.6)", marginBottom: 24 }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--orange-500)", marginBottom: 24 }}>
               A real person, on your side
             </div>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 80, lineHeight: 0.98, letterSpacing: "-0.03em", margin: "0 0 20px" }}>
@@ -423,10 +423,11 @@ function Eyebrow({ children, dark = false }) {
     <div
       style={{
         fontFamily: "var(--font-mono)",
-        fontSize: 11,
+        fontSize: 13,
+        fontWeight: 600,
         letterSpacing: "0.14em",
         textTransform: "uppercase",
-        color: dark ? "rgba(245,240,228,0.6)" : "var(--navy-700)",
+        color: dark ? "var(--orange-500)" : "var(--navy-900)",
         marginBottom: 20,
       }}
     >
