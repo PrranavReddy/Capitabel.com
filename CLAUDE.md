@@ -38,6 +38,11 @@ that should never get lost or accidentally reversed.
 - Product display order is **MSME → LAP → Home Loans**, consistently on
   both the Landing page and the Loans page — keep them in sync if either
   changes.
+- When a tile/card's fill color changes (e.g. cream → navy or back), every
+  text/border/chip/icon color inside it must be flipped for contrast too —
+  this has caused multiple "invisible on navy" bugs (a tag chip the same
+  color as its card, a navy icon circle on a navy card, a dark border on a
+  dark background). Check the whole tile, not just the background line.
 
 ## Code patterns to preserve
 
@@ -66,6 +71,18 @@ that should never get lost or accidentally reversed.
 - `MagneticButton` is scoped to **primary CTAs only** ("Book a consultation
   call" buttons, the contact form submit). Don't apply it to secondary/
   ghost buttons or nav links — it was deliberately left off those.
+- `Serif`/`Eyebrow`/`h2Style`/`leadStyle` are **not** shared components —
+  each page (`app/page.js`, `app/about/page.js`, `app/loans/page.js`,
+  `app/contact/page.js`, `app/journal/page.js`) defines its own local copy
+  at the bottom of the file. They've already drifted once (only
+  `app/page.js`'s `Serif` accepts a `style` override prop). If you change
+  one page's copy, the other four don't automatically get it — either
+  update all five or promote it to a real `components/` export.
+- No image-editing tools are installed by default (`sips` only does
+  crop/resize/format, no background removal). If background removal is
+  ever needed again, `pip install pillow rembg onnxruntime` was done once
+  already (user-level `python3.9` site-packages) — check whether it's
+  still installed before reinstalling.
 
 ## Before committing
 
