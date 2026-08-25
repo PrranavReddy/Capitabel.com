@@ -328,7 +328,7 @@ export default function LandingPage() {
               <Serif>hear most often.</Serif>
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.5, color: "var(--navy-700)", margin: "0 0 20px", maxWidth: 340 }}>
-              A 10-minute call answers most things faster than an email chain.
+              A 10-minute call to answer all your queries.
             </p>
             <Link
               href="/contact"
