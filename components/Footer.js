@@ -16,7 +16,7 @@ export function LandingFooter() {
           }}
         >
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
               <Image
                 src="/images/capitabel-logo.png"
                 alt="Capitabel"
@@ -25,24 +25,19 @@ export function LandingFooter() {
                 style={{ display: "block", mixBlendMode: "multiply" }}
               />
             </div>
-            <p
+            <div
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 500,
-                fontSize: 28,
-                lineHeight: 1.1,
+                fontWeight: 600,
+                fontSize: 18,
+                lineHeight: 1,
                 letterSpacing: "-0.02em",
                 color: "var(--navy-900)",
                 margin: "0 0 32px",
-                maxWidth: 400,
               }}
             >
-              Building Bharat through
-              <br />
-              <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 400, color: "var(--orange-500)" }}>
-                credit access.
-              </span>
-            </p>
+              BORROW <span style={{ color: "var(--orange-500)" }}>BETTER</span>
+            </div>
             <div style={{ fontSize: 13, color: "var(--navy-700)", lineHeight: 1.6, maxWidth: 340 }}>
               {site.address.map((line) => (
                 <span key={line}>

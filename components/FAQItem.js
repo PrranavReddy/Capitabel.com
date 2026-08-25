@@ -9,6 +9,23 @@ import { useState } from "react";
  * 0fr -> 1fr trick (see .faq-panel in globals.css) so it eases to whatever
  * the content's natural height is, no JS measurement needed.
  */
+
+// A bullet is either a plain string, or { text, highlight } where `highlight`
+// is a substring of `text` to render in orange.
+function BulletText({ item }) {
+  if (typeof item === "string") return item;
+  const { text, highlight } = item;
+  const idx = highlight ? text.indexOf(highlight) : -1;
+  if (idx === -1) return text;
+  return (
+    <>
+      {text.slice(0, idx)}
+      <span style={{ color: "var(--orange-500)", fontWeight: 600 }}>{highlight}</span>
+      {text.slice(idx + highlight.length)}
+    </>
+  );
+}
+
 export default function FAQItem({ n, q, a }) {
   const [open, setOpen] = useState(false);
 
@@ -51,9 +68,11 @@ export default function FAQItem({ n, q, a }) {
           {Array.isArray(a) ? (
             <div style={{ display: "flex", flexDirection: "column", gap: 10, margin: "14px 0 0", maxWidth: 680 }}>
               {a.map((line) => (
-                <div key={line} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 16, lineHeight: 1.55, color: "var(--navy-700)" }}>
+                <div key={typeof line === "string" ? line : line.text} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 16, lineHeight: 1.55, color: "var(--navy-700)" }}>
                   <span style={{ color: "var(--orange-500)", fontWeight: 600, marginTop: 2 }}>◆</span>
-                  <span>{line}</span>
+                  <span>
+                    <BulletText item={line} />
+                  </span>
                 </div>
               ))}
             </div>
