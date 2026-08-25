@@ -48,7 +48,18 @@ export default function FAQItem({ n, q, a }) {
       </button>
       <div className="faq-panel">
         <div style={{ overflow: "hidden" }}>
-          <p style={{ fontSize: 16, lineHeight: 1.55, color: "var(--navy-700)", margin: "14px 0 0", maxWidth: 680 }}>{a}</p>
+          {Array.isArray(a) ? (
+            <div style={{ display: "flex", flexDirection: "column", gap: 10, margin: "14px 0 0", maxWidth: 680 }}>
+              {a.map((line) => (
+                <div key={line} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 16, lineHeight: 1.55, color: "var(--navy-700)" }}>
+                  <span style={{ color: "var(--orange-500)", fontWeight: 600, marginTop: 2 }}>◆</span>
+                  <span>{line}</span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p style={{ fontSize: 16, lineHeight: 1.55, color: "var(--navy-700)", margin: "14px 0 0", maxWidth: 680 }}>{a}</p>
+          )}
         </div>
       </div>
     </div>
