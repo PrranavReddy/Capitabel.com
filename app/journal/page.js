@@ -93,7 +93,7 @@ export default function JournalPage() {
               <Serif>post didn&rsquo;t answer?</Serif>
             </h2>
             <p style={{ fontSize: 17, lineHeight: 1.5, color: "rgba(245,240,228,0.75)", margin: 0, maxWidth: 480 }}>
-              A 20-minute call with a lending specialist usually clears it up faster than an email chain.
+              A 10-minute call with a lending specialist usually clears it up faster than an email chain.
             </p>
           </div>
           <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 14 }}>

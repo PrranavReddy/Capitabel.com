@@ -301,7 +301,7 @@ export default function LoansPage() {
               <Serif>product fits?</Serif>
             </h2>
             <p style={{ fontSize: 18, lineHeight: 1.5, color: "rgba(245,240,228,0.75)", margin: 0, maxWidth: 520 }}>
-              A 20-minute call tells you which of our three products fits your file — and roughly what rate you can expect, based on this
+              A 10-minute call tells you which of our three products fits your file — and roughly what rate you can expect, based on this
               quarter&rsquo;s lender panel.
             </p>
           </div>

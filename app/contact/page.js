@@ -6,7 +6,7 @@ import { contact, site } from "@/lib/data";
 export const metadata = {
   title: "Contact",
   description:
-    "Book a free 20-minute consultation call. WhatsApp, phone, or email — response within two hours during business days, Mon–Sat 9–7 IST.",
+    "Book a free 10-minute consultation call. WhatsApp, phone, or email — response within two hours during business days, Mon–Sat 9–7 IST.",
 };
 
 export default function ContactPage() {
