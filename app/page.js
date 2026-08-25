@@ -297,8 +297,7 @@ export default function LandingPage() {
             <Serif>built on ground truth.</Serif>
           </h2>
           <p style={{ ...leadStyle, fontSize: 18, marginBottom: 32, maxWidth: 560 }}>
-            Twenty-five years of South India real estate operations from Manor Group. Eighteen years of banking technology from ING
-            Netherlands. Codified into a matching engine that routes borrowers by fit — not by what pays us best.
+            2 decades of Real Estate &amp; Banking expertise, codified into a matching engine — offering you the best credit fit for your needs.
           </p>
 
           <div className="grid-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16, marginBottom: 32 }}>
