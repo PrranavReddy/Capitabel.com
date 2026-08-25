@@ -16,7 +16,7 @@ export function LandingFooter() {
           }}
         >
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, marginBottom: 32 }}>
               <Image
                 src="/images/capitabel-logo.png"
                 alt="Capitabel"
@@ -24,19 +24,18 @@ export function LandingFooter() {
                 height={36}
                 style={{ display: "block", mixBlendMode: "multiply" }}
               />
-            </div>
-            <div
-              style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 600,
-                fontSize: 18,
-                lineHeight: 1,
-                letterSpacing: "-0.02em",
-                color: "var(--navy-900)",
-                margin: "0 0 32px",
-              }}
-            >
-              BORROW <span style={{ color: "var(--orange-500)" }}>BETTER</span>
+              <div
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 600,
+                  fontSize: 18,
+                  lineHeight: 1,
+                  letterSpacing: "-0.02em",
+                  color: "var(--navy-900)",
+                }}
+              >
+                BORROW <span style={{ color: "var(--orange-500)" }}>BETTER</span>
+              </div>
             </div>
             <div style={{ fontSize: 13, color: "var(--navy-700)", lineHeight: 1.6, maxWidth: 340 }}>
               Headquartered in Chennai.
