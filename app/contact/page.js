@@ -6,14 +6,14 @@ import { contact, site } from "@/lib/data";
 export const metadata = {
   title: "Contact",
   description:
-    "Book a free 10-minute consultation call. WhatsApp, phone, or email — response within two hours during business days, Mon–Sat 9–7 IST.",
+    "Book a free 10-minute consultation call. WhatsApp, phone, or email — response within two hours during business days, Mon–Sat 10–6 IST.",
 };
 
 export default function ContactPage() {
   return (
     <div>
       <section className="container" style={{ paddingTop: 64, paddingBottom: 40 }}>
-        <Eyebrow>Contact · Chennai · Mon–Sat · 9–7 IST</Eyebrow>
+        <Eyebrow>Contact · Chennai · Mon–Sat · 10–6 IST</Eyebrow>
         <h1
           style={{
             fontFamily: "var(--font-display)",
@@ -58,7 +58,7 @@ export default function ContactPage() {
                   style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 20px", background: "rgba(245,240,228,0.08)", border: "1px solid rgba(245,240,228,0.2)", color: "#FFFFFF", borderRadius: 8, fontSize: 14 }}
                 >
                   <span>Call directly</span>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "rgba(245,240,228,0.7)" }}>Mon–Sat · 9–7</span>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "rgba(245,240,228,0.7)" }}>Mon–Sat · 10–6</span>
                 </a>
                 <a
                   href={`mailto:${site.email}`}

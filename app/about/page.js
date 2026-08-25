@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
 import TiltCard from "@/components/TiltCard";
 import MagneticButton from "@/components/MagneticButton";
-import { about } from "@/lib/data";
+import { about, site } from "@/lib/data";
 
 export const metadata = {
   title: "About",
@@ -270,28 +270,46 @@ export default function AboutPage() {
               Every consultation call in Q1 goes to Harish, Chidu, or Devesh directly. No routing menus.
             </p>
           </div>
-          <MagneticButton
-            as={Link}
-            href="/contact"
-            className="btn hover-fade"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              padding: "24px 28px",
-              background: "rgba(22,38,77,0.92)",
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
-              border: "1px solid rgba(255,255,255,0.25)",
-              color: "#FFFFFF",
-              borderRadius: 8,
-              fontSize: 16,
-              fontWeight: 500,
-            }}
-          >
-            Book a consultation call
-            <span style={{ fontSize: 22 }} aria-hidden>→</span>
-          </MagneticButton>
+          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+            <MagneticButton
+              as={Link}
+              href="/contact"
+              className="btn hover-fade"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                padding: "22px 26px",
+                background: "rgba(22,38,77,0.92)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+                border: "1px solid rgba(255,255,255,0.25)",
+                color: "#FFFFFF",
+                borderRadius: 8,
+                fontSize: 16,
+                fontWeight: 500,
+              }}
+            >
+              Book a consultation call
+              <span style={{ fontSize: 22 }} aria-hidden>→</span>
+            </MagneticButton>
+            <a
+              href={site.whatsapp}
+              className="btn btn-white hover-fade"
+              style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "22px 26px", background: "#FFFFFF", color: "var(--navy-900)", borderRadius: 8, fontSize: 16, fontWeight: 500 }}
+            >
+              WhatsApp us
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: 13 }}>{site.phone}</span>
+            </a>
+            <a
+              href={site.phoneHref}
+              className="btn hover-fade"
+              style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "22px 26px", background: "transparent", border: "1px solid rgba(255,255,255,0.35)", color: "#FFFFFF", borderRadius: 8, fontSize: 16 }}
+            >
+              Call directly
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "rgba(255,255,255,0.8)" }}>Mon–Sat · 10–6</span>
+            </a>
+          </div>
         </Reveal>
       </section>
 

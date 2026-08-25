@@ -405,7 +405,7 @@ export default function LandingPage() {
               style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "22px 26px", background: "transparent", border: "1px solid rgba(245,240,228,0.25)", color: "#FFFFFF", borderRadius: 8, fontSize: 16 }}
             >
               Call directly
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "rgba(245,240,228,0.7)" }}>Mon–Sat · 9–7</span>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "rgba(245,240,228,0.7)" }}>Mon–Sat · 10–6</span>
             </a>
           </div>
         </Reveal>
