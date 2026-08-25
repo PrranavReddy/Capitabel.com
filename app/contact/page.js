@@ -30,7 +30,7 @@ export default function ContactPage() {
           <Serif>your file.</Serif>
         </h1>
         <p style={{ fontSize: 20, lineHeight: 1.45, color: "var(--navy-700)", maxWidth: 640, margin: 0, textWrap: "pretty" }}>
-          A twenty-minute call with a lending specialist. Free, unhurried, and no commitment. Response within two hours during business days.
+          A ten-minute call with a lending specialist. Free, unhurried, and no commitment. Response within two hours during business days.
         </p>
       </section>
 

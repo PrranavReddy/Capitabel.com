@@ -378,8 +378,7 @@ export default function LandingPage() {
               not a commitment.
             </h2>
             <p style={{ fontSize: 18, lineHeight: 1.5, color: "rgba(245,240,228,0.72)", margin: 0, maxWidth: 520 }}>
-              A free 10-minute consultation with a lending specialist who understands what you&rsquo;re building — and what a good rate looks
-              like this quarter.
+              A free 10-minute consultation with loan experts who understand what you&rsquo;re building.
             </p>
           </div>
           <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 14 }}>
