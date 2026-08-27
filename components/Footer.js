@@ -16,7 +16,7 @@ export function LandingFooter() {
           }}
         >
           <div>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, marginBottom: 32 }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, marginBottom: 32, width: "fit-content" }}>
               <Image
                 src="/images/capitabel-logo.png"
                 alt="Capitabel"
