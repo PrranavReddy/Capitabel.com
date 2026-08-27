@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { SimpleFooter } from "@/components/Footer";
 import Reveal from "@/components/Reveal";
-import CountUp from "@/components/CountUp";
 import TiltCard from "@/components/TiltCard";
 import MagneticButton from "@/components/MagneticButton";
 import { about, site } from "@/lib/data";
@@ -46,33 +45,6 @@ export default function AboutPage() {
             Capitabel Solutions was founded in 2023 by Chidambaram Kattuputur and Harish Bode - two operators with deeply complementary expertise:
             15+ years in South India real estate development, and 18+ years in banking technology built across Europe.
           </p>
-        </div>
-      </section>
-
-      {/* BY THE NUMBERS */}
-      <section style={{ background: "var(--navy-900)", color: "#FFFFFF" }}>
-        <div className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-          <Reveal as="div">
-            <Eyebrow dark>By the numbers · Since 2023</Eyebrow>
-            <h2 style={{ ...h2Style, fontSize: 72, lineHeight: 0.98, color: "#FFFFFF", marginBottom: 64 }}>
-              Two years in.
-              <br />
-              <Serif>Measured honestly.</Serif>
-            </h2>
-          </Reveal>
-          <Reveal as="div" className="stats-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
-            {about.stats.map((s) => (
-              <div key={s.tag} style={{ borderTop: "1px solid rgba(245,240,228,0.2)", paddingTop: 28 }}>
-                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 72, lineHeight: 1, letterSpacing: "-0.03em", color: "#FFFFFF" }}>
-                  <CountUp value={s.val} />
-                </div>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--orange-500)", marginTop: 16 }}>
-                  {s.tag}
-                </div>
-                <div style={{ fontSize: 14, color: "rgba(245,240,228,0.7)", marginTop: 8, maxWidth: 220 }}>{s.label}</div>
-              </div>
-            ))}
-          </Reveal>
         </div>
       </section>
 
