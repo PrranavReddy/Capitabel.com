@@ -38,10 +38,9 @@ export default function AboutPage() {
         </h1>
         <div className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, marginTop: 48 }}>
           <p style={{ fontSize: 22, lineHeight: 1.4, color: "var(--navy-700)", margin: 0, textWrap: "pretty" }}>
-            The founding insight: millions of creditworthy borrowers in peri-urban and Tier 2 South India are underserved - not because lenders
-            won&rsquo;t lend to them, but because the matching infrastructure between borrower and lender does not exist at the ground level.
-            Built on Manor Group&rsquo;s 25+ years of South India real estate operations, we&rsquo;re now codifying that ground-level knowledge
-            into technology.
+            The founding insight: millions of creditworthy borrowers in Urban, Peri-Urban and Tier 2 South India are underserved - not because
+            lenders won&rsquo;t lend to them, but because the matching infrastructure between borrower and lender does not exist. Built on Manor
+            Group&rsquo;s 20+ years of ground truths, we&rsquo;re now codifying that ground-level knowledge into technology.
           </p>
           <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--navy-700)", margin: 0, textWrap: "pretty" }}>
             Capitabel Solutions was founded in 2023 by Chidambaram Kattuputur and Harish Bode - two operators with deeply complementary expertise:
