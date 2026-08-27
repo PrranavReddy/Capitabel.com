@@ -50,19 +50,13 @@ export default function AboutPage() {
 
       {/* FOUNDING TEAM */}
       <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-        <Reveal as="div" className="split-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 80, alignItems: "end", marginBottom: 56 }}>
-          <div>
-            <Eyebrow>Founding team</Eyebrow>
-            <h2 style={h2Style}>
-              A team you
-              <br />
-              <Serif>actually talk to.</Serif>
-            </h2>
-          </div>
-          <p style={leadStyle}>
-            Real estate operations, European banking technology, and India&rsquo;s leading MSME NBFC — three career paths that met in a
-            Besantnagar office and stayed.
-          </p>
+        <Reveal as="div" style={{ marginBottom: 56 }}>
+          <Eyebrow>Founding team</Eyebrow>
+          <h2 style={h2Style}>
+            A team you
+            <br />
+            <Serif>actually talk to.</Serif>
+          </h2>
         </Reveal>
 
         <Reveal as="div" className="team-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
@@ -98,8 +92,7 @@ export default function AboutPage() {
                   {m.name}
                 </h3>
                 <p style={{ fontSize: 13, lineHeight: 1.55, color: "var(--navy-700)", margin: "0 0 16px" }}>{m.bio}</p>
-                <div style={{ marginTop: "auto", paddingTop: 16, borderTop: "1px solid var(--navy-a12)", display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--navy-700)" }}>
-                  <span>{m.langs}</span>
+                <div style={{ marginTop: "auto", paddingTop: 16, borderTop: "1px solid var(--navy-a12)", display: "flex", justifyContent: "flex-end", fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--navy-700)" }}>
                   <span>{m.base}</span>
                 </div>
               </div>
@@ -325,13 +318,4 @@ const h2Style = {
   letterSpacing: "-0.025em",
   margin: 0,
   color: "var(--navy-900)",
-};
-
-const leadStyle = {
-  fontSize: 19,
-  lineHeight: 1.5,
-  color: "var(--navy-700)",
-  maxWidth: 520,
-  margin: 0,
-  textWrap: "pretty",
 };
