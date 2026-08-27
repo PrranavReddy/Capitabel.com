@@ -18,7 +18,7 @@ export default function AboutPage() {
     <div>
       {/* STORY */}
       <section className="container" style={{ paddingTop: 72, paddingBottom: 40 }}>
-        <Eyebrow>About Capitabel · Founded 2023 · Chennai · Manor Group</Eyebrow>
+        <Eyebrow>About Capitabel</Eyebrow>
         <h1
           style={{
             fontFamily: "var(--font-display)",
@@ -30,7 +30,7 @@ export default function AboutPage() {
             maxWidth: 1200,
           }}
         >
-          15 years of
+          20+ years of
           <br />
           South Indian ground roots.
           <br />
