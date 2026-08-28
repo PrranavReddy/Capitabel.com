@@ -49,7 +49,7 @@ export default function AboutPage() {
       </section>
 
       {/* BELIEFS */}
-      <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
+      <section className="container" style={{ paddingTop: 120, paddingBottom: 72 }}>
         <Reveal as="div" style={{ marginBottom: 56 }}>
           <Eyebrow>What we believe</Eyebrow>
           <h2 style={{ ...h2Style, maxWidth: 1000 }}>
@@ -72,7 +72,7 @@ export default function AboutPage() {
       </section>
 
       {/* FOUNDING TEAM */}
-      <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
+      <section className="container" style={{ paddingTop: 72, paddingBottom: 120 }}>
         <Reveal as="div" style={{ marginBottom: 56 }}>
           <Eyebrow>Founding team</Eyebrow>
           <h2 style={h2Style}>
