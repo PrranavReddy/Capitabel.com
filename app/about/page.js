@@ -114,7 +114,10 @@ export default function AboutPage() {
                 className="opsrow-grid"
                 style={{ display: "grid", gridTemplateColumns: "1.4fr 1.5fr 1fr 2fr", gap: 24, padding: "20px 0", borderTop: "1px solid rgba(245,240,228,0.15)", alignItems: "baseline" }}
               >
-                <div style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 18, color: "#FFFFFF" }}>{p.name}</div>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 18, color: "#FFFFFF" }}>
+                  {p.name}
+                  <LinkedInIcon href={p.linkedin} size={15} color="rgba(245,240,228,0.75)" />
+                </div>
                 <div style={{ fontSize: 14, color: "rgba(245,240,228,0.75)" }}>{p.role}</div>
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", color: "var(--orange-500)" }}>{p.loc}</div>
                 <div style={{ fontSize: 13, color: "rgba(245,240,228,0.7)" }}>{p.focus}</div>
@@ -311,7 +314,7 @@ function Serif({ children }) {
   return <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 400, color: "var(--orange-500)" }}>{children}</span>;
 }
 
-function LinkedInIcon({ href }) {
+function LinkedInIcon({ href, size = 18, color = "var(--navy-700)" }) {
   if (!href) return null;
   return (
     <a
@@ -320,9 +323,9 @@ function LinkedInIcon({ href }) {
       rel="noreferrer"
       aria-label="LinkedIn profile"
       className="hover-fade"
-      style={{ display: "inline-flex", flexShrink: 0, color: "var(--navy-700)" }}
+      style={{ display: "inline-flex", flexShrink: 0, color }}
     >
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
         <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z" />
       </svg>
     </a>
