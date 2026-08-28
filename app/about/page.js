@@ -48,6 +48,29 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* BELIEFS */}
+      <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
+        <Reveal as="div" style={{ marginBottom: 56 }}>
+          <Eyebrow>What we believe</Eyebrow>
+          <h2 style={{ ...h2Style, maxWidth: 1000 }}>
+            Four ideas we <Serif>refuse to bend on.</Serif>
+          </h2>
+        </Reveal>
+        <Reveal as="div" className="beliefs-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 20 }}>
+          {about.beliefs.map((b) => (
+            <div key={b.n} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: "44px 40px", minHeight: 260, display: "flex", flexDirection: "column" }}>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 44, color: "var(--orange-500)", lineHeight: 1, letterSpacing: "-0.02em", marginBottom: "auto" }}>
+                {b.n}
+              </div>
+              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 28, lineHeight: 1.15, letterSpacing: "-0.02em", margin: "36px 0 12px", color: "var(--navy-900)" }}>
+                {b.title}
+              </h3>
+              <p style={{ fontSize: 15, lineHeight: 1.55, color: "var(--navy-700)", margin: 0, maxWidth: 480 }}>{b.body}</p>
+            </div>
+          ))}
+        </Reveal>
+      </section>
+
       {/* FOUNDING TEAM */}
       <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
         <Reveal as="div" style={{ marginBottom: 56 }}>
@@ -124,29 +147,6 @@ export default function AboutPage() {
             ))}
             <div style={{ borderTop: "1px solid rgba(245,240,228,0.15)" }} />
           </div>
-        </Reveal>
-      </section>
-
-      {/* BELIEFS */}
-      <section className="container" style={{ paddingTop: 120, paddingBottom: 120 }}>
-        <Reveal as="div" style={{ marginBottom: 56 }}>
-          <Eyebrow>What we believe</Eyebrow>
-          <h2 style={{ ...h2Style, maxWidth: 1000 }}>
-            Four ideas we <Serif>refuse to bend on.</Serif>
-          </h2>
-        </Reveal>
-        <Reveal as="div" className="beliefs-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 20 }}>
-          {about.beliefs.map((b) => (
-            <div key={b.n} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: "44px 40px", minHeight: 260, display: "flex", flexDirection: "column" }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 44, color: "var(--orange-500)", lineHeight: 1, letterSpacing: "-0.02em", marginBottom: "auto" }}>
-                {b.n}
-              </div>
-              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 28, lineHeight: 1.15, letterSpacing: "-0.02em", margin: "36px 0 12px", color: "var(--navy-900)" }}>
-                {b.title}
-              </h3>
-              <p style={{ fontSize: 15, lineHeight: 1.55, color: "var(--navy-700)", margin: 0, maxWidth: 480 }}>{b.body}</p>
-            </div>
-          ))}
         </Reveal>
       </section>
 
