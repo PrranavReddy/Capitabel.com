@@ -88,12 +88,12 @@ export default function AboutPage() {
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--orange-500)", marginBottom: 8 }}>
                   {m.role}
                 </div>
-                <h3 style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 24, lineHeight: 1.1, letterSpacing: "-0.015em", margin: "0 0 12px", color: "var(--navy-900)" }}>
+                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 24, lineHeight: 1.1, letterSpacing: "-0.015em", margin: "0 0 12px", color: "var(--navy-900)" }}>
                   {m.name}
-                  <LinkedInIcon href={m.linkedin} />
                 </h3>
                 <p style={{ fontSize: 13, lineHeight: 1.55, color: "var(--navy-700)", margin: "0 0 16px" }}>{m.bio}</p>
-                <div style={{ marginTop: "auto", paddingTop: 16, borderTop: "1px solid var(--navy-a12)", display: "flex", justifyContent: "flex-end", fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--navy-700)" }}>
+                <div style={{ marginTop: "auto", paddingTop: 16, borderTop: "1px solid var(--navy-a12)", display: "flex", alignItems: "center", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--navy-700)" }}>
+                  <LinkedInIcon href={m.linkedin} boxed />
                   <span>{m.base}</span>
                 </div>
               </div>
@@ -314,7 +314,7 @@ function Serif({ children }) {
   return <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 400, color: "var(--orange-500)" }}>{children}</span>;
 }
 
-function LinkedInIcon({ href, size = 18, color = "var(--navy-700)" }) {
+function LinkedInIcon({ href, size = 18, color = "var(--navy-700)", boxed = false }) {
   if (!href) return null;
   return (
     <a
@@ -323,7 +323,11 @@ function LinkedInIcon({ href, size = 18, color = "var(--navy-700)" }) {
       rel="noreferrer"
       aria-label="LinkedIn profile"
       className="hover-fade"
-      style={{ display: "inline-flex", flexShrink: 0, color }}
+      style={
+        boxed
+          ? { display: "inline-flex", alignItems: "center", justifyContent: "center", width: size + 12, height: size + 12, border: "1px solid var(--navy-a20)", color, flexShrink: 0 }
+          : { display: "inline-flex", flexShrink: 0, color }
+      }
     >
       <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
         <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z" />
