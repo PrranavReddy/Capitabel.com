@@ -105,14 +105,14 @@ export default function AboutPage() {
         <Reveal as="div" style={{ marginTop: 48, background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 12, padding: "44px 48px" }}>
           <Eyebrow dark>Current operating team</Eyebrow>
           <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 36, letterSpacing: "-0.02em", margin: "0 0 32px" }}>
-            On the ground, in seven roles.
+            On the ground, in nine roles.
           </h3>
           <div style={{ display: "flex", flexDirection: "column" }}>
             {about.opsTeam.map((p) => (
               <div
                 key={p.name}
                 className="opsrow-grid"
-                style={{ display: "grid", gridTemplateColumns: "1.4fr 1.5fr 1fr 2fr", gap: 24, padding: "20px 0", borderTop: "1px solid rgba(245,240,228,0.15)", alignItems: "baseline" }}
+                style={{ display: "grid", gridTemplateColumns: "1.4fr 1.8fr 1.2fr", gap: 24, padding: "20px 0", borderTop: "1px solid rgba(245,240,228,0.15)", alignItems: "baseline" }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 18, color: "#FFFFFF" }}>
                   {p.name}
@@ -120,7 +120,6 @@ export default function AboutPage() {
                 </div>
                 <div style={{ fontSize: 14, color: "rgba(245,240,228,0.75)" }}>{p.role}</div>
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", color: "var(--orange-500)" }}>{p.loc}</div>
-                <div style={{ fontSize: 13, color: "rgba(245,240,228,0.7)" }}>{p.focus}</div>
               </div>
             ))}
             <div style={{ borderTop: "1px solid rgba(245,240,228,0.15)" }} />
