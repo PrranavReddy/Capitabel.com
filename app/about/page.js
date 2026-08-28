@@ -64,7 +64,7 @@ export default function AboutPage() {
             <TiltCard key={m.name} maxTilt={5} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: 32, display: "grid", gridTemplateColumns: "auto 1fr", gap: 28 }}>
               <div style={{ width: 140, aspectRatio: "4/5", background: "var(--cream-200)", borderRadius: 8, overflow: "hidden", position: "relative" }}>
                 {m.img ? (
-                  <Image src={m.img} alt={m.name} fill sizes="140px" style={{ objectFit: "cover" }} />
+                  <Image src={m.img} alt={m.name} fill sizes="140px" style={{ objectFit: "cover", objectPosition: m.imgPosition || "center" }} />
                 ) : (
                   <div
                     style={{
