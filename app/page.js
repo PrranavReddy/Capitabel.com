@@ -280,7 +280,7 @@ export default function LandingPage() {
       </section>
 
       {/* MATCHING ENGINE */}
-      <section className="container" style={{ paddingBottom: 120 }}>
+      <section className="container" style={{ paddingBottom: 56 }}>
         <Reveal
           as="div"
           style={{
@@ -404,7 +404,7 @@ export default function LandingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="container" style={{ paddingBottom: 120 }}>
+      <section className="container" style={{ paddingTop: 48, paddingBottom: 120 }}>
         <div className="faq-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "start" }}>
           <div className="faq-sticky" style={{ position: "sticky", top: 120 }}>
             <Eyebrow>05 · FAQ</Eyebrow>
