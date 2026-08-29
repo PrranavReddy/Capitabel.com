@@ -99,7 +99,7 @@ export function LandingFooter() {
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12, fontSize: 14, color: "var(--navy-900)" }}>
               <a className="hover-fade" href="https://www.linkedin.com/company/capitabel-solutions/?viewAsMember=true" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-              <a className="hover-fade" href="#">Instagram ↗</a>
+              <a className="hover-fade" href="https://www.instagram.com/capitabel_/?hl=en" target="_blank" rel="noreferrer">Instagram ↗</a>
               <a className="hover-fade" href="#">Facebook ↗</a>
             </div>
           </div>
