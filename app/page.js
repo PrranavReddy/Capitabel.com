@@ -317,13 +317,15 @@ export default function LandingPage() {
       </section>
 
       {/* PEOPLE WHO BORROWED BETTER */}
-      <section className="container" style={{ paddingBottom: 120 }}>
-        <Reveal as="div" style={{ marginBottom: 56 }}>
-          <Eyebrow>04 · Client stories</Eyebrow>
-          <h2 style={h2Style}>
-            People who <Serif>Borrowed Better.</Serif>
-          </h2>
-        </Reveal>
+      <section style={{ background: "var(--navy-900)", color: "#FFFFFF", paddingBottom: 72 }}>
+        <div className="container" style={{ paddingTop: 72, paddingBottom: 40 }}>
+          <Reveal as="div" style={{ marginBottom: 40 }}>
+            <Eyebrow dark>04 · Client stories</Eyebrow>
+            <h2 style={{ ...h2Style, color: "#FFFFFF" }}>
+              People who <Serif>Borrowed Better.</Serif>
+            </h2>
+          </Reveal>
+        </div>
 
         <div className="wall-track">
           <div className="wall-inner">

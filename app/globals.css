@@ -191,6 +191,10 @@ button {
 /* ---------------------------------------------------------------------- */
 .wall-track {
   overflow: hidden;
+  /* Fade cards to transparent at both edges so they dissolve into the
+     section's navy background instead of hard-clipping. */
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
 }
 
 .wall-inner {
