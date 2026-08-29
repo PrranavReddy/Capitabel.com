@@ -416,6 +416,12 @@ summary:focus-visible {
     grid-template-columns: 1fr !important;
   }
 
+  /* Masonry wall (People who Borrowed Better): CSS columns, not grid —
+     collapses to a single column on phone. */
+  .wall-grid {
+    column-count: 1 !important;
+  }
+
   h1 {
     font-size: clamp(40px, 12vw, 72px) !important;
   }

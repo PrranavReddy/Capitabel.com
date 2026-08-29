@@ -316,12 +316,94 @@ export default function LandingPage() {
         </Reveal>
       </section>
 
+      {/* PEOPLE WHO BORROWED BETTER */}
+      <section className="container" style={{ paddingBottom: 120 }}>
+        <Reveal as="div" style={{ marginBottom: 56 }}>
+          <Eyebrow>04 · Client stories</Eyebrow>
+          <h2 style={h2Style}>
+            People who <Serif>Borrowed Better.</Serif>
+          </h2>
+        </Reveal>
+
+        <Reveal as="div" className="wall-grid" delay={100} style={{ columnCount: 2, columnGap: 24 }}>
+          {landing.borrowedBetter.map((c) => (
+            <TiltCard
+              key={c.name}
+              maxTilt={4}
+              style={{
+                breakInside: "avoid",
+                marginBottom: 24,
+                background: "var(--cream-100)",
+                border: "1px solid var(--navy-a08)",
+                borderRadius: 16,
+                padding: 32,
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                <div
+                  style={{
+                    width: 44,
+                    height: 44,
+                    borderRadius: "50%",
+                    background: "var(--navy-900)",
+                    color: "#FFFFFF",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 600,
+                    fontSize: 16,
+                    flexShrink: 0,
+                  }}
+                >
+                  {c.initial}
+                </div>
+                <div>
+                  <div style={{ fontSize: 15, fontWeight: 600, color: "var(--navy-900)" }}>{c.name}</div>
+                  <div style={{ fontSize: 12, color: "var(--navy-700)" }}>{c.role}</div>
+                </div>
+              </div>
+
+              <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--navy-700)", margin: "0 0 20px" }}>{c.quote}</p>
+
+              <div
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 12,
+                  letterSpacing: "0.02em",
+                  color: "var(--navy-700)",
+                  padding: "12px 16px",
+                  background: "#FFFFFF",
+                  border: "1px solid var(--navy-a08)",
+                  borderRadius: 8,
+                  marginBottom: 16,
+                }}
+              >
+                {c.product} · {c.ticket}
+              </div>
+
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  padding: "8px 14px",
+                  background: "rgba(245,130,32,0.12)",
+                  border: "1px solid rgba(245,130,32,0.3)",
+                  borderRadius: 999,
+                }}
+              >
+                <span style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 13, color: "var(--orange-500)" }}>{c.outcome}</span>
+              </div>
+            </TiltCard>
+          ))}
+        </Reveal>
+      </section>
 
       {/* FAQ */}
       <section className="container" style={{ paddingBottom: 120 }}>
         <div className="faq-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "start" }}>
           <div className="faq-sticky" style={{ position: "sticky", top: 120 }}>
-            <Eyebrow>04 · FAQ</Eyebrow>
+            <Eyebrow>05 · FAQ</Eyebrow>
             <h2 style={{ ...h2Style, fontSize: 56, marginBottom: 24 }}>
               Questions we
               <br />
