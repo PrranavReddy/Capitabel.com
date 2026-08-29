@@ -186,6 +186,26 @@ button {
 }
 
 /* ---------------------------------------------------------------------- */
+/* Marquee (People who Borrowed Better wall) — same mechanism as the      */
+/* lender strip above, just slower so a full testimonial is readable.     */
+/* ---------------------------------------------------------------------- */
+.wall-track {
+  overflow: hidden;
+}
+
+.wall-inner {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  align-items: flex-start;
+  animation: marquee 70s linear infinite;
+}
+
+.wall-track:hover .wall-inner {
+  animation-play-state: paused;
+}
+
+/* ---------------------------------------------------------------------- */
 /* Scroll reveal (components/Reveal.js)                                   */
 /* ---------------------------------------------------------------------- */
 .reveal {
@@ -219,7 +239,8 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-inner {
+  .marquee-inner,
+  .wall-inner {
     animation: none;
   }
 
@@ -414,12 +435,6 @@ summary:focus-visible {
   .next-grid,
   .footer-grid {
     grid-template-columns: 1fr !important;
-  }
-
-  /* Masonry wall (People who Borrowed Better): CSS columns, not grid —
-     collapses to a single column on phone. */
-  .wall-grid {
-    column-count: 1 !important;
   }
 
   h1 {
