@@ -36,7 +36,7 @@ export default function LandingPage() {
                   fontWeight: 400,
                   letterSpacing: "-0.02em",
                   display: "inline-block",
-                  fontSize: 70,
+                  fontSize: "clamp(28px, 8vw, 70px)",
                   marginTop: 8,
                 }}
               >
@@ -71,7 +71,7 @@ export default function LandingPage() {
                 fontFamily: "var(--font-serif)",
                 fontStyle: "italic",
                 fontWeight: 400,
-                fontSize: 72,
+                fontSize: "clamp(32px, 9vw, 72px)",
                 lineHeight: 1,
                 letterSpacing: "-0.015em",
                 color: "var(--navy-900)",
@@ -173,7 +173,7 @@ export default function LandingPage() {
                 91% of Capitabel Loan Offers convert to lender sanctions on materially similar terms.
               </div>
             </div>
-            <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 96, color: "var(--orange-500)", letterSpacing: "-0.03em" }}>
+            <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: "clamp(48px, 12vw, 96px)", color: "var(--orange-500)", letterSpacing: "-0.03em" }}>
               <CountUp value="91%" />
             </div>
           </Reveal>
