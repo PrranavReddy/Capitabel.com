@@ -409,7 +409,8 @@ summary:focus-visible {
   .cta-grid,
   .process-row,
   .process-head,
-  .opsrow-grid {
+  .opsrow-grid,
+  .footer-grid {
     grid-template-columns: 1fr !important;
   }
 
@@ -433,8 +434,7 @@ summary:focus-visible {
   .beliefs-grid,
   .summary-grid,
   .field-grid-2,
-  .next-grid,
-  .footer-grid {
+  .next-grid {
     grid-template-columns: 1fr !important;
   }
 
@@ -481,10 +481,6 @@ summary:focus-visible {
 
   .testimonials-grid {
     grid-template-columns: 1fr 1fr !important;
-  }
-
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
   }
 
   h1 {
