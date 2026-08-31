@@ -398,9 +398,10 @@ summary:focus-visible {
 /* ---------------------------------------------------------------------- */
 
 /* Asymmetric sidebar/split layouts and table-like rows: don't split
-   cleanly into 2 columns at medium widths, so these stack instead. */
+   cleanly into 2 columns at medium widths, so these stack instead.
+   (.hero-grid is deliberately NOT in this list — it stays side-by-side
+   through tablet and only stacks on phone, below.) */
 @media (max-width: 1023px) {
-  .hero-grid,
   .split-grid,
   .faq-grid,
   .contact-grid,
@@ -416,15 +417,11 @@ summary:focus-visible {
   .loans-sticky {
     position: static !important;
   }
-
-  .hero-tagline {
-    text-align: left !important;
-    margin-top: 24px;
-  }
 }
 
 /* Phone: full single-column collapse for everything, tightest type. */
 @media (max-width: 640px) {
+  .hero-grid,
   .grid-collapse,
   .products-grid,
   .steps-grid,
@@ -439,6 +436,11 @@ summary:focus-visible {
   .next-grid,
   .footer-grid {
     grid-template-columns: 1fr !important;
+  }
+
+  .hero-tagline {
+    text-align: left !important;
+    margin-top: 24px;
   }
 
   h1 {
@@ -491,6 +493,14 @@ summary:focus-visible {
 
   h2 {
     font-size: clamp(36px, 5.5vw, 64px) !important;
+  }
+
+  /* Hero tagline sits in a half-width column again at this breakpoint
+     (see .hero-grid above) — its inline clamp() was tuned for full
+     viewport width, so it needs its own smaller scale here or it
+     overflows the narrower column next to the BORROW BETTER heading. */
+  .hero-tagline p {
+    font-size: clamp(26px, 5vw, 44px) !important;
   }
 }
 
