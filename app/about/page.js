@@ -59,7 +59,7 @@ export default function AboutPage() {
         <Reveal as="div" className="beliefs-grid" delay={100} style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 20 }}>
           {about.beliefs.map((b) => (
             <div key={b.n} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: "44px 40px", minHeight: 260, display: "flex", flexDirection: "column" }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 44, color: "var(--orange-500)", lineHeight: 1, letterSpacing: "-0.02em", marginBottom: "auto" }}>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 44, color: "var(--orange-500)", lineHeight: 1, letterSpacing: "-0.02em" }}>
                 {b.n}
               </div>
               <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 28, lineHeight: 1.15, letterSpacing: "-0.02em", margin: "36px 0 12px", color: "var(--navy-900)" }}>
