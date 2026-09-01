@@ -30,7 +30,7 @@ export default function FAQItem({ n, q, a }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={`faq-item${open ? " is-open" : ""}`} style={{ borderTop: "1px solid var(--navy-a15)", padding: "26px 0" }}>
+    <div className={`faq-item${open ? " is-open" : ""}`} style={{ borderTop: "1px solid var(--navy-a15)", padding: "20px 0" }}>
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
@@ -51,24 +51,24 @@ export default function FAQItem({ n, q, a }) {
           cursor: "pointer",
         }}
       >
-        <span style={{ display: "flex", alignItems: "baseline", gap: 16 }}>
+        <span style={{ display: "flex", alignItems: "baseline", gap: 14 }}>
           {n && (
-            <span style={{ fontFamily: "var(--font-mono)", fontWeight: 600, fontSize: 14, letterSpacing: "0.05em", color: "var(--orange-500)", flexShrink: 0 }}>
+            <span style={{ fontFamily: "var(--font-mono)", fontWeight: 600, fontSize: 12, letterSpacing: "0.05em", color: "var(--orange-500)", flexShrink: 0 }}>
               {n}
             </span>
           )}
-          <span style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 22, letterSpacing: "-0.01em", color: "var(--navy-900)" }}>{q}</span>
+          <span style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 18, letterSpacing: "-0.01em", color: "var(--navy-900)" }}>{q}</span>
         </span>
-        <span className="plus" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: 28, color: "var(--orange-500)", flexShrink: 0 }}>
+        <span className="plus" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: 22, color: "var(--orange-500)", flexShrink: 0 }}>
           +
         </span>
       </button>
       <div className="faq-panel">
         <div style={{ overflow: "hidden" }}>
           {Array.isArray(a) ? (
-            <div style={{ display: "flex", flexDirection: "column", gap: 10, margin: "14px 0 0", maxWidth: 680 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8, margin: "12px 0 0", maxWidth: 680 }}>
               {a.map((line) => (
-                <div key={typeof line === "string" ? line : line.text} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 16, lineHeight: 1.55, color: "var(--navy-700)" }}>
+                <div key={typeof line === "string" ? line : line.text} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, lineHeight: 1.5, color: "var(--navy-700)" }}>
                   <span style={{ color: "var(--orange-500)", fontWeight: 600, marginTop: 2 }}>◆</span>
                   <span>
                     <BulletText item={line} />
@@ -77,7 +77,7 @@ export default function FAQItem({ n, q, a }) {
               ))}
             </div>
           ) : (
-            <p style={{ fontSize: 16, lineHeight: 1.55, color: "var(--navy-700)", margin: "14px 0 0", maxWidth: 680 }}>{a}</p>
+            <p style={{ fontSize: 14, lineHeight: 1.5, color: "var(--navy-700)", margin: "12px 0 0", maxWidth: 680 }}>{a}</p>
           )}
         </div>
       </div>
