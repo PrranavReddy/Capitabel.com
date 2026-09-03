@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SimpleFooter } from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import MagneticButton from "@/components/MagneticButton";
-import { landing, site } from "@/lib/data";
+import { journal, site } from "@/lib/data";
 
 export const metadata = {
   title: "Journal",
@@ -37,8 +37,8 @@ export default function JournalPage() {
 
       <section className="container" style={{ paddingBottom: 120 }}>
         <Reveal as="div" className="journal-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
-          {landing.posts.map((p) => (
-            <a key={p.title} href="#" style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+          {journal.posts.map((p) => (
+            <Link key={p.slug} href={`/journal/${p.slug}`} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               <div
                 style={{
                   aspectRatio: "5/4",
@@ -63,7 +63,7 @@ export default function JournalPage() {
                   {p.title}
                 </h3>
               </div>
-            </a>
+            </Link>
           ))}
         </Reveal>
       </section>
