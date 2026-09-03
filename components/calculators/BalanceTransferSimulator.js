@@ -208,7 +208,7 @@ function SliderInput({ label, value, onChange, min, max, step, prefix, suffix, h
             background: "#fff",
           }}
         >
-          {prefix && <span style={{ fontSize: 12.5, color: MUTED }}>{prefix}</span>}
+          {prefix && <span style={{ fontSize: 14, color: MUTED }}>{prefix}</span>}
           <input
             type="text"
             inputMode="decimal"
@@ -219,11 +219,11 @@ function SliderInput({ label, value, onChange, min, max, step, prefix, suffix, h
               if (e.key === "Enter") e.currentTarget.blur();
             }}
             style={{
-              width: 84,
+              width: 100,
               border: "none",
               outline: "none",
               textAlign: "right",
-              fontSize: 13.5,
+              fontSize: 16,
               fontWeight: 700,
               color: INK,
               background: "transparent",
@@ -582,7 +582,7 @@ export default function BalanceTransferSimulator() {
             </div>
             <SliderInput
               label="Outstanding to transfer"
-              prefix="\u20B9"
+              prefix="₹"
               value={outstanding}
               onChange={setOutstanding}
               min={500000}
@@ -654,7 +654,7 @@ export default function BalanceTransferSimulator() {
             />
             <SliderInput
               label="Legal, valuation, stamp & MODT"
-              prefix="\u20B9"
+              prefix="₹"
               value={otherCosts}
               onChange={setOtherCosts}
               min={0}

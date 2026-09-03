@@ -220,7 +220,7 @@ function SliderInput({ label, value, onChange, min, max, step, prefix, suffix, h
             background: "#fff",
           }}
         >
-          {prefix && <span style={{ fontSize: 12.5, color: MUTED }}>{prefix}</span>}
+          {prefix && <span style={{ fontSize: 14, color: MUTED }}>{prefix}</span>}
           <input
             type="text"
             inputMode="decimal"
@@ -231,11 +231,11 @@ function SliderInput({ label, value, onChange, min, max, step, prefix, suffix, h
               if (e.key === "Enter") e.currentTarget.blur();
             }}
             style={{
-              width: 84,
+              width: 100,
               border: "none",
               outline: "none",
               textAlign: "right",
-              fontSize: 13.5,
+              fontSize: 16,
               fontWeight: 700,
               color: INK,
               background: "transparent",
@@ -524,7 +524,7 @@ export default function IncomeEligibilitySimulator() {
           >
             <SliderInput
               label="Net monthly income"
-              prefix="\u20B9"
+              prefix="₹"
               value={monthlyIncome}
               onChange={setMonthlyIncome}
               min={10000}
@@ -544,7 +544,7 @@ export default function IncomeEligibilitySimulator() {
             />
             <SliderInput
               label="Existing obligations"
-              prefix="\u20B9"
+              prefix="₹"
               value={obligations}
               onChange={setObligations}
               min={0}
