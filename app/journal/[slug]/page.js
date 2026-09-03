@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { SimpleFooter } from "@/components/Footer";
 import MagneticButton from "@/components/MagneticButton";
 import JournalArticle from "@/components/JournalArticle";
+import CoverArt from "@/components/journal/CoverArt";
 import { journal } from "@/lib/data";
 
 export function generateStaticParams() {
@@ -59,6 +60,20 @@ export default async function JournalPostPage({ params }) {
           {post.title}
         </h1>
         <p style={{ fontSize: 19, lineHeight: 1.5, color: "var(--navy-700)", margin: 0, maxWidth: 680, textWrap: "pretty" }}>{post.excerpt}</p>
+      </section>
+
+      <section className="container" style={{ paddingBottom: 56 }}>
+        <div
+          style={{
+            aspectRatio: "12/5",
+            maxWidth: 900,
+            borderRadius: 16,
+            overflow: "hidden",
+            border: "1px solid var(--navy-a08)",
+          }}
+        >
+          <CoverArt slug={post.slug} />
+        </div>
       </section>
 
       <section className="container" style={{ paddingBottom: 80 }}>

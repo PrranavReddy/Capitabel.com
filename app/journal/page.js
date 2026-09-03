@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SimpleFooter } from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import MagneticButton from "@/components/MagneticButton";
+import CoverArt from "@/components/journal/CoverArt";
 import { journal, site } from "@/lib/data";
 
 export const metadata = {
@@ -42,16 +43,12 @@ export default function JournalPage() {
               <div
                 style={{
                   aspectRatio: "5/4",
-                  background: "repeating-linear-gradient(135deg,#D8CCB4,#D8CCB4 10px,#C7B899 10px,#C7B899 20px)",
                   borderRadius: 8,
-                  display: "flex",
-                  alignItems: "flex-end",
-                  padding: 14,
+                  overflow: "hidden",
+                  border: "1px solid var(--navy-a08)",
                 }}
               >
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--navy-700)", background: "rgba(255,255,255,0.9)", padding: "4px 8px", borderRadius: 4 }}>
-                  img · {p.tag}
-                </span>
+                <CoverArt slug={p.slug} />
               </div>
               <div>
                 <div style={{ display: "flex", gap: 14, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--navy-700)", marginBottom: 12 }}>
