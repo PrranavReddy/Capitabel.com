@@ -340,6 +340,7 @@ export default function LoansPage() {
         links={[
           { href: "/", label: "Home" },
           { href: "/about", label: "About" },
+          { href: "/calculators", label: "Calculators" },
           { href: "/contact", label: "Contact" },
         ]}
       />

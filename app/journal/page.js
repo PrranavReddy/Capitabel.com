@@ -132,6 +132,7 @@ export default function JournalPage() {
           { href: "/", label: "Home" },
           { href: "/about", label: "About" },
           { href: "/loans", label: "Loans" },
+          { href: "/calculators", label: "Calculators" },
           { href: "/contact", label: "Contact" },
         ]}
       />
