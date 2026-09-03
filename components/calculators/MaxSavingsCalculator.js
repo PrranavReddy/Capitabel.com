@@ -15,8 +15,8 @@ import {
 } from "recharts";
 
 /* ------------------------------------------------------------------ *
- * Baroda Max Savings Home Loan — Amortisation Simulator
- * Overdraft-linked home loan (MaxGain family). Interest is charged on
+ * Max Savings Home Loan — Amortisation Simulator
+ * Overdraft-linked home loan. Interest is charged on
  * the NET balance (loan outstanding − surplus parked in the linked SB
  * account). EMI stays fixed, so suppressed interest means more of each
  * EMI retires principal → the loan closes early. The parked surplus is
@@ -432,7 +432,7 @@ async function copyCSV(csv) {
 
 /* ------------------------------ app ------------------------------- */
 
-export default function BarodaMaxSavingsSimulator() {
+export default function MaxSavingsCalculator() {
   const [useMoratorium, setUseMoratorium] = useState(false);
   const [loanAmount, setLoanAmount] = useState(5000000);
   const [rate, setRate] = useState(8.4);
@@ -497,7 +497,7 @@ export default function BarodaMaxSavingsSimulator() {
 
   const handleDownload = () => {
     const csv = toCSV(CSV_HEADERS, csvRows);
-    downloadCSV("baroda-max-savings-amortisation.csv", csv);
+    downloadCSV("max-savings-amortisation.csv", csv);
   };
   const handleCopy = async () => {
     const csv = toCSV(CSV_HEADERS, csvRows);
@@ -544,7 +544,7 @@ export default function BarodaMaxSavingsSimulator() {
         {/* Header */}
         <div style={{ marginBottom: 18 }}>
           <h1 style={{ fontSize: 25, fontWeight: 800, margin: "0 0 5px", letterSpacing: -0.4 }}>
-            Baroda Max Savings — Amortisation Simulator
+            Max Savings — Amortisation Simulator
           </h1>
           <p style={{ fontSize: 13.5, color: MUTE, margin: 0, maxWidth: 760, lineHeight: 1.55 }}>
             Overdraft-linked home loan. Interest each month is charged on the{" "}
@@ -581,7 +581,7 @@ export default function BarodaMaxSavingsSimulator() {
                 hint={compact(loanAmount)}
               />
               <SliderInput
-                label="Interest rate (BRLLR-linked)"
+                label="Interest rate (Repo-linked)"
                 value={rate}
                 onChange={setRate}
                 min={6}

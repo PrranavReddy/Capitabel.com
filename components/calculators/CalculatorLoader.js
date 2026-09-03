@@ -21,7 +21,7 @@ const COMPONENTS = {
   "emi-calculator": dynamic(() => import("./EMICalculator"), { ssr: false, loading: () => LOADING }),
   "income-eligibility": dynamic(() => import("./IncomeEligibilitySimulator"), { ssr: false, loading: () => LOADING }),
   "balance-transfer": dynamic(() => import("./BalanceTransferSimulator"), { ssr: false, loading: () => LOADING }),
-  "baroda-max-savings": dynamic(() => import("./BarodaMaxSavingsSimulator"), { ssr: false, loading: () => LOADING }),
+  "max-savings": dynamic(() => import("./MaxSavingsCalculator"), { ssr: false, loading: () => LOADING }),
 };
 
 export default function CalculatorLoader({ slug }) {
