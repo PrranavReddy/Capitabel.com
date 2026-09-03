@@ -284,7 +284,7 @@ function SliderInput({ label, value, onChange, min, max, step, prefix, suffix, h
             background: disabled ? "#F4F1EB" : "#fff",
           }}
         >
-          {prefix && <span style={{ fontSize: 14, color: MUTE, fontWeight: 600 }}>{prefix}</span>}
+          {prefix && <span style={{ fontSize: 16, color: MUTE, fontWeight: 600 }}>{prefix}</span>}
           <input
             type="text"
             inputMode="decimal"
@@ -296,12 +296,12 @@ function SliderInput({ label, value, onChange, min, max, step, prefix, suffix, h
               if (e.key === "Enter") e.currentTarget.blur();
             }}
             style={{
-              width: 100,
+              width: 130,
               border: "none",
               outline: "none",
               textAlign: "right",
-              fontSize: 16,
-              fontWeight: 700,
+              fontSize: 19,
+              fontWeight: 400,
               color: NAVY,
               background: "transparent",
               fontVariantNumeric: "tabular-nums",
