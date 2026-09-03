@@ -124,9 +124,9 @@ export function LandingFooter() {
             CHENNAI · EST. 2024
           </div>
           <div style={{ display: "flex", gap: 20 }}>
-            <a className="hover-fade" href="#">Privacy</a>
-            <a className="hover-fade" href="#">Terms</a>
-            <a className="hover-fade" href="#">Disclosures</a>
+            <Link className="hover-fade" href="/privacy">Privacy</Link>
+            <Link className="hover-fade" href="/terms">Terms</Link>
+            <Link className="hover-fade" href="/disclosures">Disclosures</Link>
           </div>
         </div>
 
@@ -155,36 +155,51 @@ export function LandingFooter() {
 export function SimpleFooter({ links, background = "#FFFFFF" }) {
   return (
     <footer style={{ background, borderTop: "1px solid var(--navy-a08)" }}>
-      <div
-        className="container"
-        style={{
-          paddingTop: 56,
-          paddingBottom: 28,
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "end",
-          flexWrap: "wrap",
-          gap: 32,
-        }}
-      >
-        <div>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-            <Image
-              src="/images/capitabel-logo.png"
-              alt="Capitabel"
-              width={132}
-              height={24}
-              style={{ display: "block", mixBlendMode: "multiply" }}
-            />
+      <div className="container" style={{ paddingTop: 56, paddingBottom: 28 }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "end",
+            flexWrap: "wrap",
+            gap: 32,
+          }}
+        >
+          <div>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+              <Image
+                src="/images/capitabel-logo.png"
+                alt="Capitabel"
+                width={132}
+                height={24}
+                style={{ display: "block", mixBlendMode: "multiply" }}
+              />
+            </div>
+            <div style={{ fontSize: 12, color: "var(--navy-700)" }}>© 2026 Capitabel Solutions Pvt Ltd · Chennai</div>
           </div>
-          <div style={{ fontSize: 12, color: "var(--navy-700)" }}>© 2026 Capitabel Solutions Pvt Ltd · Chennai</div>
+          <div style={{ display: "flex", gap: 32, fontSize: 14 }}>
+            {links.map((link) => (
+              <Link key={link.href} className="hover-fade" href={link.href}>
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
-        <div style={{ display: "flex", gap: 32, fontSize: 14 }}>
-          {links.map((link) => (
-            <Link key={link.href} className="hover-fade" href={link.href}>
-              {link.label}
-            </Link>
-          ))}
+
+        <div
+          style={{
+            display: "flex",
+            gap: 20,
+            marginTop: 28,
+            paddingTop: 20,
+            borderTop: "1px solid var(--navy-a08)",
+            fontSize: 12,
+            color: "var(--navy-700)",
+          }}
+        >
+          <Link className="hover-fade" href="/privacy">Privacy</Link>
+          <Link className="hover-fade" href="/terms">Terms</Link>
+          <Link className="hover-fade" href="/disclosures">Disclosures</Link>
         </div>
       </div>
     </footer>
