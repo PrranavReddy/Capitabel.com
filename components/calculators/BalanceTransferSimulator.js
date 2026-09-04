@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import HeaderCTA from "./HeaderCTA";
 import {
   ResponsiveContainer,
   ComposedChart,
@@ -536,16 +537,19 @@ export default function BalanceTransferSimulator() {
     >
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
         {/* Header */}
-        <div style={{ marginBottom: 18 }}>
-          <h1 style={{ fontSize: 25, fontWeight: 800, margin: "0 0 5px", letterSpacing: -0.4 }}>
-            Balance Transfer Simulator
-          </h1>
-          <p style={{ fontSize: 13.5, color: MUTED, margin: 0, maxWidth: 760, lineHeight: 1.55 }}>
-            A balance transfer re-originates an existing loan mid-life: the new lender clears the
-            outstanding and re-amortises it at a lower rate over the remaining tenure. This weighs{" "}
-            <b>staying</b> against <b>switching</b>, net of one-time costs. Hold the tenure to cut the
-            EMI, or hold the EMI to finish sooner.
-          </p>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 20, flexWrap: "wrap", marginBottom: 18 }}>
+          <div>
+            <h1 style={{ fontSize: 25, fontWeight: 800, margin: "0 0 5px", letterSpacing: -0.4 }}>
+              Balance Transfer Simulator
+            </h1>
+            <p style={{ fontSize: 13.5, color: MUTED, margin: 0, maxWidth: 760, lineHeight: 1.55 }}>
+              A balance transfer re-originates an existing loan mid-life: the new lender clears the
+              outstanding and re-amortises it at a lower rate over the remaining tenure. This weighs{" "}
+              <b>staying</b> against <b>switching</b>, net of one-time costs. Hold the tenure to cut the
+              EMI, or hold the EMI to finish sooner.
+            </p>
+          </div>
+          <HeaderCTA />
         </div>
 
         {/* Strategy toggle */}

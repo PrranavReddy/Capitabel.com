@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import HeaderCTA from "./HeaderCTA";
 import {
   ResponsiveContainer,
   ComposedChart,
@@ -481,16 +482,19 @@ export default function IncomeEligibilitySimulator() {
     >
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
         {/* Header */}
-        <div style={{ marginBottom: 18 }}>
-          <h1 style={{ fontSize: 25, fontWeight: 800, margin: "0 0 5px", letterSpacing: -0.4 }}>
-            Loan Eligibility Simulator
-          </h1>
-          <p style={{ fontSize: 13.5, color: MUTED, margin: 0, maxWidth: 760, lineHeight: 1.55 }}>
-            FOIR sets the ceiling on total debt outflow (<b>income × FOIR</b>); existing obligations
-            are netted off, and the <b>remaining EMI headroom</b> is reverse-amortised over the tenure
-            to give the <b>sanctionable loan amount</b>. Income-based eligibility only — no property/LTV
-            cap applied here.
-          </p>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 20, flexWrap: "wrap", marginBottom: 18 }}>
+          <div>
+            <h1 style={{ fontSize: 25, fontWeight: 800, margin: "0 0 5px", letterSpacing: -0.4 }}>
+              Loan Eligibility Simulator
+            </h1>
+            <p style={{ fontSize: 13.5, color: MUTED, margin: 0, maxWidth: 760, lineHeight: 1.55 }}>
+              FOIR sets the ceiling on total debt outflow (<b>income × FOIR</b>); existing obligations
+              are netted off, and the <b>remaining EMI headroom</b> is reverse-amortised over the tenure
+              to give the <b>sanctionable loan amount</b>. Income-based eligibility only, no property/LTV
+              cap applied here.
+            </p>
+          </div>
+          <HeaderCTA />
         </div>
 
         {/* Method toggle */}

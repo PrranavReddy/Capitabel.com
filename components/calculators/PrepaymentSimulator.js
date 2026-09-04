@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import HeaderCTA from "./HeaderCTA";
 import {
   ResponsiveContainer,
   ComposedChart,
@@ -619,16 +620,19 @@ export default function PrepaymentSimulator() {
     >
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
         {/* Header */}
-        <div style={{ marginBottom: 18 }}>
-          <h1 style={{ fontSize: 25, fontWeight: 800, margin: "0 0 5px", letterSpacing: -0.4 }}>
-            Prepayment Simulator
-          </h1>
-          <p style={{ fontSize: 13.5, color: MUTED, margin: 0, maxWidth: 760, lineHeight: 1.55 }}>
-            A part-prepayment retires principal directly. The <b>EMI is held</b>, so every later
-            instalment carries less interest and more principal — the loan closes early. This shows the{" "}
-            <b>interest saved</b> and the <b>revised tenure</b> for either a one-time lump sum or a
-            recurring extra payment.
-          </p>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 20, flexWrap: "wrap", marginBottom: 18 }}>
+          <div>
+            <h1 style={{ fontSize: 25, fontWeight: 800, margin: "0 0 5px", letterSpacing: -0.4 }}>
+              Prepayment Simulator
+            </h1>
+            <p style={{ fontSize: 13.5, color: MUTED, margin: 0, maxWidth: 760, lineHeight: 1.55 }}>
+              A part-prepayment retires principal directly. The <b>EMI is held</b>, so every later
+              instalment carries less interest and more principal, so the loan closes early. This shows the{" "}
+              <b>interest saved</b> and the <b>revised tenure</b> for either a one-time lump sum or a
+              recurring extra payment.
+            </p>
+          </div>
+          <HeaderCTA />
         </div>
 
         {/* Entry-point toggle */}

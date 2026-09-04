@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import HeaderCTA from "./HeaderCTA";
 import {
   ResponsiveContainer,
   ComposedChart,
@@ -542,16 +543,19 @@ export default function MaxSavingsCalculator() {
     >
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
         {/* Header */}
-        <div style={{ marginBottom: 18 }}>
-          <h1 style={{ fontSize: 25, fontWeight: 800, margin: "0 0 5px", letterSpacing: -0.4 }}>
-            Max Savings — Amortisation Simulator
-          </h1>
-          <p style={{ fontSize: 13.5, color: MUTE, margin: 0, maxWidth: 760, lineHeight: 1.55 }}>
-            Overdraft-linked home loan. Interest each month is charged on the{" "}
-            <b>net</b> balance — outstanding minus the surplus parked in the linked account. The EMI
-            stays fixed, so the suppressed interest retires principal faster and the loan closes
-            early. Parked surplus stays fully withdrawable; it is never a prepayment.
-          </p>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 20, flexWrap: "wrap", marginBottom: 18 }}>
+          <div>
+            <h1 style={{ fontSize: 25, fontWeight: 800, margin: "0 0 5px", letterSpacing: -0.4 }}>
+              Max Savings: Amortisation Simulator
+            </h1>
+            <p style={{ fontSize: 13.5, color: MUTE, margin: 0, maxWidth: 760, lineHeight: 1.55 }}>
+              Overdraft-linked home loan. Interest each month is charged on the{" "}
+              <b>net</b> balance (outstanding minus the surplus parked in the linked account). The EMI
+              stays fixed, so the suppressed interest retires principal faster and the loan closes
+              early. Parked surplus stays fully withdrawable; it is never a prepayment.
+            </p>
+          </div>
+          <HeaderCTA />
         </div>
 
         {/* Mode toggle */}

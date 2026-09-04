@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import HeaderCTA from "./HeaderCTA";
 import {
   ResponsiveContainer,
   ComposedChart,
@@ -702,16 +703,19 @@ export default function EMICalculator() {
     >
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
         {/* Header */}
-        <div style={{ marginBottom: 18 }}>
-          <h1 style={{ fontSize: 25, fontWeight: 800, margin: "0 0 5px", letterSpacing: -0.4 }}>
-            EMI Calculator
-          </h1>
-          <p style={{ fontSize: 13.5, color: MUTED, margin: 0, maxWidth: 720, lineHeight: 1.55 }}>
-            Interest and EMI both track the amount actually disbursed, not the sanction. Until the
-            next tranche is released, interest is charged only on the disbursed balance; the EMI is
-            computed on that balance and revised each time a tranche aggregates it up. Choose immediate
-            repayment or a moratorium, and stage the release with the disbursement schedule.
-          </p>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 20, flexWrap: "wrap", marginBottom: 18 }}>
+          <div>
+            <h1 style={{ fontSize: 25, fontWeight: 800, margin: "0 0 5px", letterSpacing: -0.4 }}>
+              EMI Calculator
+            </h1>
+            <p style={{ fontSize: 13.5, color: MUTED, margin: 0, maxWidth: 720, lineHeight: 1.55 }}>
+              Interest and EMI both track the amount actually disbursed, not the sanction. Until the
+              next tranche is released, interest is charged only on the disbursed balance; the EMI is
+              computed on that balance and revised each time a tranche aggregates it up. Choose immediate
+              repayment or a moratorium, and stage the release with the disbursement schedule.
+            </p>
+          </div>
+          <HeaderCTA />
         </div>
 
         {/* Method toggle */}
