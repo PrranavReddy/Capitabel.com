@@ -22,6 +22,7 @@ const COMPONENTS = {
   "income-eligibility": dynamic(() => import("./IncomeEligibilitySimulator"), { ssr: false, loading: () => LOADING }),
   "balance-transfer": dynamic(() => import("./BalanceTransferSimulator"), { ssr: false, loading: () => LOADING }),
   "max-savings": dynamic(() => import("./MaxSavingsCalculator"), { ssr: false, loading: () => LOADING }),
+  "prepayment-simulator": dynamic(() => import("./PrepaymentSimulator"), { ssr: false, loading: () => LOADING }),
 };
 
 export default function CalculatorLoader({ slug }) {
