@@ -3,11 +3,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { navLinks, site } from "@/lib/data";
+import { navLinks } from "@/lib/data";
 
 export default function Nav() {
   const pathname = usePathname();
-  const isContact = pathname === "/contact";
 
   return (
     <nav
@@ -57,26 +56,6 @@ export default function Nav() {
             );
           })}
         </div>
-
-        <Link
-          href={isContact ? site.whatsapp : "/contact"}
-          className="btn btn-dark hover-fade"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 8,
-            padding: "11px 20px",
-            background: "var(--navy-900)",
-            color: "#FFFFFF",
-            borderRadius: 6,
-            fontSize: 14,
-            fontWeight: 500,
-            flexShrink: 0,
-          }}
-        >
-          <span className="nav-cta-label">{isContact ? "WhatsApp us" : "Talk to an expert"}</span>
-          <span aria-hidden>→</span>
-        </Link>
       </div>
     </nav>
   );
