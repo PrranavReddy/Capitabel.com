@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 
 const MS = 380;
@@ -14,12 +15,19 @@ const EASE = "cubic-bezier(0.4,0,0.2,1)";
  * DOM to be ready before the browser captures it, which Next.js App
  * Router's async navigation doesn't guarantee).
  *
- * IMPORTANT: animate `transform` only, never top/left/width/height. Those
- * are layout properties — animating them forces a full layout recompute on
- * every frame, which is what caused the visible stutter in the first
- * version. A fixed, full-viewport overlay scaled down via transform to
- * visually sit at the tile's rect, then transitioned to scale(1), is
- * compositor-only (GPU) and stays smooth regardless of page complexity.
+ * Two things had to be true for this to actually be smooth, not one:
+ *
+ * 1. Animate `transform` only, never top/left/width/height — those are
+ *    layout properties and animating them forces a full layout recompute
+ *    every frame.
+ * 2. The fixed overlay must be portaled to document.body, NOT rendered as
+ *    a normal descendant. This grid sits inside <Reveal>, which applies a
+ *    CSS `transform` (translateY) for its scroll-in animation — and per
+ *    the CSS spec, ANY ancestor with an active transform (even an identity
+ *    translateY(0)) creates a new containing block for position:fixed
+ *    descendants. Without the portal, "fixed, full-viewport" was actually
+ *    being measured against the grid container's own box, not the real
+ *    viewport — which is what made the first "fix" still look broken.
  *
  * No new animation library — respects prefers-reduced-motion by skipping
  * straight to navigation, and modifier/middle-clicks still open a new tab.
@@ -154,21 +162,24 @@ export default function CalculatorTile({ href, sample, tag, title, desc }) {
         </span>
       </a>
 
-      {expand && (
-        <div
-          aria-hidden
-          style={{
-            position: "fixed",
-            inset: 0,
-            zIndex: 200,
-            background: "var(--cream-100)",
-            borderRadius: 12,
-            willChange: "transform",
-            transform: expand.grown ? "none" : expand.start,
-            transition: `transform ${MS}ms ${EASE}`,
-          }}
-        />
-      )}
+      {expand &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            aria-hidden
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 200,
+              background: "var(--cream-100)",
+              borderRadius: 12,
+              willChange: "transform",
+              transform: expand.grown ? "none" : expand.start,
+              transition: `transform ${MS}ms ${EASE}`,
+            }}
+          />,
+          document.body
+        )}
     </>
   );
 }
