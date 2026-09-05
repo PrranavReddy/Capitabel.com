@@ -79,23 +79,6 @@ export default function ContactPage() {
                 Headquartered in Chennai
               </div>
             </div>
-
-            <div style={{ background: "var(--cream-300)", borderRadius: 12, padding: "32px 28px" }}>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-700)", marginBottom: 16 }}>
-                Cluster contacts
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-                {contact.clusters.map((c) => (
-                  <div key={c.name} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", paddingBottom: 14, borderBottom: "1px solid var(--navy-a15)" }}>
-                    <div>
-                      <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 15, color: "var(--navy-900)" }}>{c.name}</div>
-                      <div style={{ fontSize: 12, color: "var(--navy-700)" }}>{c.rm}</div>
-                    </div>
-                    <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--navy-700)" }}>{c.tag}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </Reveal>
       </section>
