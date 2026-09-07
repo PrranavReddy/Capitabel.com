@@ -4,8 +4,8 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import { createPortal } from "react-dom";
 import { usePathname, useRouter } from "next/navigation";
 
-const GROW_MS = 380;
-const FADE_MS = 260;
+const GROW_MS = 300;
+const FADE_MS = 200;
 const EASE = "cubic-bezier(0.4,0,0.2,1)";
 
 const Ctx = createContext(null);
@@ -57,7 +57,7 @@ export function TileTransitionProvider({ children }) {
           setState((s) => (s ? { ...s, phase: "grown" } : s));
         });
       });
-      setTimeout(() => router.push(href), GROW_MS + 60);
+      setTimeout(() => router.push(href), GROW_MS + 20);
     },
     [router]
   );
@@ -76,7 +76,7 @@ export function TileTransitionProvider({ children }) {
       const t = setTimeout(() => {
         setState(null);
         targetRef.current = null;
-      }, FADE_MS + 40);
+      }, FADE_MS + 20);
       return () => clearTimeout(t);
     }
   }, [pathname, state?.phase]);

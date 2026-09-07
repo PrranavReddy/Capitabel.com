@@ -40,7 +40,7 @@ export default function CalculatorsPage() {
       <section className="container" style={{ paddingBottom: 120 }}>
         <Reveal as="div" className="grid-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
           {calculators.map((c) => (
-            <CalculatorTile key={c.slug} href={`/calculators/${c.slug}`} tag={c.tag} title={c.title} desc={c.desc} sample={c.sample} />
+            <CalculatorTile key={c.slug} href={`/calculators/${c.slug}`} slug={c.slug} tag={c.tag} title={c.title} desc={c.desc} sample={c.sample} />
           ))}
         </Reveal>
       </section>

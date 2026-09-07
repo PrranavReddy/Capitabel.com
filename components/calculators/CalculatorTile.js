@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTileTransition } from "./TileTransitionOverlay";
+import { preloadCalculator } from "./preload";
 
 /**
  * A calculator card that, on click, grows from its own on-screen position
@@ -21,22 +22,36 @@ import { useTileTransition } from "./TileTransitionOverlay";
  * it. Respects prefers-reduced-motion by skipping straight to navigation;
  * modifier/middle-clicks still open a new tab as normal.
  */
-export default function CalculatorTile({ href, sample, tag, title, desc }) {
+export default function CalculatorTile({ href, slug, sample, tag, title, desc }) {
   const ref = useRef(null);
   const router = useRouter();
   const startTransition = useTileTransition();
   const [hover, setHover] = useState(false);
   const [expanding, setExpanding] = useState(false);
   const reducedMotion = useRef(false);
+  const warmed = useRef(false);
 
   useEffect(() => {
     reducedMotion.current = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
   }, []);
 
+  // Kicks off the destination page's RSC fetch and its (separately
+  // lazy-loaded, recharts-based) calculator chunk ahead of the click, so
+  // that download runs hidden inside the grow animation instead of adding
+  // its own delay after it. Called on hover as the earliest signal, and
+  // again on click as a fallback for touch/keyboard.
+  function warm() {
+    if (warmed.current) return;
+    warmed.current = true;
+    router.prefetch(href);
+    if (slug) preloadCalculator(slug);
+  }
+
   function handleClick(e) {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return; // let modifier/middle clicks behave normally
     e.preventDefault();
     if (expanding) return;
+    warm();
     if (reducedMotion.current || !ref.current || !startTransition) {
       router.push(href);
       return;
@@ -65,7 +80,10 @@ export default function CalculatorTile({ href, sample, tag, title, desc }) {
       ref={ref}
       href={href}
       onClick={handleClick}
-      onMouseEnter={() => setHover(true)}
+      onMouseEnter={() => {
+        setHover(true);
+        warm();
+      }}
       onMouseLeave={() => setHover(false)}
       style={cardStyle}
     >
