@@ -60,33 +60,36 @@ export default function ReferralsPage() {
             Payout <Serif>slabs.</Serif>
           </h2>
         </Reveal>
-        <Reveal as="div" delay={100} style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, overflow: "hidden" }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 24,
-              padding: "20px 32px",
-              background: "var(--navy-900)",
-              color: "#FFFFFF",
-              fontFamily: "var(--font-mono)",
-              fontSize: 11,
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-            }}
-          >
-            <div>Loan value</div>
-            <div>Referral amount</div>
-          </div>
-          {referrals.slabs.map((s) => (
-            <div
-              key={s.range}
-              style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, padding: "18px 32px", borderTop: "1px solid var(--navy-a10)", alignItems: "center" }}
-            >
-              <div style={{ fontSize: 15, color: "var(--navy-900)", fontWeight: 500 }}>{s.range}</div>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: 16, fontWeight: 500, color: "var(--orange-500)", fontVariantNumeric: "tabular-nums" }}>{s.amount}</div>
-            </div>
-          ))}
+        <Reveal as="div" delay={100} style={{ borderTop: "2px solid var(--navy-900)" }}>
+          {referrals.slabs.map((s, i) => {
+            const isLast = i === referrals.slabs.length - 1;
+            return (
+              <div
+                key={s.range}
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "baseline",
+                  padding: "22px 4px",
+                  borderBottom: "1px solid var(--navy-a10)",
+                }}
+              >
+                <div style={{ fontSize: 16, color: "var(--navy-700)" }}>{s.range}</div>
+                <div
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 600,
+                    fontSize: isLast ? 34 : 28,
+                    letterSpacing: "-0.015em",
+                    color: "var(--orange-500)",
+                    fontVariantNumeric: "tabular-nums",
+                  }}
+                >
+                  {s.amount}
+                </div>
+              </div>
+            );
+          })}
         </Reveal>
         <p style={{ marginTop: 16, fontSize: 12, color: "var(--navy-700)" }}>
           Payout is released once the referred loan disburses.
