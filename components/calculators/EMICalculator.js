@@ -729,6 +729,7 @@ export default function EMICalculator() {
         />
 
         <div
+          className="calc-layout-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "minmax(280px, 350px) 1fr",

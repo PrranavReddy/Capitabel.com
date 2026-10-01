@@ -410,7 +410,8 @@ summary:focus-visible {
   .process-row,
   .process-head,
   .opsrow-grid,
-  .footer-grid {
+  .footer-grid,
+  .calc-layout-grid {
     grid-template-columns: 1fr !important;
   }
 
