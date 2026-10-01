@@ -94,6 +94,20 @@ export default function ReferralsPage() {
         <p style={{ marginTop: 16, fontSize: 12, color: "var(--navy-700)" }}>
           Payout is released once the referred loan disburses.
         </p>
+        <div
+          style={{
+            marginTop: 24,
+            padding: "18px 22px",
+            background: "rgba(245,130,32,0.1)",
+            border: "1px solid rgba(245,130,32,0.35)",
+            borderRadius: 10,
+            fontSize: 13,
+            lineHeight: 1.6,
+            color: "var(--navy-900)",
+          }}
+        >
+          <strong>Disclaimer:</strong> {referrals.disclaimer}
+        </div>
       </section>
 
       {/* PROCESS */}
