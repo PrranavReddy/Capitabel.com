@@ -61,6 +61,7 @@ export function LandingFooter() {
               <Link className="hover-fade" href="/loans">Loan products</Link>
               <Link className="hover-fade" href="/calculators">Calculators</Link>
               <Link className="hover-fade" href="/journal">Journal</Link>
+              <Link className="hover-fade" href="/referrals">Referrals</Link>
               <Link className="hover-fade" href="/contact">Contact</Link>
             </div>
           </div>
