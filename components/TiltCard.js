@@ -18,6 +18,13 @@ export default function TiltCard({ as: Component = "div", maxTilt = 8, scale = 1
     if (!el) return;
     if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
 
+    // will-change only while hovered: holding it permanently keeps every
+    // card as its own GPU layer, which adds up fast on phones.
+    let clearTimer;
+    function handleEnter() {
+      clearTimeout(clearTimer);
+      el.style.willChange = "transform";
+    }
     function handleMove(e) {
       const rect = el.getBoundingClientRect();
       const px = (e.clientX - rect.left) / rect.width - 0.5;
@@ -26,11 +33,17 @@ export default function TiltCard({ as: Component = "div", maxTilt = 8, scale = 1
     }
     function handleLeave() {
       el.style.transform = "perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)";
+      clearTimer = setTimeout(() => {
+        el.style.willChange = "auto";
+      }, 250);
     }
 
+    el.addEventListener("mouseenter", handleEnter);
     el.addEventListener("mousemove", handleMove);
     el.addEventListener("mouseleave", handleLeave);
     return () => {
+      clearTimeout(clearTimer);
+      el.removeEventListener("mouseenter", handleEnter);
       el.removeEventListener("mousemove", handleMove);
       el.removeEventListener("mouseleave", handleLeave);
     };
@@ -39,7 +52,7 @@ export default function TiltCard({ as: Component = "div", maxTilt = 8, scale = 1
   return (
     <Component
       ref={ref}
-      style={{ transition: "transform 0.15s ease-out", willChange: "transform", ...style }}
+      style={{ transition: "transform 0.15s ease-out", ...style }}
       {...props}
     />
   );

@@ -30,10 +30,14 @@ export default function CursorDotGrid({
 
     const ctx = canvas.getContext("2d");
     const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    // No cursor on phones/tablets, so there's nothing to react to: draw the
+    // static grid once instead of redrawing it every frame for nobody.
+    const hasCursor = window.matchMedia?.("(hover: hover) and (pointer: fine)").matches ?? true;
+    const interactive = hasCursor && !reduceMotion;
     const mouse = { x: -9999, y: -9999 };
     let width = 0;
     let height = 0;
-    let raf;
+    let raf = 0;
 
     function resize() {
       width = window.innerWidth;
@@ -46,14 +50,31 @@ export default function CursorDotGrid({
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
+    // The picture only depends on the mouse position, so redraw only when
+    // it changes (at most once per frame) instead of on a permanent loop.
+    function schedule() {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        draw();
+      });
+    }
+
     function handleMove(e) {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
+      schedule();
     }
 
     function handleLeave() {
       mouse.x = -9999;
       mouse.y = -9999;
+      schedule();
+    }
+
+    function handleResize() {
+      resize();
+      draw();
     }
 
     function draw() {
@@ -76,20 +97,19 @@ export default function CursorDotGrid({
           ctx.fill();
         }
       }
-      if (!reduceMotion) raf = requestAnimationFrame(draw);
     }
 
     resize();
     draw();
 
-    window.addEventListener("mousemove", handleMove);
-    window.addEventListener("mouseleave", handleLeave);
-    window.addEventListener("resize", resize);
+    if (interactive) window.addEventListener("mousemove", handleMove);
+    if (interactive) window.addEventListener("mouseleave", handleLeave);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("mousemove", handleMove);
       window.removeEventListener("mouseleave", handleLeave);
-      window.removeEventListener("resize", resize);
+      window.removeEventListener("resize", handleResize);
       if (raf) cancelAnimationFrame(raf);
     };
   }, [gap, dotColor, accentColor, baseOpacity]);
