@@ -150,33 +150,6 @@ export default function LandingPage() {
             ))}
           </div>
 
-          <Reveal
-            as="div"
-            className="grid-collapse"
-            style={{
-              marginTop: 40,
-              padding: "40px 48px",
-              background: "rgba(245,130,32,0.12)",
-              border: "1px solid rgba(245,130,32,0.35)",
-              borderRadius: 12,
-              display: "grid",
-              gridTemplateColumns: "1fr auto",
-              gap: 32,
-              alignItems: "center",
-            }}
-          >
-            <div>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--orange-500)", marginBottom: 12 }}>
-                Offer Honour Rate
-              </div>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 32, lineHeight: 1.2, letterSpacing: "-0.015em" }}>
-                91% of Capitabel Loan Offers convert to lender sanctions on materially similar terms.
-              </div>
-            </div>
-            <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: "clamp(48px, 12vw, 96px)", color: "var(--orange-500)", letterSpacing: "-0.03em" }}>
-              <CountUp value="91%" />
-            </div>
-          </Reveal>
         </div>
       </section>
 
