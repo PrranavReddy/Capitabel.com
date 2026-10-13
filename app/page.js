@@ -43,10 +43,7 @@ export default function LandingPage() {
                 with Capitabel.
               </span>
             </h1>
-            <p style={{ fontSize: 20, lineHeight: 1.45, color: "var(--navy-700)", maxWidth: 520, margin: 0, textWrap: "pretty" }}>
-              {landing.hero.sub}
-            </p>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 32 }}>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 40 }}>
               <MagneticButton
                 as={Link}
                 href="/contact"
