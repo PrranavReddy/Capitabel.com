@@ -1,6 +1,6 @@
 import { calculators, journal } from "@/lib/data";
 
-const BASE_URL = "https://capitabel.com";
+const BASE_URL = "https://www.capitabel.com";
 
 // Next.js App Router convention: this file generates /sitemap.xml
 // automatically at build time. Tells search engines exactly which pages

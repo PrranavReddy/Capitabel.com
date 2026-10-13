@@ -35,7 +35,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://capitabel.com"),
+  metadataBase: new URL("https://www.capitabel.com"),
   title: {
     default: "Capitabel Solutions — Building Bharat through credit access.",
     template: "%s · Capitabel Solutions",
@@ -53,7 +53,7 @@ export const metadata = {
   openGraph: {
     title: "Capitabel Solutions — Building Bharat through credit access.",
     description: "One advisor. The right lender. 48 hours.",
-    url: "https://capitabel.com",
+    url: "https://www.capitabel.com",
     siteName: "Capitabel Solutions",
     locale: "en_IN",
     type: "website",

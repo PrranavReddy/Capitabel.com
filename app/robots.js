@@ -8,6 +8,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://capitabel.com/sitemap.xml",
+    sitemap: "https://www.capitabel.com/sitemap.xml",
   };
 }
