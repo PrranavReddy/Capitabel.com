@@ -43,7 +43,10 @@ export default function LandingPage() {
                 with Capitabel.
               </span>
             </h1>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 40 }}>
+            <p style={{ fontSize: 20, lineHeight: 1.45, color: "var(--navy-700)", maxWidth: 520, margin: 0, textWrap: "pretty" }}>
+              {landing.hero.sub}
+            </p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 32 }}>
               <MagneticButton
                 as={Link}
                 href="/contact"
@@ -78,9 +81,9 @@ export default function LandingPage() {
                 margin: 0,
               }}
             >
-              Growth capital
+              {landing.hero.tagline[0]}
               <br />
-              <span style={{ color: "var(--orange-500)" }}>advisory and fulfilment.</span>
+              <span style={{ color: "var(--orange-500)" }}>{landing.hero.tagline[1]}</span>
             </p>
           </div>
         </div>
