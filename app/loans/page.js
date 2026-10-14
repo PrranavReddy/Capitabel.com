@@ -32,7 +32,7 @@ export default function LoansPage() {
           <Serif>One relationship.</Serif>
         </h1>
         <p style={{ fontSize: 20, lineHeight: 1.45, color: "var(--navy-700)", maxWidth: 640, margin: 0, textWrap: "pretty" }}>
-          A rationalised core lender panel, drawn from a wider network of 40+ banks and NBFCs. Every file is scored on borrower fit —
+          A rationalised core lender panel, drawn from a wider network of 50+ banks and NBFCs. Every file is scored on borrower fit —
           approval probability, indicative rate, sanction TAT, KFS terms — before we recommend a lender.
         </p>
       </section>

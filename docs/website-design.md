@@ -212,7 +212,7 @@ round language — not to be published), Company timeline section.
 Hero → summary strip → per-product deep-dive (MSME → LAP → Home Loans order,
 matches Landing) → "Who we serve" segments (moved here from Landing) →
 process TAT table → CTA. All "10–12 lenders" / "Twelve lenders" specific
-counts were removed sitewide (replaced with the "40+ network" figure or
+counts were removed sitewide (replaced with the "50+ network" figure or
 generic "core lender panel" language) — don't reintroduce a specific core
 lender count without being asked. **Note**: this page's product deep-dive
 still uses the *original* longer bullets/descriptions — the Landing page's

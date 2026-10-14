@@ -99,7 +99,7 @@ export default function LandingPage() {
               whiteSpace: "nowrap",
             }}
           >
-            40+ lenders in our network
+            50+ lenders in our network
           </div>
           <div style={{ flex: 1, height: 1, background: "var(--navy-a15)" }} />
         </Reveal>

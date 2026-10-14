@@ -33,7 +33,7 @@ that should never get lost or accidentally reversed.
   "Q3/Q4 milestone" framing. This was explicitly stripped from the About
   page and should not be reintroduced without the user asking for it back.
 - **Never state a specific core lender count** (e.g. "10–12" or "Twelve
-  lenders") — use the "40+ network" figure or generic "core lender panel"
+  lenders") — use the "50+ network" figure or generic "core lender panel"
   phrasing instead. This was deliberately scrubbed sitewide.
 - Product display order is **MSME → LAP → Home Loans**, consistently on
   both the Landing page and the Loans page — keep them in sync if either

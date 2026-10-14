@@ -31,7 +31,7 @@ export default function ReferralsPage() {
           <Serif>We&rsquo;ll handle the rest.</Serif>
         </h1>
         <p style={{ fontSize: 20, lineHeight: 1.45, color: "var(--navy-700)", maxWidth: 640, margin: 0, textWrap: "pretty" }}>
-          Refer an MSME, LAP, or home loan client and earn a fixed payout on every case that disburses, across our 40+ lender network.
+          Refer an MSME, LAP, or home loan client and earn a fixed payout on every case that disburses, across our 50+ lender network.
         </p>
       </section>
 
