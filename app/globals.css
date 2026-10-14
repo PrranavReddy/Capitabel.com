@@ -42,6 +42,9 @@ body {
 body {
   font-size: 16px;
   line-height: 1.5;
+  /* The dropdown menu overflows the nav; body clips overflow (overflow-x is
+     hidden above), so very short pages need a body at least screen-tall. */
+  min-height: 100vh;
 }
 
 a {
@@ -376,6 +379,45 @@ summary:focus-visible {
 
 .nav-mobile-toggle {
   display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--navy-900);
+  cursor: pointer;
+}
+
+.nav-mobile-toggle:focus-visible {
+  outline: 2px solid var(--orange-500);
+  outline-offset: 2px;
+}
+
+.nav-mobile-menu {
+  display: none;
+}
+
+.nav-mobile-link {
+  display: block;
+  padding: 16px 0;
+  border-top: 1px solid var(--navy-a08);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@keyframes nav-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 860px) {
@@ -385,6 +427,30 @@ summary:focus-visible {
 
   .nav-cta-label {
     display: none;
+  }
+
+  .nav-mobile-toggle {
+    display: inline-flex;
+  }
+
+  .nav-mobile-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    background: #ffffff;
+    border-bottom: 1px solid var(--navy-a08);
+    box-shadow: 0 16px 32px -16px rgba(22, 38, 77, 0.18);
+    animation: nav-menu-in 0.18s ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-mobile-menu {
+    animation: none;
   }
 }
 
