@@ -226,7 +226,7 @@ export default function LandingPage() {
               >
                 <div>
                   <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(245,240,228,0.6)", marginBottom: 6 }}>
-                    Ticket size
+                    Starts from
                   </div>
                   <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 30, color: "#FFFFFF" }}>{p.ticket}</div>
                 </div>
