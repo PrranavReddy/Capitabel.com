@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import PageTransition from "@/components/PageTransition";
 import CursorDotGrid from "@/components/CursorDotGrid";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -72,6 +73,7 @@ export default function RootLayout({ children }) {
         <div style={{ position: "relative", zIndex: 1 }}>
           <Nav />
           <PageTransition>{children}</PageTransition>
+          <WhatsAppFloat />
         </div>
       </body>
     </html>

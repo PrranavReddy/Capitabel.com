@@ -579,3 +579,52 @@ summary:focus-visible {
     --max-width: 1760px;
   }
 }
+
+/* ---------------------------------------------------------------------- */
+/* Floating WhatsApp button (components/WhatsAppFloat.js, home page only) */
+/* ---------------------------------------------------------------------- */
+.wa-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wa-float:hover {
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.4);
+}
+
+.wa-float:focus-visible {
+  outline: 3px solid var(--navy-900);
+  outline-offset: 3px;
+}
+
+@media (min-width: 1024px) {
+  .wa-float {
+    right: 28px;
+    bottom: 28px;
+    width: 62px;
+    height: 62px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-float {
+    transition: none;
+  }
+
+  .wa-float:hover {
+    transform: none;
+  }
+}
