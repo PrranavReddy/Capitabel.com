@@ -26,29 +26,17 @@ export default function LandingPage() {
             />
             <h1
               style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 500,
-                fontSize: 56,
-                lineHeight: 1.02,
-                letterSpacing: "-0.025em",
+                fontFamily: "var(--font-serif)",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "clamp(56px, 5.6vw, 80px)",
+                lineHeight: 1.05,
+                letterSpacing: "-0.01em",
                 margin: 0,
                 color: "var(--navy-900)",
               }}
             >
-              Borrow
-              <br />
-              <span
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontStyle: "italic",
-                  fontWeight: 400,
-                  fontSize: "1.18em",
-                  letterSpacing: "-0.01em",
-                  color: "var(--orange-500)",
-                }}
-              >
-                better.
-              </span>
+              Borrow <span style={{ color: "var(--orange-500)" }}>better.</span>
             </h1>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 36 }}>
               <MagneticButton
