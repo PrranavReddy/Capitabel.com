@@ -1,0 +1,592 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>/* ---------------------------------------------------------------------- */
+/* Design tokens — see design-reference/README.md for the source spec     */
+/* ---------------------------------------------------------------------- */
+:root {
+  --navy-900: #16264d;
+  --navy-700: #334971;
+  --orange-500: #f58220;
+  --cream-100: #f7f3e9;
+  --cream-200: #efe7d5;
+  --cream-300: #f5f0e4;
+  --white: #ffffff;
+  --navy-a08: rgba(22, 38, 77, 0.08);
+  --navy-a10: rgba(22, 38, 77, 0.1);
+  --navy-a12: rgba(22, 38, 77, 0.12);
+  --navy-a15: rgba(22, 38, 77, 0.15);
+  --navy-a20: rgba(22, 38, 77, 0.2);
+  --navy-a25: rgba(22, 38, 77, 0.25);
+
+  --font-display: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  --font-serif: var(--font-instrument-serif), "Instrument Serif", serif;
+  --font-body: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
+
+  --max-width: 1400px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--white);
+  color: var(--navy-900);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  /* The dropdown menu overflows the nav; body clips overflow (overflow-x is
+     hidden above), so very short pages need a body at least screen-tall. */
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--orange-500);
+  color: var(--white);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Layout helpers                                                         */
+/* ---------------------------------------------------------------------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Interactions                                                           */
+/* ---------------------------------------------------------------------- */
+.hover-fade:hover {
+  opacity: 0.78;
+}
+
+.hover-fade-soft:hover {
+  opacity: 0.85;
+}
+
+.btn {
+  transition: background-color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.btn-dark:hover {
+  background: #0f1a35;
+}
+
+.btn-orange:hover {
+  background: #dd7415;
+  box-shadow: 0 8px 20px -6px rgba(245, 130, 32, 0.5);
+}
+
+.btn-white:hover {
+  background: var(--cream-100);
+}
+
+.btn-ghost:hover {
+  border-color: var(--navy-900);
+}
+
+.card-hover {
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-hover:hover {
+  border-color: rgba(245, 130, 32, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 32px -18px rgba(22, 38, 77, 0.28);
+}
+
+.underline-link {
+  border-bottom: 1px solid var(--navy-900);
+  padding-bottom: 2px;
+  transition: opacity 0.15s ease;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Marquee (lender strip)                                                 */
+/* ---------------------------------------------------------------------- */
+.marquee-track {
+  overflow: hidden;
+  border-top: 1px solid var(--navy-a10);
+  border-bottom: 1px solid var(--navy-a10);
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-track:hover .marquee-inner {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Marquee (People who Borrowed Better wall) — same mechanism as the      */
+/* lender strip above, just slower so a full testimonial is readable.     */
+/* ---------------------------------------------------------------------- */
+.wall-track {
+  overflow: hidden;
+  /* Fade cards to transparent at both edges so they dissolve into the
+     section's navy background instead of hard-clipping. */
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.wall-inner {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  align-items: flex-start;
+  animation: marquee 70s linear infinite;
+}
+
+.wall-track:hover .wall-inner {
+  animation-play-state: paused;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Scroll reveal (components/Reveal.js)                                   */
+/* ---------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Page transition (components/PageTransition.js)                         */
+/* ---------------------------------------------------------------------- */
+.page-fade {
+  animation: page-fade-in 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-inner,
+  .wall-inner {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .page-fade {
+    animation: none;
+  }
+
+  .btn:hover,
+  .btn:active,
+  .card-hover:hover {
+    transform: none;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* FAQ accordion (FAQItem.js — state-driven, not native <details>)        */
+/* ---------------------------------------------------------------------- */
+.plus {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.faq-item.is-open .plus {
+  transform: rotate(45deg);
+}
+
+/* grid-template-rows 0fr -> 1fr eases to the content's natural height
+   without any JS measuring or hardcoded max-height. */
+.faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faq-item.is-open .faq-panel {
+  grid-template-rows: 1fr;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Form controls                                                          */
+/* ---------------------------------------------------------------------- */
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--navy-900);
+  background: var(--white);
+  border: 1px solid var(--navy-a15);
+  border-radius: 6px;
+  padding: 14px 16px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--orange-500);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: var(--font-body);
+}
+
+label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy-700);
+  margin-bottom: 8px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--orange-500);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Glass tile — frosted-glass CTA treatment                               */
+/* ---------------------------------------------------------------------- */
+.glass-tile {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.glass-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.32) 0%,
+    rgba(255, 255, 255, 0.08) 22%,
+    rgba(255, 255, 255, 0) 45%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glass-tile > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Nav                                                                    */
+/* ---------------------------------------------------------------------- */
+.nav-links {
+  display: flex;
+  gap: 36px;
+}
+
+.nav-mobile-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--navy-900);
+  cursor: pointer;
+}
+
+.nav-mobile-toggle:focus-visible {
+  outline: 2px solid var(--orange-500);
+  outline-offset: 2px;
+}
+
+.nav-mobile-menu {
+  display: none;
+}
+
+.nav-mobile-link {
+  display: block;
+  padding: 16px 0;
+  border-top: 1px solid var(--navy-a08);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@keyframes nav-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 860px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-cta-label {
+    display: none;
+  }
+
+  .nav-mobile-toggle {
+    display: inline-flex;
+  }
+
+  .nav-mobile-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    background: #ffffff;
+    border-bottom: 1px solid var(--navy-a08);
+    box-shadow: 0 16px 32px -16px rgba(22, 38, 77, 0.18);
+    animation: nav-menu-in 0.18s ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-mobile-menu {
+    animation: none;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Responsive tiers — desktop values live inline (matching the design     */
+/* reference pixel-for-pixel) and are the default above 1024px. Three     */
+/* breakpoints layer on top: phone (≤640px), tablet (641–1023px), and     */
+/* large desktop (≥1440px). Class list is every grid actually in use —    */
+/* check with a grep before adding a page that introduces a new one.      */
+/* ---------------------------------------------------------------------- */
+
+/* Asymmetric sidebar/split layouts and table-like rows: don't split
+   cleanly into 2 columns at medium widths, so these stack instead.
+   (.hero-grid is deliberately NOT in this list — it stays side-by-side
+   through tablet and only stacks on phone, below.) */
+@media (max-width: 1023px) {
+  .split-grid,
+  .faq-grid,
+  .contact-grid,
+  .product-detail-grid,
+  .cta-grid,
+  .process-row,
+  .process-head,
+  .opsrow-grid,
+  .footer-grid,
+  .calc-layout-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .faq-sticky,
+  .loans-sticky {
+    position: static !important;
+  }
+}
+
+/* Phone: full single-column collapse for everything, tightest type. */
+@media (max-width: 640px) {
+  .hero-grid,
+  .grid-collapse,
+  .products-grid,
+  .steps-grid,
+  .segments-grid,
+  .testimonials-grid,
+  .journal-grid,
+  .stats-grid,
+  .team-grid,
+  .beliefs-grid,
+  .summary-grid,
+  .field-grid-2,
+  .next-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-tagline {
+    text-align: left !important;
+    margin-top: 24px;
+  }
+
+  h1 {
+    font-size: clamp(40px, 12vw, 72px) !important;
+  }
+
+  h2 {
+    font-size: clamp(30px, 8vw, 48px) !important;
+  }
+
+  .footer-wordmark {
+    font-size: clamp(56px, 20vw, 120px) !important;
+  }
+}
+
+/* Tablet: 2-column card grids, moderate type clamp so the biggest
+   desktop headline sizes (up to 112px) don't overflow a narrower
+   column. Asymmetric/table layouts already stacked above. */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .grid-collapse,
+  .products-grid,
+  .steps-grid,
+  .segments-grid,
+  .journal-grid,
+  .stats-grid,
+  .team-grid,
+  .beliefs-grid,
+  .summary-grid,
+  .field-grid-2,
+  .next-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  h1 {
+    font-size: clamp(48px, 7vw, 96px) !important;
+  }
+
+  h2 {
+    font-size: clamp(36px, 5.5vw, 64px) !important;
+  }
+
+  /* Hero tagline sits in a half-width column again at this breakpoint
+     (see .hero-grid above) — its inline clamp() was tuned for full
+     viewport width, so it needs its own smaller scale here or it
+     overflows the narrower column next to the BORROW BETTER heading. */
+  .hero-tagline p {
+    font-size: clamp(26px, 5vw, 44px) !important;
+  }
+}
+
+/* Large desktop: give big screens more room instead of just wider
+   margins — every section using .container widens with it. */
+@media (min-width: 1440px) {
+  :root {
+    --max-width: 1600px;
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --max-width: 1760px;
+  }
+}
+</style>
+<style>body{font-family:'DM Sans',system-ui,sans-serif;background:#fff}</style></head><body>
+<section class="container" style="padding-top:24px;padding-bottom:24px">
+ <div style="background:var(--navy-900);color:#fff;border-radius:20px;padding:60px 60px;">
+  <div style="display:flex;flex-direction:column;gap:14px">
+   <a class="btn btn-orange" style="display:flex;align-items:center;justify-content:space-between;padding:22px 26px;background:var(--orange-500);color:#fff;border-radius:8px;font-size:16px;font-weight:500">Book a consultation call <span style="font-size:22px">→</span></a>
+   <a class="btn btn-white" aria-label="WhatsApp" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:22px 26px;background:#fff;color:var(--navy-900);border-radius:8px;font-size:16px;font-weight:500">
+     <svg width="30" height="30" viewBox="0 0 24 24" fill="#25D366" style="display:block;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+     <span style="font-family:'JetBrains Mono',monospace;font-size:13px;white-space:nowrap">+91 99405 48583</span></a>
+   <a class="btn" style="display:flex;align-items:center;justify-content:space-between;padding:22px 26px;background:transparent;border:1px solid rgba(245,240,228,.25);color:#fff;border-radius:8px;font-size:16px">Call directly <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(245,240,228,.7)">Mon–Sat · 10–6</span></a>
+  </div></div></section></body></html>
