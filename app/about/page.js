@@ -230,7 +230,7 @@ export default function AboutPage() {
         links={[
           { href: "/", label: "Home" },
           { href: "/loans", label: "Loans" },
-          { href: "/calculators", label: "Calculators" },
+          { href: "/calculators", label: "Check Eligibility" },
           { href: "/contact", label: "Contact" },
         ]}
       />

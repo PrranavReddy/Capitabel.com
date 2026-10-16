@@ -119,7 +119,7 @@ export default function ContactPage() {
           { href: "/", label: "Home" },
           { href: "/about", label: "About" },
           { href: "/loans", label: "Loans" },
-          { href: "/calculators", label: "Calculators" },
+          { href: "/calculators", label: "Check Eligibility" },
         ]}
       />
     </div>
