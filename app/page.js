@@ -19,10 +19,10 @@ export default function LandingPage() {
             <Image
               src="/images/capitabel-logo-full.png"
               alt="Capitabel Solutions"
-              width={560}
-              height={81}
+              width={640}
+              height={92}
               priority
-              style={{ display: "block", width: "100%", maxWidth: 560, height: "auto", marginBottom: 28 }}
+              style={{ display: "block", width: "100%", maxWidth: 640, height: "auto", marginBottom: 28 }}
             />
             <h1
               style={{
@@ -35,7 +35,9 @@ export default function LandingPage() {
                 color: "var(--navy-900)",
               }}
             >
-              BORROW <span style={{ color: "var(--orange-500)" }}>BETTER</span>
+              BORROW
+              <br />
+              <span style={{ color: "var(--orange-500)" }}>BETTER</span>
             </h1>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 36 }}>
               <MagneticButton
