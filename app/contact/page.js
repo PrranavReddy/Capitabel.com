@@ -49,7 +49,7 @@ export default function ContactPage() {
                   href={site.whatsappWithText}
                   aria-label="WhatsApp us"
                   className="btn btn-orange hover-fade"
-                  style={{ display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 56, padding: "16px 20px", background: "var(--orange-500)", color: "#FFFFFF", borderRadius: 8, fontSize: 14, fontWeight: 500 }}
+                  style={{ display: "flex", alignItems: "center", justifyContent: "flex-start", gap: 12, minHeight: 56, padding: "16px 20px", background: "var(--orange-500)", color: "#FFFFFF", borderRadius: 8, fontSize: 14, fontWeight: 500 }}
                 >
                   <WhatsAppIcon size={22} />
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 12 }}>{site.phone}</span>
@@ -58,7 +58,7 @@ export default function ContactPage() {
                   href={site.phoneHref}
                   aria-label="Call directly"
                   className="btn hover-fade"
-                  style={{ display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 56, padding: "16px 20px", background: "rgba(245,240,228,0.08)", border: "1px solid rgba(245,240,228,0.2)", color: "#FFFFFF", borderRadius: 8, fontSize: 14 }}
+                  style={{ display: "flex", alignItems: "center", justifyContent: "flex-start", gap: 12, minHeight: 56, padding: "16px 20px", background: "rgba(245,240,228,0.08)", border: "1px solid rgba(245,240,228,0.2)", color: "#FFFFFF", borderRadius: 8, fontSize: 14 }}
                 >
                   <PhoneIcon size={22} />
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "rgba(245,240,228,0.7)" }}>Mon–Sat · 10–6</span>

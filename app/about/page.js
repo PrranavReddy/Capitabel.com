@@ -208,19 +208,19 @@ export default function AboutPage() {
               href={site.whatsapp}
               aria-label="WhatsApp us"
               className="btn btn-white hover-fade"
-              style={{ display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 77, padding: "22px 26px", background: "#FFFFFF", color: "var(--navy-900)", borderRadius: 8, fontSize: 16, fontWeight: 500 }}
+              style={{ display: "flex", alignItems: "center", justifyContent: "flex-start", gap: 14, minHeight: 77, padding: "22px 26px", background: "#FFFFFF", color: "var(--navy-900)", borderRadius: 8, fontSize: 16, fontWeight: 500 }}
             >
               <WhatsAppIcon size={26} color="#128C7E" />
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: 13 }}>{site.phone}</span>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: 15 }}>{site.phone}</span>
             </a>
             <a
               href={site.phoneHref}
               aria-label="Call directly"
               className="btn hover-fade"
-              style={{ display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 77, padding: "22px 26px", background: "transparent", border: "1px solid rgba(255,255,255,0.35)", color: "#FFFFFF", borderRadius: 8, fontSize: 16 }}
+              style={{ display: "flex", alignItems: "center", justifyContent: "flex-start", gap: 14, minHeight: 77, padding: "22px 26px", background: "transparent", border: "1px solid rgba(255,255,255,0.35)", color: "#FFFFFF", borderRadius: 8, fontSize: 16 }}
             >
               <PhoneIcon size={26} />
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "rgba(255,255,255,0.8)" }}>Mon–Sat · 10–6</span>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: 15, color: "rgba(255,255,255,0.8)" }}>Mon–Sat · 10–6</span>
             </a>
           </div>
         </Reveal>
