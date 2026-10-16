@@ -6,7 +6,7 @@ import CalculatorTile from "@/components/calculators/CalculatorTile";
 import { calculators } from "@/lib/data";
 
 export const metadata = {
-  title: "Calculators",
+  title: "Check Eligibility",
   description:
     "EMI, eligibility, balance transfer, and overdraft-linked loan simulators — work out the real numbers before you talk to us.",
 };
@@ -15,7 +15,7 @@ export default function CalculatorsPage() {
   return (
     <div>
       <section className="container" style={{ paddingTop: 72, paddingBottom: 60 }}>
-        <Eyebrow>Calculators</Eyebrow>
+        <Eyebrow>Check Eligibility</Eyebrow>
         <h1
           style={{
             fontFamily: "var(--font-display)",
