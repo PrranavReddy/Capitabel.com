@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { LandingFooter } from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
@@ -14,36 +15,28 @@ export default function LandingPage() {
       <section className="container" style={{ paddingTop: 72, paddingBottom: 48 }}>
         <div className="hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
           <div>
+            <Image
+              src="/images/capitabel-logo-full.png"
+              alt="Capitabel Solutions"
+              width={560}
+              height={81}
+              priority
+              style={{ display: "block", width: "100%", maxWidth: 560, height: "auto", marginBottom: 28 }}
+            />
             <h1
               style={{
                 fontFamily: "var(--font-display)",
                 fontWeight: 600,
-                fontSize: 104,
-                lineHeight: 0.96,
-                letterSpacing: "-0.035em",
-                margin: "0 0 32px",
+                fontSize: 56,
+                lineHeight: 1,
+                letterSpacing: "-0.03em",
+                margin: 0,
                 color: "var(--navy-900)",
               }}
             >
-              BORROW
-              <br />
-              <span style={{ color: "var(--orange-500)" }}>BETTER</span>
-              <br />
-              <span
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontStyle: "italic",
-                  fontWeight: 400,
-                  letterSpacing: "-0.02em",
-                  display: "inline-block",
-                  fontSize: "clamp(28px, 8vw, 70px)",
-                  marginTop: 8,
-                }}
-              >
-                with Capitabel.
-              </span>
+              BORROW <span style={{ color: "var(--orange-500)" }}>BETTER</span>
             </h1>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 40 }}>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 36 }}>
               <MagneticButton
                 as={Link}
                 href="/contact"

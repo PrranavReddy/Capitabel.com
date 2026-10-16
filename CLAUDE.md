@@ -58,6 +58,8 @@ that should never get lost or accidentally reversed.
   background baked into the file. Every `<Image>` usage applies
   `style={{ mixBlendMode: "multiply" }}` to blend it into whatever surface
   it sits on. **Don't drop that style** or a white box reappears behind it.
+  Exception: `capitabel-logo-full.png` (the large hero logo) is a true
+  transparent PNG, so it needs no blend mode.
 - Any new scroll-triggered, cursor-following, or hover animation must check
   `prefers-reduced-motion` and either skip attaching its listeners or jump
   straight to the resting/end state — every existing animation component
