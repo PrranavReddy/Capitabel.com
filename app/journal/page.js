@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import MagneticButton from "@/components/MagneticButton";
 import CoverArt from "@/components/journal/CoverArt";
 import { journal, site } from "@/lib/data";
+import { WhatsAppIcon, PhoneIcon } from "@/components/ContactIcons";
 
 export const metadata = {
   title: "Journal",
@@ -105,18 +106,20 @@ export default function JournalPage() {
             </MagneticButton>
             <a
               href={site.whatsapp}
+              aria-label="WhatsApp us"
               className="btn btn-white hover-fade"
-              style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "22px 26px", background: "#FFFFFF", color: "var(--navy-900)", borderRadius: 8, fontSize: 16, fontWeight: 500 }}
+              style={{ display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 77, padding: "22px 26px", background: "#FFFFFF", color: "var(--navy-900)", borderRadius: 8, fontSize: 16, fontWeight: 500 }}
             >
-              WhatsApp us
+              <WhatsAppIcon size={26} color="#128C7E" />
               <span style={{ fontFamily: "var(--font-mono)", fontSize: 13 }}>{site.phone}</span>
             </a>
             <a
               href={site.phoneHref}
+              aria-label="Call directly"
               className="btn hover-fade"
-              style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "22px 26px", background: "transparent", border: "1px solid rgba(245,240,228,0.25)", color: "#FFFFFF", borderRadius: 8, fontSize: 16 }}
+              style={{ display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 77, padding: "22px 26px", background: "transparent", border: "1px solid rgba(245,240,228,0.25)", color: "#FFFFFF", borderRadius: 8, fontSize: 16 }}
             >
-              Call directly
+              <PhoneIcon size={26} />
               <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "rgba(245,240,228,0.7)" }}>Mon–Sat · 10–6</span>
             </a>
           </div>

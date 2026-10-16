@@ -2,6 +2,7 @@ import { SimpleFooter } from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 import { contact, site } from "@/lib/data";
+import { WhatsAppIcon, PhoneIcon } from "@/components/ContactIcons";
 
 export const metadata = {
   title: "Contact",
@@ -46,24 +47,26 @@ export default function ContactPage() {
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 <a
                   href={site.whatsappWithText}
+                  aria-label="WhatsApp us"
                   className="btn btn-orange hover-fade"
-                  style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 20px", background: "var(--orange-500)", color: "#FFFFFF", borderRadius: 8, fontSize: 14, fontWeight: 500 }}
+                  style={{ display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 56, padding: "16px 20px", background: "var(--orange-500)", color: "#FFFFFF", borderRadius: 8, fontSize: 14, fontWeight: 500 }}
                 >
-                  <span>WhatsApp us</span>
+                  <WhatsAppIcon size={22} />
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 12 }}>{site.phone}</span>
                 </a>
                 <a
                   href={site.phoneHref}
+                  aria-label="Call directly"
                   className="btn hover-fade"
-                  style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 20px", background: "rgba(245,240,228,0.08)", border: "1px solid rgba(245,240,228,0.2)", color: "#FFFFFF", borderRadius: 8, fontSize: 14 }}
+                  style={{ display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 56, padding: "16px 20px", background: "rgba(245,240,228,0.08)", border: "1px solid rgba(245,240,228,0.2)", color: "#FFFFFF", borderRadius: 8, fontSize: 14 }}
                 >
-                  <span>Call directly</span>
+                  <PhoneIcon size={22} />
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "rgba(245,240,228,0.7)" }}>Mon–Sat · 10–6</span>
                 </a>
                 <a
                   href={`mailto:${site.email}`}
                   className="btn hover-fade"
-                  style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 20px", background: "rgba(245,240,228,0.08)", border: "1px solid rgba(245,240,228,0.2)", color: "#FFFFFF", borderRadius: 8, fontSize: 14 }}
+                  style={{ display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 56, padding: "16px 20px", background: "rgba(245,240,228,0.08)", border: "1px solid rgba(245,240,228,0.2)", color: "#FFFFFF", borderRadius: 8, fontSize: 14 }}
                 >
                   <span>Email</span>
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "rgba(245,240,228,0.7)" }}>{site.email}</span>
