@@ -166,8 +166,6 @@ export default function LandingPage() {
           {landing.products.map((p) => (
             <TiltCard
               key={p.code}
-              as={Link}
-              href="/loans"
               className="card-hover"
               style={{
                 background: "var(--navy-900)",
@@ -180,6 +178,11 @@ export default function LandingPage() {
                 position: "relative",
               }}
             >
+              <Link
+                href="/loans"
+                aria-label={`${p.name}: view loan product details`}
+                style={{ position: "absolute", inset: 0, borderRadius: 12, zIndex: 1 }}
+              />
               <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", marginBottom: 20 }}>
                 <div
                   style={{
@@ -213,8 +216,10 @@ export default function LandingPage() {
               <div
                 style={{
                   display: "flex",
-                  alignItems: "baseline",
+                  alignItems: "center",
                   justifyContent: "space-between",
+                  flexWrap: "wrap",
+                  gap: 16,
                   marginTop: 32,
                   paddingTop: 20,
                   borderTop: "1px solid rgba(245,240,228,0.15)",
@@ -226,22 +231,26 @@ export default function LandingPage() {
                   </div>
                   <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 30, color: "#FFFFFF" }}>{p.ticket}</div>
                 </div>
-                <span
+                <Link
+                  href="/calculators"
+                  className="btn btn-orange hover-fade"
                   style={{
+                    position: "relative",
+                    zIndex: 2,
                     display: "inline-flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    width: 48,
-                    height: 48,
-                    borderRadius: "50%",
+                    padding: "14px 22px",
                     background: "var(--orange-500)",
                     color: "#FFFFFF",
-                    fontSize: 18,
+                    borderRadius: 6,
+                    fontSize: 14,
+                    fontWeight: 500,
+                    whiteSpace: "nowrap",
                   }}
-                  aria-hidden
                 >
-                  →
-                </span>
+                  Check Eligibility
+                </Link>
               </div>
             </TiltCard>
           ))}
