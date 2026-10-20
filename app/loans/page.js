@@ -110,7 +110,7 @@ export default function LoansPage() {
                   <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-900)", marginBottom: 20 }}>
                     Snapshot
                   </div>
-                  <div className="grid-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "28px 48px" }}>
                     <Snapshot value={p.rate} label="Interest rate" />
                     <Snapshot value={p.tenure} label="Tenure" />
                     <Snapshot value={p.ticket} label="Starting from" />
@@ -253,7 +253,7 @@ export default function LoansPage() {
 function Snapshot({ value, label }) {
   return (
     <div>
-      <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 32, color: "var(--navy-900)", letterSpacing: "-0.02em", lineHeight: 1 }}>{value}</div>
+      <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 32, color: "var(--navy-900)", letterSpacing: "-0.02em", lineHeight: 1, whiteSpace: "nowrap" }}>{value}</div>
       <div style={{ fontSize: 12, color: "var(--navy-700)", marginTop: 6 }}>{label}</div>
     </div>
   );
