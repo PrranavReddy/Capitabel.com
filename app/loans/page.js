@@ -24,7 +24,7 @@ export default function LoansPage() {
             fontSize: 112,
             lineHeight: 0.96,
             letterSpacing: "-0.035em",
-            margin: "0 0 32px",
+            margin: 0,
             maxWidth: 1200,
           }}
         >
@@ -32,37 +32,14 @@ export default function LoansPage() {
           <br />
           <Serif>One relationship.</Serif>
         </h1>
-        <p style={{ fontSize: 20, lineHeight: 1.45, color: "var(--navy-700)", maxWidth: 640, margin: 0, textWrap: "pretty" }}>
-          A rationalised core lender panel, drawn from a wider network of 50+ banks and NBFCs. Every file is scored on borrower fit —
-          approval probability, indicative rate, sanction TAT, KFS terms — before we recommend a lender.
-        </p>
       </section>
 
       {/* SUMMARY */}
       <section className="container" style={{ paddingBottom: 40 }}>
         <Reveal
           as="div"
-          className="summary-grid"
-          style={{ background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 16, padding: "56px 56px 40px", display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 32 }}
-        >
-          {loans.summary.map((s) => (
-            <div key={s.label}>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(245,240,228,0.6)", marginBottom: 14 }}>
-                {s.label}
-              </div>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 48, lineHeight: 1, color: "#FFFFFF", letterSpacing: "-0.02em" }}>
-                <CountUp value={s.val} />
-              </div>
-              <div style={{ fontSize: 12, color: "rgba(245,240,228,0.55)", marginTop: 10 }}>{s.note}</div>
-            </div>
-          ))}
-        </Reveal>
-
-        <Reveal
-          as="div"
           className="grid-collapse"
           style={{
-            marginTop: 20,
             padding: "40px 48px",
             background: "rgba(245,130,32,0.1)",
             border: "1px solid rgba(245,130,32,0.35)",
