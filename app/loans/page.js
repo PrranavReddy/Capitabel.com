@@ -129,7 +129,7 @@ export default function LoansPage() {
                   <div className="groups-grid">
                     {p.groups.map((g) => (
                       <div key={g.title} className="group-col">
-                        <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-900)", marginBottom: 20 }}>
+                        <div style={{ display: "inline-block", fontFamily: "var(--font-mono)", fontSize: 20, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--navy-900)", paddingBottom: 10, borderBottom: "2px solid var(--orange-500)", marginBottom: 22 }}>
                           {g.title}
                         </div>
                         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
