@@ -118,6 +118,30 @@ export default function LoansPage() {
                 </div>
               </Reveal>
             </div>
+
+            {p.groups && (
+              <Reveal as="div" delay={100}>
+                <div className="groups-card">
+                  <div className="groups-grid">
+                    {p.groups.map((g) => (
+                      <div key={g.title} className="group-col">
+                        <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-900)", marginBottom: 20 }}>
+                          {g.title}
+                        </div>
+                        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                          {g.items.map((item) => (
+                            <div key={item} style={{ display: "flex", gap: 12, alignItems: "baseline", fontSize: 17, color: "var(--navy-900)" }}>
+                              <span style={{ color: "var(--orange-500)", fontWeight: 600, fontSize: 13 }}>◆</span>
+                              <span>{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            )}
           </div>
         ))}
       </section>

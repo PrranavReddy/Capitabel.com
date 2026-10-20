@@ -476,6 +476,7 @@ summary:focus-visible {
   .process-head,
   .opsrow-grid,
   .footer-grid,
+  .groups-grid,
   .calc-layout-grid {
     grid-template-columns: 1fr !important;
   }
@@ -624,5 +625,44 @@ summary:focus-visible {
 
   .wa-float:hover {
     transform: none;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Product groups card (Loan products page: Products / Types / Employment) */
+/* ---------------------------------------------------------------------- */
+.groups-card {
+  background: var(--cream-100);
+  border: 1px solid var(--navy-a08);
+  border-radius: 12px;
+  padding: 36px 0;
+  margin-top: 24px;
+}
+
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.group-col {
+  padding: 0 40px;
+}
+
+.group-col + .group-col {
+  border-left: 1px solid var(--navy-a12);
+}
+
+@media (max-width: 1023px) {
+  .groups-card {
+    padding: 8px 0;
+  }
+
+  .group-col {
+    padding: 24px 28px;
+  }
+
+  .group-col + .group-col {
+    border-left: none;
+    border-top: 1px solid var(--navy-a12);
   }
 }
