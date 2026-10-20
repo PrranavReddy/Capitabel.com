@@ -68,8 +68,9 @@ export default function LoansPage() {
       <section className="container" style={{ paddingTop: 80, paddingBottom: 80 }}>
         {loans.products.map((p) => (
           <div key={p.slug} id={p.slug} style={{ padding: "80px 0", borderTop: "1px solid var(--navy-a15)" }}>
-            <div className="product-detail-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 80, alignItems: "start" }}>
-              <div className="loans-sticky" style={{ position: "sticky", top: 120 }}>
+            <div className="product-detail-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 24, alignItems: "stretch" }}>
+              <div style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: 36, display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 32 }}>
+                <div>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
                   <div
                     style={{
@@ -93,21 +94,24 @@ export default function LoansPage() {
                     <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", color: "var(--orange-500)" }}>{p.tag}</div>
                   </div>
                 </div>
-                <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 60, lineHeight: 0.98, letterSpacing: "-0.03em", margin: "0 0 28px", color: "var(--navy-900)" }}>
+                <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 52, lineHeight: 0.98, letterSpacing: "-0.03em", margin: 0, color: "var(--navy-900)" }}>
                   {p.name}
                 </h2>
-                <Link
-                  href="/contact"
-                  className="btn btn-dark hover-fade"
-                  style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 22px", background: "var(--navy-900)", color: "#FFFFFF", borderRadius: 6, fontSize: 14, fontWeight: 500 }}
-                >
-                  Discuss a file →
-                </Link>
+                </div>
+                <div>
+                  <Link
+                    href="/contact"
+                    className="btn btn-orange hover-fade"
+                    style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 22px", background: "var(--orange-500)", color: "#FFFFFF", borderRadius: 6, fontSize: 14, fontWeight: 500 }}
+                  >
+                    Discuss a file →
+                  </Link>
+                </div>
               </div>
 
               <Reveal as="div">
-                <div style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: 36 }}>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-900)", marginBottom: 20 }}>
+                <div style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: 36, height: "100%", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 32 }}>
+                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-900)" }}>
                     Snapshot
                   </div>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "28px 48px" }}>
@@ -130,7 +134,7 @@ export default function LoansPage() {
                         </div>
                         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                           {g.items.map((item) => (
-                            <div key={item} style={{ display: "flex", gap: 12, alignItems: "baseline", fontSize: 17, color: "var(--navy-900)" }}>
+                            <div key={item} style={{ display: "flex", gap: 12, alignItems: "baseline", fontSize: 17, fontWeight: 600, color: "var(--navy-900)" }}>
                               <span style={{ color: "var(--orange-500)", fontWeight: 600, fontSize: 13 }}>◆</span>
                               <span>{item}</span>
                             </div>
