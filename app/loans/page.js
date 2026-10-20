@@ -112,9 +112,9 @@ export default function LoansPage() {
                     Snapshot
                   </div>
                   <div className="grid-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
-                    <Snapshot value={p.rate} label="Indicative rate p.a." />
-                    <Snapshot value={p.tenure} label="Tenure range" />
-                    <Snapshot value={p.ticket} label="Typical ticket range" />
+                    <Snapshot value={p.rate} label="Interest rate" />
+                    <Snapshot value={p.tenure} label="Tenure" />
+                    <Snapshot value={p.ticket} label="Starting from" />
                   </div>
                 </div>
               </Reveal>
