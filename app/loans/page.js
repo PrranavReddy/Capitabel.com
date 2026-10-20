@@ -93,10 +93,9 @@ export default function LoansPage() {
                     <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", color: "var(--orange-500)" }}>{p.tag}</div>
                   </div>
                 </div>
-                <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 60, lineHeight: 0.98, letterSpacing: "-0.03em", margin: "0 0 20px", color: "var(--navy-900)" }}>
+                <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 60, lineHeight: 0.98, letterSpacing: "-0.03em", margin: "0 0 28px", color: "var(--navy-900)" }}>
                   {p.name}
                 </h2>
-                <p style={{ fontSize: 17, lineHeight: 1.55, color: "var(--navy-700)", margin: "0 0 24px", maxWidth: 420 }}>{p.desc}</p>
                 <Link
                   href="/contact"
                   className="btn btn-dark hover-fade"
