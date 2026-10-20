@@ -107,7 +107,7 @@ export default function LoansPage() {
               </div>
 
               <Reveal as="div">
-                <div style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: 36, marginBottom: 20 }}>
+                <div style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: 36 }}>
                   <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-900)", marginBottom: 20 }}>
                     Snapshot
                   </div>
@@ -115,48 +115,6 @@ export default function LoansPage() {
                     <Snapshot value={p.rate} label="Indicative rate p.a." />
                     <Snapshot value={p.tenure} label="Tenure range" />
                     <Snapshot value={p.ticket} label="Typical ticket range" />
-                  </div>
-                </div>
-
-                <div style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: 36, marginBottom: 20 }}>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-900)", marginBottom: 20 }}>
-                    Who this fits
-                  </div>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-                    {p.fit.map((f) => (
-                      <div key={f.title} style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 16, alignItems: "baseline" }}>
-                        <span style={{ color: "var(--orange-500)", fontWeight: 600 }}>◆</span>
-                        <div>
-                          <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 17, color: "var(--navy-900)", marginBottom: 4 }}>{f.title}</div>
-                          <div style={{ fontSize: 14, color: "var(--navy-700)" }}>{f.body}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: 36 }}>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-900)", marginBottom: 20 }}>
-                    Lender partners for this product
-                  </div>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                    {p.lenders.map((l) => (
-                      <span
-                        key={l}
-                        style={{
-                          padding: "8px 14px",
-                          background: "rgba(22,38,77,0.06)",
-                          border: "1px solid var(--navy-a12)",
-                          borderRadius: 6,
-                          fontFamily: "var(--font-display)",
-                          fontSize: 13,
-                          fontWeight: 500,
-                          color: "var(--navy-900)",
-                        }}
-                      >
-                        {l}
-                      </span>
-                    ))}
                   </div>
                 </div>
               </Reveal>
