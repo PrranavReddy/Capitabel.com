@@ -280,7 +280,7 @@ export default function LoansPage() {
 
 function Snapshot({ value, label }) {
   return (
-    <div style={{ flex: "1 1 auto", background: "#FFFFFF", borderRadius: 8, padding: 20, display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
+    <div style={{ flex: "1 1 auto", background: "#FFFFFF", borderTop: "3px solid var(--orange-500)", borderRadius: "0 0 8px 8px", padding: 20, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
       <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 32, color: "var(--navy-900)", letterSpacing: "-0.02em", lineHeight: 1, whiteSpace: "nowrap" }}>{value}</div>
       <div style={{ fontSize: 12, color: "var(--navy-700)", marginTop: 6 }}>{label}</div>
     </div>
