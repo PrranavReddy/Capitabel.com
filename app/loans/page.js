@@ -90,7 +90,6 @@ export default function LoansPage() {
                     {p.icon}
                   </div>
                   <div>
-                    <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-700)" }}>{p.code}</div>
                     <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", color: "var(--orange-500)" }}>{p.tag}</div>
                   </div>
                 </div>
