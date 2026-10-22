@@ -126,7 +126,7 @@ export default function LoansPage() {
             {p.groups && (
               <Reveal as="div" delay={100}>
                 <div className="groups-card">
-                  <div className={`groups-grid${p.groups.some((g) => g.items.length > 4) ? " groups-grid-wide" : ""}`}>
+                  <div className="groups-grid">
                     {p.groups.map((g) => (
                       <div key={g.title} className="group-col">
                         <div style={{ display: "inline-block", fontFamily: "var(--font-mono)", fontSize: 20, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--navy-900)", paddingBottom: 10, borderBottom: "2px solid var(--orange-500)", marginBottom: 22 }}>
