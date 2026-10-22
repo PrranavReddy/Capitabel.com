@@ -666,3 +666,12 @@ summary:focus-visible {
     border-top: 1px solid var(--navy-a12);
   }
 }
+
+.group-items { display: flex; flex-direction: column; gap: 14px; }
+@media (min-width: 1280px) {
+  .groups-grid-wide { grid-template-columns: 1.8fr 1fr 1fr; }
+  .group-items-wide { display: grid; grid-auto-flow: column; grid-template-rows: repeat(2, auto); gap: 14px 32px; justify-content: start; }
+}
+@media (min-width: 641px) and (max-width: 1023px) {
+  .group-items-wide { display: grid; grid-auto-flow: column; grid-template-rows: repeat(2, auto); gap: 14px 32px; justify-content: start; }
+}
