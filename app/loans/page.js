@@ -111,7 +111,7 @@ export default function LoansPage() {
 
               <Reveal as="div">
                 <div style={{ background: "var(--cream-100)", border: "1px solid var(--navy-a08)", borderRadius: 12, padding: 36, height: "100%", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 32 }}>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--navy-900)" }}>
+                  <div style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--navy-900)" }}>
                     Snapshot
                   </div>
                   <div style={{ flex: 1, display: "flex", flexWrap: "wrap", alignItems: "stretch", gap: 12 }}>
@@ -282,7 +282,7 @@ function Snapshot({ value, label }) {
   return (
     <div style={{ flex: "1 1 auto", background: "#FFFFFF", borderTop: "3px solid var(--orange-500)", borderRadius: "0 0 8px 8px", padding: 20, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
       <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 32, color: "var(--navy-900)", letterSpacing: "-0.02em", lineHeight: 1, whiteSpace: "nowrap" }}>{value}</div>
-      <div style={{ fontSize: 12, color: "var(--navy-700)", marginTop: 6 }}>{label}</div>
+      <div style={{ fontSize: 13, fontWeight: 600, color: "var(--navy-900)", background: "rgba(245, 130, 32, 0.22)", padding: "3px 10px", borderRadius: 4, marginTop: 10 }}>{label}</div>
     </div>
   );
 }
